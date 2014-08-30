@@ -22,7 +22,6 @@ public class PlayerControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		print(IsFloor());
 
 		if((Input.anyKey) & OnFloor){
 			//スペース押したらジャンプ
@@ -35,9 +34,6 @@ public class PlayerControl : MonoBehaviour {
 		}
 	}
 
-	bool IsFloor(){
-		return Physics.Raycast(transform.position,new Vector3(0,1,0),this.BodyColider.radius);
-	}
 
 
 	//Floorに着地したとき
