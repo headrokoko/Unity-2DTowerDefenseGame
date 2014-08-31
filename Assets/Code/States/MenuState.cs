@@ -22,12 +22,12 @@ namespace Assets.Code.States{
 				manager.SwichState(new StageSelectState(manager));
 			}
 
-			else if(GUI.Button(new Rect(50,250,250,50),"Stage2")){
+			else if(GUI.Button(new Rect(50,250,250,50),"Trade")){
 				Time.timeScale = 1;
 				Debug.Log("Trade");
 			}
 
-			else if(GUI.Button(new Rect(50,300,250,50),"Stage3")){
+			else if(GUI.Button(new Rect(50,300,250,50),"AssemblyState")){
 				Time.timeScale = 1;
 				Debug.Log("AssemblyState");
 			}

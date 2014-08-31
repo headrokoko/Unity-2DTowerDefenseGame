@@ -1,53 +1,61 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerControl : MonoBehaviour {
-
+public class PlayerControlConstant : MonoBehaviour {
+	
 	public float playerSpeed;
 	public float JumpPower;
 	private float Movepow;
-	private float MovePowMin = 2;
 	private bool OnFloor = false;
-	//CapsuleCollider BodyColider;
-
-
+	private bool OnWall = false;
+	
+	
 	void Awake(){
-		//this.BodyColider = GetComponent<CapsuleCollider>();
-	}
 
+	}
+	
 	// Use this for initialization
 	void Start () {
-	
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		
 		if((Input.anyKey) & OnFloor){
 			//スペース押したらジャンプ
 			if(Input.GetKeyDown(KeyCode.Space)){
 				rigidbody.AddForce(Vector3.up * JumpPower);
 			}
-			//画面左右の動き
-			Movepow = MovePowMin + Input.GetAxis("Horizontal") * playerSpeed;
-			//transform.Translate(playerSpeed,0,0);
-			rigidbody.AddForce(Movepow,0,0);
 		}
+			//画面左右の動き
+			if(Input.GetKey(KeyCode.A)){
+			transform.Translate(-Movepow,0,0);
+			}
+
+		else if (Input.GetKey(KeyCode.D)){
+			transform.Translate(Movepow,0,0);
+			}
+
 	}
-
-
-
 	//Floorに着地したとき
 	void OnCollisionEnter(Collision CollisionObj){
 		if(CollisionObj.gameObject.tag == "Floor"){
 			Debug.Log("ONFloor");
+			Movepow = playerSpeed;
 			OnFloor = true;
+		}
+		if(CollisionObj.gameObject.tag == "Wall"){
+			Debug.Log("ONWall");
+			Movepow = playerSpeed;
+			OnWall = true;
 		}
 	}
 	//Floor上にいるとき
 	void OnCollisionStay(Collision CollisionObj){
 		if(CollisionObj.gameObject.tag == "Floor"){
 			//Debug.Log("KeepFloor");
+			Movepow = playerSpeed;
 			OnFloor = true;
 		}
 	}
@@ -56,6 +64,10 @@ public class PlayerControl : MonoBehaviour {
 		if(CollisionObj.gameObject.tag == "Floor"){
 			//Debug.Log("TakeOffFloor");
 			OnFloor = false;
+		}
+		if(CollisionObj.gameObject.tag == "Wall"){
+			//Debug.Log("TakeOffFloor");
+			OnWall = false;
 		}
 	}
 }

@@ -3,10 +3,10 @@ using Assets.Code.Interfaces;
 using Assets.Code.States;
 
 namespace Assets.Code.States{
-	public class PlayState : IState {
+	public class PlayStateFollowCam : IState {
 		private StateManager manager;
-
-		public PlayState(StateManager stateManager){
+		
+		public PlayStateFollowCam(StateManager stateManager){
 			manager = stateManager;
 		}
 		
@@ -17,31 +17,35 @@ namespace Assets.Code.States{
 			}
 			if(Input.GetKeyDown(KeyCode.M)){
 				CameraChange();
-				manager.SwichState(new PlayStateFollowCam(manager));
-
+				manager.SwichState(new PlayState(manager));
+				
 			}
-
+			
 		}
-		
+
 		public void Render(){
 			if(GUI.Button(new Rect(100,500,100,50),"Camera")){
 				CameraChange();
-				Debug.Log("camera Follow");
-				manager.SwichState(new PlayStateFollowCam(manager));
+				Debug.Log("camera ZoomOut");
+				manager.SwichState(new PlayState(manager));
+			}
+
+			if(GUI.Button(new Rect(200,500,50,50),"I1")){
+				Debug.Log("Item1");
 			}
 		}
-
+		
 		void CameraChange(){
 			foreach(GameObject camera in manager.gameData.cameras){
-				if(camera.name != "ZoomOutCamera"){
+				if(camera.name != "FollowCamera"){
 					camera.SetActive(true);
 				}
 				else{
 					camera.SetActive(false);
 				}
 			}
-
+			
 		}
-
+		
 	}
 }
