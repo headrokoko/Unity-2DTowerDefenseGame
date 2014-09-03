@@ -38,14 +38,14 @@ namespace Assets.Code.States{
 			}
 			
 			else if(GUI.Button(new Rect(50,350,250,50),"Stage4")){
-				Application.LoadLevel("TDGStage4");
+				Application.LoadLevel("TDGStage1");
 				Time.timeScale = 1;
 				Debug.Log("ステージ4");
 				manager.SwichState(new PlayState(manager));
 			}
 			
-			else if(GUI.Button(new Rect(50,400,250,50),"Stage5")){
-				Application.LoadLevel("TDGStage5");
+			else if(GUI.Button(new Rect(50,400,250,50),"test")){
+				Application.LoadLevel("testscene");
 				Time.timeScale = 1;
 				Debug.Log("ステージ5");
 				manager.SwichState(new PlayState(manager));

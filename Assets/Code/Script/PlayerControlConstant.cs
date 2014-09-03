@@ -38,7 +38,7 @@ public class PlayerControlConstant : MonoBehaviour {
 			}
 
 	}
-	//Floorに着地したとき
+	//何かに触れたとき
 	void OnCollisionEnter(Collision CollisionObj){
 		if(CollisionObj.gameObject.tag == "Floor"){
 			Debug.Log("ONFloor");
@@ -50,6 +50,10 @@ public class PlayerControlConstant : MonoBehaviour {
 			Movepow = playerSpeed;
 			OnWall = true;
 		}
+		if(CollisionObj.gameObject.tag == "Death"){
+			Debug.Log("GameOver");
+		}
+
 	}
 	//Floor上にいるとき
 	void OnCollisionStay(Collision CollisionObj){

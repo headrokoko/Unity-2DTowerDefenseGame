@@ -20,10 +20,10 @@ namespace Assets.Code.States{
 				manager.SwichState(new PlayStateFollowCam(manager));
 
 			}
-
 		}
 		
 		public void Render(){
+
 			if(GUI.Button(new Rect(100,500,100,50),"Camera")){
 				CameraChange();
 				Debug.Log("camera Follow");
