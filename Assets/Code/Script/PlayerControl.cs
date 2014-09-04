@@ -43,6 +43,9 @@ public class PlayerControl : MonoBehaviour {
 			Debug.Log("ONFloor");
 			OnFloor = true;
 		}
+		if(CollisionObj.gameObject.tag == "Enemy"){
+			//GetComponentInParent.GetComponent<GameData>.initPlayerHP;
+		}
 	}
 	//Floor上にいるとき
 	void OnCollisionStay(Collision CollisionObj){

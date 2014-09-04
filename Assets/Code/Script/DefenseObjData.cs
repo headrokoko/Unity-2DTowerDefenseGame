@@ -12,15 +12,16 @@ public class DefenseObjData : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 	
 	//何かに触れたとき
 	void OnCollisionEnter(Collision CollisionObj){
 		Debug.Log ("Hit!");
-		if(CollisionObj.gameObject.tag == "Player"){
+		if(CollisionObj.gameObject.tag == "Enemy"){
 			DefObjHP = DefObjHP - 1; 
 			Debug.Log (DefObjHP);
+			Destroy(CollisionObj.gameObject);
 		}
 	}
 }
