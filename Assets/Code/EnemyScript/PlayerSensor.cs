@@ -18,7 +18,7 @@ public class PlayerSensor : MonoBehaviour {
 		Vector3 loolup = transform.position + ((Vector3.right *5) + (Vector3.up * 5));
 
 		transform.LookAt(Target,Vector3.up);
-		transform.Translate(transform.forward * Speed);
+		transform.Translate(Vector3.forward * Speed);
 		if(Physics.Raycast(transform.position,transform.forward,out hit,Range))
 		   {
 			if(hit.collider.tag == "Player"){
@@ -35,6 +35,10 @@ public class PlayerSensor : MonoBehaviour {
 	void OnCollisionEnter(Collision CollisionObj){
 		if(CollisionObj.gameObject.tag == "Defense"){
 			Debug.Log ("Damage");
+		}
+		
+		if(CollisionObj.gameObject.tag == "Dead"){
+			Destroy(this.gameObject);
 		}
 	}
 
