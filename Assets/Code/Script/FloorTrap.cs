@@ -3,8 +3,11 @@ using System.Collections;
 
 public class FloorTrap : MonoBehaviour {
 
-	public float Pow = 500;
+	public float BackPow = 500;
+	public float UpPow = 500;
 	public Rigidbody PushWall;
+	public float ReloadTime = 3.0f;
+	private bool trap = true;
 	// Use this for initialization
 	void Start () {
 	
@@ -16,13 +19,26 @@ public class FloorTrap : MonoBehaviour {
 	//何かに触れたとき
 	void OnTriggerEnter(Collider CollisionObj){
 		Debug.Log ("OnTrap");
-		if(CollisionObj.gameObject.tag == "Enemy"){
+		if((CollisionObj.gameObject.tag == "Enemy")&(trap)){
+			trap = false;
 			Debug.Log ("TrapOn");
-			Rigidbody clone;
-			clone = Instantiate(PushWall,transform.position,transform.rotation) as Rigidbody;
-			clone.transform.Translate(0,1.0f,1.6f);
-			clone.velocity = transform.TransformDirection(Vector3.back * Pow);
+			//Rigidbody clone;
+
+			//接触したEnemyを飛ばす
+			CollisionObj.rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+			CollisionObj.transform.rigidbody.AddForce((Vector3.back * BackPow) + (Vector3.up * UpPow));
+			StartCoroutine("Reload");
+			//clone = Instantiate(PushWall,transform.position,transform.rotation) as Rigidbody;
+			//clone.transform.Translate(0,1.0f,1.6f);
+			//clone.velocity = transform.TransformDirection(Vector3.back * Pow);
 
 		}
+	}
+
+	IEnumerator Reload(){
+		Debug.Log ("Reload");
+		yield return new WaitForSeconds(ReloadTime);
+		trap = true;
+		Debug.Log("trapready");
 	}
 }
