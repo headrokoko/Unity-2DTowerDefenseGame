@@ -8,6 +8,7 @@ public class FloorTrap : MonoBehaviour {
 	public Rigidbody PushWall;
 	public float ReloadTime = 3.0f;
 	private bool trap = true;
+	private bool TrapOn = false;
 	// Use this for initialization
 	void Start () {
 	
@@ -21,9 +22,10 @@ public class FloorTrap : MonoBehaviour {
 		Debug.Log ("OnTrap");
 		if((CollisionObj.gameObject.tag == "Enemy")&(trap)){
 			trap = false;
+			TrapOn = true;
 			Debug.Log ("TrapOn");
 			//Rigidbody clone;
-
+			GetComponent<Animator>().SetBool("TrapOn",TrapOn);
 			//接触したEnemyを飛ばす
 			CollisionObj.rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 			CollisionObj.transform.rigidbody.AddForce((Vector3.back * BackPow) + (Vector3.up * UpPow));
@@ -39,6 +41,8 @@ public class FloorTrap : MonoBehaviour {
 		Debug.Log ("Reload");
 		yield return new WaitForSeconds(ReloadTime);
 		trap = true;
+		TrapOn = false;
+		GetComponent<Animator>().SetBool("TrapOn",TrapOn);
 		Debug.Log("trapready");
 	}
 }
