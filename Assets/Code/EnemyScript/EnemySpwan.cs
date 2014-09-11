@@ -40,7 +40,7 @@ public class EnemySpwan : MonoBehaviour {
 		Rigidbody clone;
 		Debug.Log ("spwanenemy");
 		clone = Instantiate(enemy,transform.position,transform.rotation)as Rigidbody;
-		clone.transform.Translate(0,2.0f,0.0f);
+		clone.transform.Translate(0,0.0f,0.0f);
 	}
 
 }

@@ -5,11 +5,13 @@ public class PlayerSensor : MonoBehaviour {
 
 	public Transform Target;
 	public Transform Player;
+	public int EnemyHP = 5;
 	public float Range = 5f;
 	public float Speed = 0.01f;
+	private GameData gameData;
 	// Use this for initialization
 	void Start () {
-	
+		gameData = GameObject.Find("GameManager").GetComponent<GameData>();	
 	}
 
 	// Update is called once per frame
@@ -38,6 +40,7 @@ public class PlayerSensor : MonoBehaviour {
 		}
 		
 		if(CollisionObj.gameObject.tag == "Dead"){
+			gameData.score += 1;
 			Destroy(this.gameObject);
 		}
 	}

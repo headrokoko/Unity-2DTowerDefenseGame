@@ -16,7 +16,7 @@ public class DefenseObjData : MonoBehaviour {
 	}
 	
 	//何かに触れたとき
-	void OnCollisionEnter(Collision CollisionObj){
+	void OnTriggerEnter(Collider CollisionObj){
 		Debug.Log ("Hit!");
 		if(CollisionObj.gameObject.tag == "Enemy"){
 			DefObjHP = DefObjHP - 1; 

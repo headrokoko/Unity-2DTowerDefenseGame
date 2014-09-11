@@ -8,8 +8,8 @@ public class PlayerControl : MonoBehaviour {
 	private float Movepow;
 	private float MovePowMin = 2;
 	private bool OnFloor = false;
+	private GameData gameData;
 	//CapsuleCollider BodyColider;
-
 
 	void Awake(){
 		//this.BodyColider = GetComponent<CapsuleCollider>();
@@ -17,6 +17,7 @@ public class PlayerControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		gameData = GameObject.Find("GameManager").GetComponent<GameData>();
 	
 	}
 	
@@ -34,7 +35,13 @@ public class PlayerControl : MonoBehaviour {
 			rigidbody.AddForce(Movepow,0,0);
 		}
 	}
-
+	
+	void OnTriggerEnter(Collider CollisionObj){
+		
+		if(CollisionObj.gameObject.tag == "Enemy"){
+			gameData.playerHP -= 1;
+		}
+	}
 
 
 	//Floorに着地したとき

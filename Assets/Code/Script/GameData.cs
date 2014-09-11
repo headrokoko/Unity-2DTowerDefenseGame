@@ -14,9 +14,8 @@ public class GameData : MonoBehaviour {
 	
 	private int initPlayerHP = 10;
 	private int beginScore;
-	
-	[HideInInspector]
-	public int playerHP;
+
+	public int playerHP = 10;
 	[HideInInspector]
 	public int score;
 	
@@ -38,5 +37,12 @@ public class GameData : MonoBehaviour {
 	public void SetScore()
 	{
 		beginScore = score;
+	}
+	
+	void OnTriggerStay(Collider CollisionObj){
+		
+		if(CollisionObj.gameObject.tag == "Enemy"){
+			playerHP -= 1;
+		}
 	}
 }
