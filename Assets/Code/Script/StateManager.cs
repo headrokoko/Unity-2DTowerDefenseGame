@@ -33,7 +33,7 @@ public class StateManager : MonoBehaviour {
 	
 	void Update () {
 		if(activeState != null){
-			activeState.StateUpdate();
+			activeState.StateUpdata();
 		}
 	}
 	

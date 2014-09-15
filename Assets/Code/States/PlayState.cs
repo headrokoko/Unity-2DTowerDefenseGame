@@ -10,7 +10,7 @@ namespace Assets.Code.States{
 			manager = stateManager;
 		}
 		
-		public void StateUpdate(){
+		public void StateUpdata(){
 			//Debug.Log("play state stateup");
 			if(Input.GetKeyDown(KeyCode.Return)){
 				manager.SwichState(new ResultState(manager));

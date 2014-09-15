@@ -10,7 +10,7 @@ namespace Assets.Code.States{
 			manager = stateManager;
 		}
 		
-		public void StateUpdate(){
+		public void StateUpdata(){
 			//Debug.Log("EndState");
 			if(Input.GetKeyDown(KeyCode.Return)){
 				Application.LoadLevel("testScene");

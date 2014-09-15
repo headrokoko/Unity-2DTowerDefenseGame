@@ -11,7 +11,7 @@ namespace Assets.Code.States{
 			Time.timeScale = 0;
 		}
 
-		public void StateUpdate(){
+		public void StateUpdata(){
 			//Debug.Log("Begin State");
 			if(Input.GetKeyDown(KeyCode.F1)){
 				Application.LoadLevel("TDGStage1");

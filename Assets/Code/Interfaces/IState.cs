@@ -2,7 +2,7 @@
 
 public interface IState {
 
-	void StateUpdate();
+	void StateUpdata();
 	void Render();
 
 	}
