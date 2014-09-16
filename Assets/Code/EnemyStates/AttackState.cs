@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using Assets.Code.EnemyStates;
+using Assets.Code.Interfaces;
 using System.Collections;
 
-public class AttackState : EnemyStateManager {
+namespace Assets.Code.EnemyStates{
+public class AttackState :  MonoBehaviour,EnemyState{
 
 	public Transform Player;
 	public float Range = 5f;
@@ -18,6 +20,10 @@ public class AttackState : EnemyStateManager {
 	void Start () {
 	
 	}
+		
+	public void EStateUpdata(){
+			Debug.Log("MarchState");
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -30,4 +36,5 @@ public class AttackState : EnemyStateManager {
 		}
 	
 	}
+}
 }

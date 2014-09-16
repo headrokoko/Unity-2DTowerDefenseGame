@@ -2,7 +2,7 @@
 	
 	public interface EnemyState {
 		
-		void StateUpdata();
+		void EStateUpdata();
 		
 	}
 }

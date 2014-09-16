@@ -3,10 +3,11 @@ using Assets.Code.EnemyStates;
 using Assets.Code.Interfaces;
 
 namespace Assets.Code.EnemyStates{
-	public class MarchState : EnemyStateManager {
-		public Transform Target;
+	public class MarchState : MonoBehaviour,EnemyState {
+		public Vector3 Target;
 		public float Range = 5f;
 		public float Speed = 0.01f;
+		private Vector3 enemypos;
 
 		private EnemyStateManager Emanager;
 
@@ -14,22 +15,15 @@ namespace Assets.Code.EnemyStates{
 			Emanager = Estatemanager;
 
 		}
-
-	// Use this for initialization
-	void Start () {
 	
-	}
-	
-	public void StateUpdata(){
-		Debug.Log("MarchState");
-	}
-
-	// Update is called once per frame
-		void Update () {
+		public void EStateUpdata(){
 			RaycastHit hit;
-			Vector3 loolup = transform.position + ((Vector3.right *5) + (Vector3.up * 5));
-			
-			transform.LookAt(Target,Vector3.up);
+			Debug.Log("March");
+			GameObject objTarget = GameObject.FindGameObjectWithTag("Defense");
+			Target = objTarget.transform.position;
+			//Vector3 loolup = transform.position + ((Vector3.right *5) + (Vector3.up * 5));
+			Debug.Log(Target);
+			transform.LookAt(Target);
 			transform.Translate(Vector3.forward * Speed);
 			if(Physics.Raycast(transform.position,transform.forward,out hit,Range))
 			{

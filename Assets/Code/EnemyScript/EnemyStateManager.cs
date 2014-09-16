@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using Assets.Code.Interfaces;
 using Assets.Code.EnemyStates;
 
 public class EnemyStateManager : MonoBehaviour {
 	
-	private EnemyStateManager enemyState;
+	private EnemyState enemyState;
 	[HideInInspector]
 	public GameData gameData;
 
@@ -13,11 +14,12 @@ public class EnemyStateManager : MonoBehaviour {
 	}
 	
 	void Update () {
-		enemyState = new MarchState(this);
-		Debug.Log("Enemy State :" + enemyState);
+		if(enemyState != null){
+			enemyState.EStateUpdata();
+		}
 	}
 	
-	public void SwichState(EnemyStateManager newState){
+	public void SwichState(EnemyState newState){
 		enemyState = newState;
 		Debug.Log("Enemy State :" + enemyState);
 	}
