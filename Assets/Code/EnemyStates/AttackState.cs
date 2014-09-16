@@ -21,16 +21,12 @@ public class AttackState :  MonoBehaviour,EnemyState{
 	
 	}
 		
-	public void EStateUpdata(){
-			Debug.Log("MarchState");
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		Vector3 enemy = transform.position;
-		Vector3 playr = Player.transform.position;
-		float dis = Vector3.Distance(enemy,playr);
-		if(dis > Range){
+		public void EStateUpdata(){
+			Debug.Log("March");
+			Vector3 enemy = transform.position;
+			Vector3 playr = Player.transform.position;
+			float dis = Vector3.Distance(enemy,playr);
+			if(dis > Range){
 			Debug.Log("Player Lost");
 			Emanager.SwichState(new MarchState(Emanager));
 		}

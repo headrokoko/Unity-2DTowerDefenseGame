@@ -7,7 +7,6 @@ public class PlayerControlConstant : MonoBehaviour {
 	public float JumpPower;
 	private float Movepow;
 	private bool OnFloor = false;
-	private bool OnWall = false;
 	
 	
 	void Awake(){
@@ -45,11 +44,6 @@ public class PlayerControlConstant : MonoBehaviour {
 			Movepow = playerSpeed;
 			OnFloor = true;
 		}
-		if(CollisionObj.gameObject.tag == "Wall"){
-			Debug.Log("ONWall");
-			Movepow = playerSpeed;
-			OnWall = true;
-		}
 		if(CollisionObj.gameObject.tag == "Death"){
 			Debug.Log("GameOver");
 		}
@@ -68,10 +62,6 @@ public class PlayerControlConstant : MonoBehaviour {
 		if(CollisionObj.gameObject.tag == "Floor"){
 			//Debug.Log("TakeOffFloor");
 			OnFloor = false;
-		}
-		if(CollisionObj.gameObject.tag == "Wall"){
-			//Debug.Log("TakeOffFloor");
-			OnWall = false;
 		}
 	}
 }

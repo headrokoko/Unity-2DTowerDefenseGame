@@ -1,44 +1,50 @@
 ﻿using UnityEngine;
 using Assets.Code.EnemyStates;
 using Assets.Code.Interfaces;
+using System.Collections;
 
 namespace Assets.Code.EnemyStates{
 	public class MarchState : MonoBehaviour,EnemyState {
-		public Vector3 Target;
+		public Transform EnemyPos;
 		public float Range = 5f;
 		public float Speed = 0.01f;
-		private Vector3 enemypos;
+		public Transform enemyTransform;
+		bool targetDiscovery = false;
 
 		private EnemyStateManager Emanager;
-
+		private Transform targetpos;
 		public MarchState(EnemyStateManager Estatemanager){
 			Emanager = Estatemanager;
 
+
 		}
-	
+		//March State プレイヤーを発見するまでは目標に向かって行進
 		public void EStateUpdata(){
-			RaycastHit hit;
+			//RaycastHit hit;
 			Debug.Log("March");
-			GameObject objTarget = GameObject.FindGameObjectWithTag("Defense");
-			Target = objTarget.transform.position;
-			//Vector3 loolup = transform.position + ((Vector3.right *5) + (Vector3.up * 5));
-			Debug.Log(Target);
-			transform.LookAt(Target);
-			transform.Translate(Vector3.forward * Speed);
-			if(Physics.Raycast(transform.position,transform.forward,out hit,Range))
-			{
-				if(hit.collider.tag == "Player"){
-					Debug.Log ("Player視認");
-					Emanager.SwichState(new AttackState(Emanager));
-				}
+			//目標の座標を探す
+			if(targetDiscovery == false){
+				Targetsarch();
+				Debug.Log(targetpos.position);
 			}
-			if(Physics.Raycast(transform.position,transform.forward + transform.up,out hit,Range))
-			{
-				if(hit.collider.tag == "Player"){
-					Debug.Log ("Player視認2");
-					Emanager.SwichState(new AttackState(Emanager));
-				}
-			}
+			//目標まで行進する処理
+			//Debug.Log (enemyTransform.position);
+			//transform.LookAt(targetpos.position);
+			enemyTransform.transform.LookAt(targetpos,Vector3.up);
+			enemyTransform.Translate(Vector3.forward * Time.deltaTime * Speed);
+		}
+
+		//目標の座標を探す処理
+		public void Targetsarch(){
+			targetpos = Emanager.Target.transform;
+			targetDiscovery = true;
+		}
+
+		void OnDrawGizmos(){
+			Vector3 frontend = transform.position + (transform.forward * Range) ;
+			Vector3 loolup = transform.position + ((transform.forward *5) + (transform.up * 5));
+			Debug.DrawLine(transform.position,frontend,Color.red);
+			Debug.DrawLine(transform.position,loolup,Color.red);
 		}
 	}
 }
