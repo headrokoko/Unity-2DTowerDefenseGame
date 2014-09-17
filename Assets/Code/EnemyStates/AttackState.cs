@@ -22,15 +22,17 @@ public class AttackState :  MonoBehaviour,EnemyState{
 	}
 		
 		public void EStateUpdata(){
-			Debug.Log("March");
-			Vector3 enemy = transform.position;
-			Vector3 playr = Player.transform.position;
-			float dis = Vector3.Distance(enemy,playr);
-			if(dis > Range){
-			Debug.Log("Player Lost");
+			Debug.Log("Attack");
+
+			if(Input.GetKeyDown(KeyCode.Q)){
+				Connection();
+			}
+	
+		}
+
+		//遷移処理
+		public void Connection(){
 			Emanager.SwichState(new MarchState(Emanager));
 		}
-	
-	}
 }
 }

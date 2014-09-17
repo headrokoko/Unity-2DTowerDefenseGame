@@ -13,16 +13,16 @@ namespace Assets.Code.EnemyStates{
 
 		private EnemyStateManager Emanager;
 		private Transform targetpos;
+
 		public MarchState(EnemyStateManager Estatemanager){
 			Emanager = Estatemanager;
-
 
 		}
 		//March State プレイヤーを発見するまでは目標に向かって行進
 		public void EStateUpdata(){
 			//RaycastHit hit;
 			Debug.Log("March");
-			//目標の座標を探す
+			//目標を見つけているか
 			if(targetDiscovery == false){
 				Targetsarch();
 				Debug.Log(targetpos.position);
@@ -30,14 +30,23 @@ namespace Assets.Code.EnemyStates{
 			//目標まで行進する処理
 			//Debug.Log (enemyTransform.position);
 			//transform.LookAt(targetpos.position);
-			enemyTransform.transform.LookAt(targetpos,Vector3.up);
-			enemyTransform.Translate(Vector3.forward * Time.deltaTime * Speed);
+			transform.LookAt(targetpos.position,Vector3.up);
+			//transform.Translate(Vector3.forward * Time.deltaTime * Speed);    
+			//enemyTransform.Translate(Vector3.forward * Time.deltaTime * Speed);
+			if(Input.GetKeyDown(KeyCode.Q)){
+				Connection();
+			}
 		}
 
 		//目標の座標を探す処理
 		public void Targetsarch(){
 			targetpos = Emanager.Target.transform;
 			targetDiscovery = true;
+		}
+
+		//遷移処理
+		public void Connection(){
+			Emanager.SwichState(new AttackState(Emanager));
 		}
 
 		void OnDrawGizmos(){
