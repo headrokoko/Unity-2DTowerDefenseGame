@@ -20,6 +20,8 @@ public class EnemyStateManager : MonoBehaviour {
 		if(enemyState != null){
 			enemyState.EStateUpdata();
 		}
+		transform.LookAt(Target,Vector3.up);
+		//Debug.Log("test");
 	}
 
 	

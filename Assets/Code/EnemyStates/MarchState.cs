@@ -30,7 +30,7 @@ namespace Assets.Code.EnemyStates{
 			//目標まで行進する処理
 			//Debug.Log (enemyTransform.position);
 			//transform.LookAt(targetpos.position);
-			transform.LookAt(targetpos.position,Vector3.up);
+			//transform.LookAt(targetpos.position,Vector3.up);
 			//transform.Translate(Vector3.forward * Time.deltaTime * Speed);    
 			//enemyTransform.Translate(Vector3.forward * Time.deltaTime * Speed);
 			if(Input.GetKeyDown(KeyCode.Q)){
