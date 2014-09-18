@@ -3,11 +3,11 @@ using Assets.Code.Interfaces;
 using Assets.Code.States;
 
 namespace Assets.Code.States{
-	public class BeginState : IState {
+	public class GameBeginState : IState {
 		
-		private StateManager manager;
-		public BeginState(StateManager stateManager){
-			manager = stateManager;
+		private GameStateManager gamemanager;
+		public GameBeginState(GameStateManager gamestateManager){
+			gamemanager = gamestateManager;
 			Time.timeScale = 0;
 		}
 
@@ -17,17 +17,17 @@ namespace Assets.Code.States{
 				Application.LoadLevel("TDGStage1");
 				Debug.Log("ステージ１");
 				Time.timeScale = 1;
-				manager.SwichState(new MenuState(manager));
+				gamemanager.SwichState(new MenuState(gamemanager));
 			}
 		}
 		
 		public void Render(){
-			GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height),manager.gameData.beginTexture,ScaleMode.StretchToFill);
+			GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height),gamemanager.gameData.beginTexture,ScaleMode.StretchToFill);
 			if(GUI.Button(new Rect(250,450,250,50),"Start")){
 				Application.LoadLevel("TDGStage1");
 				Time.timeScale = 1;
 				Debug.Log("ステージ１");
-				manager.SwichState(new MenuState(manager));
+				gamemanager.SwichState(new MenuState(gamemanager));
 			}
 		}
 		

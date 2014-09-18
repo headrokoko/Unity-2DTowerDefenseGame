@@ -4,20 +4,20 @@ using Assets.Code.States;
 
 namespace Assets.Code.States{
 	public class PlayStateFollowCam : IState {
-		private StateManager manager;
+		private GameStateManager gamemanager;
 		
-		public PlayStateFollowCam(StateManager stateManager){
-			manager = stateManager;
+		public PlayStateFollowCam(GameStateManager gamestateManager){
+			gamemanager = gamestateManager;
 		}
 		
 		public void StateUpdata(){
 			//Debug.Log("play state stateup");
 			if(Input.GetKeyDown(KeyCode.Return)){
-				manager.SwichState(new ResultState(manager));
+				gamemanager.SwichState(new ResultState(gamemanager));
 			}
 			if(Input.GetKeyDown(KeyCode.M)){
 				CameraChange();
-				manager.SwichState(new PlayState(manager));
+				gamemanager.SwichState(new PlayState(gamemanager));
 				
 			}
 			
@@ -27,7 +27,7 @@ namespace Assets.Code.States{
 			if(GUI.Button(new Rect(100,500,100,50),"Camera")){
 				CameraChange();
 				Debug.Log("camera ZoomOut");
-				manager.SwichState(new PlayState(manager));
+				gamemanager.SwichState(new PlayState(gamemanager));
 			}
 
 			if(GUI.Button(new Rect(200,500,50,50),"I1")){
@@ -36,7 +36,7 @@ namespace Assets.Code.States{
 		}
 		
 		void CameraChange(){
-			foreach(GameObject camera in manager.gameData.cameras){
+			foreach(GameObject camera in gamemanager.gameData.cameras){
 				if(camera.name != "FollowCamera"){
 					camera.SetActive(true);
 				}

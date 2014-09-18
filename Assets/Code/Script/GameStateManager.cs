@@ -2,13 +2,13 @@
 using Assets.Code.Interfaces;
 using Assets.Code.States;
 
-public class StateManager : MonoBehaviour {
+public class GameStateManager : MonoBehaviour {
 	
 	private IState activeState;
 	private IState activeCameraState;
 	[HideInInspector]
 	public GameData gameData;
-	public static StateManager instance;
+	public static GameStateManager instance;
 	
 	void Awake(){
 		if(instance == null){
@@ -27,7 +27,7 @@ public class StateManager : MonoBehaviour {
 	}
 	
 	void Start () {
-		activeState = new BeginState(this);
+		activeState = new GameBeginState(this);
 		gameData = GetComponent<GameData> ();
 	}
 	

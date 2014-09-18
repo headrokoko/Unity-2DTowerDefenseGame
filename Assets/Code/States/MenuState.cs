@@ -5,9 +5,9 @@ using Assets.Code.States;
 namespace Assets.Code.States{
 	public class MenuState : IState {
 		
-		private StateManager manager;
-		public MenuState(StateManager stateManager){
-			manager = stateManager;
+		private GameStateManager manager;
+		public MenuState(GameStateManager gamestateManager){
+			manager = gamestateManager;
 			Time.timeScale = 0;
 		}
 		

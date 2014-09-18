@@ -4,9 +4,9 @@ using Assets.Code.States;
 
 namespace Assets.Code.States{
 	public class PlayState : IState {
-		private StateManager manager;
+		private GameStateManager manager;
 
-		public PlayState(StateManager stateManager){
+		public PlayState(GameStateManager stateManager){
 			manager = stateManager;
 		}
 		
