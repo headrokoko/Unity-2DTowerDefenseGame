@@ -9,11 +9,12 @@ public class EnemyDead : EnemyFSMState {
 	
 	public override void Reason(Transform player, Transform npc)
 	{
-		
 	}
 	
 	public override void Act(Transform player, Transform npc, Transform target)
 	{
-		
+		Debug.Log("Destroy");
 	}
+
+
 }

@@ -3,13 +3,14 @@ using System.Collections;
 
 public class MarchState : EnemyFSMState {
 	public float Range = 5f;
+	public EnemyController enemycontroller;
 
 	public MarchState(Transform target){
 
 		stateID = FSMStateID.March;
 
-		curSpeed = 1.0f;
-		curRotSpeed = 100.0f;
+		moveSpeed = 1.0f;
+		RotSpeed = 100.0f;
 	}
 
 	public override void Reason(Transform Player,Transform npc){
@@ -17,7 +18,7 @@ public class MarchState : EnemyFSMState {
 		if(Physics.Raycast(npc.transform.position,npc.transform.forward,out hit,Range))
 		{
 			if(hit.collider.tag == "Player"){
-				Debug.Log ("Player視認");
+				Debug.Log ("SawPlayer Swich AttackState");
 				npc.GetComponent<EnemyController>().SetTransition(Transition.SawPlayer);
 			}
 		}
@@ -42,6 +43,6 @@ public class MarchState : EnemyFSMState {
 		//npc.rotation = Quaternion.Slerp(npc.rotation, targetRotation, Time.deltaTime * curRotSpeed);
 		
 		//前進
-		npc.Translate(Vector3.forward * Time.deltaTime * curSpeed);
+		npc.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
 	}
 }

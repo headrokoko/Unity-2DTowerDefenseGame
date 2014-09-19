@@ -5,8 +5,12 @@ public class PlayerControlConstant : MonoBehaviour {
 	
 	public float playerSpeed;
 	public float JumpPower;
+	public Rigidbody Bullet;
+	public int FireFlameRate;
+	private int count = 0;
 	private float Movepow;
 	private bool OnFloor = false;
+
 	
 	
 	void Awake(){
@@ -20,6 +24,7 @@ public class PlayerControlConstant : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		count++;
 		
 		if((Input.anyKey) & OnFloor){
 			//スペース押したらジャンプ
@@ -28,13 +33,19 @@ public class PlayerControlConstant : MonoBehaviour {
 			}
 		}
 			//画面左右の動き
-			if(Input.GetKey(KeyCode.A)){
-			transform.Translate(-Movepow,0,0);
+			if(Input.GetKey(KeyCode.D)){
+			transform.Translate(Movepow,0,0);
+			transform.eulerAngles = new Vector3 (0,0,0); 
 			}
 
-		else if (Input.GetKey(KeyCode.D)){
+		else if (Input.GetKey(KeyCode.A)){
 			transform.Translate(Movepow,0,0);
-			}
+			transform.eulerAngles = new Vector3 (0,180,0); 
+		}
+
+		if((Input.GetKeyDown(KeyCode.Mouse0)) && (FireFlameRate <= count)){
+			Fire();
+		}
 
 	}
 	//何かに触れたとき
@@ -63,5 +74,12 @@ public class PlayerControlConstant : MonoBehaviour {
 			//Debug.Log("TakeOffFloor");
 			OnFloor = false;
 		}
+	}
+
+	void Fire(){
+		Rigidbody bullet;
+		bullet = Instantiate(Bullet, transform.position, transform.rotation) as Rigidbody;
+		bullet.velocity = transform.TransformDirection(Vector3.right * 10);
+		count = 0;
 	}
 }

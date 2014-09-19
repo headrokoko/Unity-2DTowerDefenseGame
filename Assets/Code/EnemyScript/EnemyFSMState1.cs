@@ -17,9 +17,8 @@ public abstract class EnemyFSMState
 	protected FSMStateID stateID;
 	public FSMStateID ID { get { return stateID; } }
 	protected Vector3 destPos;
-	protected Transform[] waypoints;
-	protected float curRotSpeed;
-	protected float curSpeed;
+	protected float RotSpeed;
+	protected float moveSpeed;
 	
 	public void AddTransition(Transition transition, FSMStateID id)
 	{
@@ -88,13 +87,13 @@ public abstract class EnemyFSMState
 	public abstract void Act(Transform player, Transform npc, Transform target);
 	
 	/// 次の策敵ポイントを指定します。乱数で動作します。
-	public void FindNextPoint()
-	{
+	//public void FindNextPoint()
+	//{
 		//Debug.Log("Finding next point");
-		int rndIndex = Random.Range(0, waypoints.Length);
-		Vector3 rndPosition = Vector3.zero;
-		destPos = waypoints[rndIndex].position + rndPosition;
-	}
+		//int rndIndex = Random.Range(0, waypoints.Length);
+		//Vector3 rndPosition = Vector3.zero;
+		//destPos = waypoints[rndIndex].position + rndPosition;
+	//}
 	
 	/// 次のポジションが、現在の位置と同じかチェックします。
 	protected bool IsInCurrentRange(Transform trans, Vector3 pos)

@@ -4,7 +4,8 @@ using System.Collections;
 public class EnemyController : AdvancedFSM {
 	
 	public GameObject Bullet;
-	private int health;
+	public int health = 10;
+	public float Range = 5f;
 	
 	//NPC FSMの初期化
 	protected override void Initialize()
@@ -78,11 +79,16 @@ public class EnemyController : AdvancedFSM {
 	//　弾丸の衝突判定
 	void OnCollisionEnter(Collision collision)
 	{
-		//hpを減少させます
-		if (collision.gameObject.tag == "Bullet")
+		if (collision.gameObject.tag == "Dead")
 		{
-			health -= 50;
-			
+			Destroy(this.gameObject);
+		}
+	}
+
+	void OnTriggerEnter(Collider collider){
+		//hpを減少させます
+		if(collider.gameObject.tag == "Bullet"){
+			health -= 100;
 			if (health <= 0)
 			{
 				Debug.Log("Switch to Dead State");
@@ -90,6 +96,7 @@ public class EnemyController : AdvancedFSM {
 				Explode();
 			}
 		}
+		
 	}
 	
 	protected void Explode()
@@ -112,5 +119,9 @@ public class EnemyController : AdvancedFSM {
 			Instantiate(Bullet, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 			elapsedTime = 0.0f;
 		}
+	}
+	void OnDrawGizmos(){
+		Vector3 frontend = transform.position + (transform.forward * 10.0f) ;
+		Debug.DrawLine(transform.position,frontend,Color.red);
 	}
 }

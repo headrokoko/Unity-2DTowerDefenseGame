@@ -1,0 +1,19 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class BulletScript : MonoBehaviour {
+
+	public float DestroyTime = 3.0f;
+
+
+	// Use this for initialization
+	void Start () {
+		Destroy(gameObject,DestroyTime);
+	
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	
+	}
+}
