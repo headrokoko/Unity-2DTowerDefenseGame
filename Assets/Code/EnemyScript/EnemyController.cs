@@ -15,14 +15,16 @@ public class EnemyController : AdvancedFSM {
 		shootRate = 2.0f;
 		
 		GameObject objPlayer = GameObject.FindGameObjectWithTag("Player");
+		GameObject objTarget = GameObject.FindGameObjectWithTag("Defense");
 		playerTransform = objPlayer.transform;
+		targetTransform = objTarget.transform;
 		
 		if (!playerTransform)
 			print("プレーヤーが存在しません。タグ 'Player'　を追加してください。");
 		
 		//　戦車の砲台を取得
-		turret = gameObject.transform.GetChild(0).transform;
-		bulletSpawnPoint = turret.GetChild(0).transform;
+		//turret = gameObject.transform.GetChild(0).transform;
+		//bulletSpawnPoint = turret.GetChild(0).transform;
 		
 		// FSMを構築
 		ConstructFSM();
@@ -37,7 +39,7 @@ public class EnemyController : AdvancedFSM {
 	protected override void FSMFixedUpdate()
 	{
 		CurrentState.Reason(playerTransform, transform);
-		CurrentState.Act(playerTransform, transform);
+		CurrentState.Act(playerTransform, transform, targetTransform);
 	}
 	
 	public void SetTransition(Transition t) 
@@ -48,21 +50,21 @@ public class EnemyController : AdvancedFSM {
 	private void ConstructFSM()
 	{
 		//ポイントのリスト
-		pointList = GameObject.FindGameObjectsWithTag("WandarPoint");
+		//pointList = GameObject.FindGameObjectsWithTag("WandarPoint");
 		
-		Transform[] waypoints = new Transform[pointList.Length];
-		int i = 0;
-		foreach(GameObject obj in pointList)
-		{
-			waypoints[i] = obj.transform;
-			i++;
-		}
+		//Transform[] waypoints = new Transform[pointList.Length];
+		//int i = 0;
+		//foreach(GameObject obj in pointList)
+		//{
+			//waypoints[i] = obj.transform;
+			//i++;
+		//}
 		
-		MarchState March = new MarchState(waypoints);
+		MarchState March = new MarchState(targetTransform);
 		March.AddTransition(Transition.SawPlayer, FSMStateID.Attacking);
 		March.AddTransition(Transition.NoHealth, FSMStateID.Dead);
 		
-		PlayerAttackState PlayerAttack = new PlayerAttackState(waypoints);
+		PlayerAttackState PlayerAttack = new PlayerAttackState(playerTransform);
 		PlayerAttack.AddTransition(Transition.LostPlayer, FSMStateID.March);
 		PlayerAttack.AddTransition(Transition.NoHealth, FSMStateID.Dead);
 		

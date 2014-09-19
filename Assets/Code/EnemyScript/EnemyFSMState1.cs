@@ -85,7 +85,7 @@ public abstract class EnemyFSMState
 	public abstract void Reason(Transform player, Transform npc);
 	
 	/// NPC(敵キャラ)の処理、行動、動作を指定します。
-	public abstract void Act(Transform player, Transform npc);
+	public abstract void Act(Transform player, Transform npc, Transform target);
 	
 	/// 次の策敵ポイントを指定します。乱数で動作します。
 	public void FindNextPoint()

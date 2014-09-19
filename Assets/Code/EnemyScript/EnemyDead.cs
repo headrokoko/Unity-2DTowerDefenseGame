@@ -12,7 +12,7 @@ public class EnemyDead : EnemyFSMState {
 		
 	}
 	
-	public override void Act(Transform player, Transform npc)
+	public override void Act(Transform player, Transform npc, Transform target)
 	{
 		
 	}
