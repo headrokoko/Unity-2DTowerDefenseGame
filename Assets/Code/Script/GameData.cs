@@ -18,6 +18,8 @@ public class GameData : MonoBehaviour {
 	public int playerHP = 10;
 	[HideInInspector]
 	public int score;
+	public int Money;
+
 	
 	void Start() {
 		playerHP = initPlayerHP;

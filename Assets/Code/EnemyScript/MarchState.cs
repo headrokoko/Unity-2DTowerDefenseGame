@@ -27,7 +27,7 @@ public class MarchState : EnemyFSMState {
 	
 	public override void Act(Transform player, Transform npc, Transform target)
 	{
-		//Debug.Log ("marchstate");
+		Debug.Log ("marchstate");
 
 		//Find another random patrol point if the current point is reached
 		//ターゲット地点に到着した場合に、パトロール地点を再度策定

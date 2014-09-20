@@ -7,7 +7,7 @@ public class PlayerAttackState : EnemyFSMState {
 
 	public PlayerAttackState(Transform player){
 
-		stateID = FSMStateID.Attacking;
+		stateID = FSMStateID.PlayerAttack;
 		moveSpeed = 1.0f;
 		RotSpeed = 100.0f;
 	}
@@ -23,11 +23,13 @@ public class PlayerAttackState : EnemyFSMState {
 			Debug.Log("PlayerLost Swich MarchState");
 			npc.GetComponent<EnemyController>().SetTransition(Transition.LostPlayer);
 		}  
+
 	}
 	
 	public override void Act(Transform player, Transform npc, Transform target)
 	{
 		//ターゲットをプレイヤーに変更しそちらを向く
+		Debug.Log("AttackState");
 		npc.transform.LookAt(player.position,Vector3.up);
 		npc.Translate(Vector3.forward * Time.deltaTime * moveSpeed * 2);
 		//ターゲット地点をプレーヤーポジションに設定

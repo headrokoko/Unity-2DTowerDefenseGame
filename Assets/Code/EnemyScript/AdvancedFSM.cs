@@ -16,7 +16,7 @@ public enum FSMStateID
 {
 	None = 0,
 	March,
-	Attacking,
+	PlayerAttack,
 	Dead,
 }
 
@@ -51,6 +51,7 @@ public class AdvancedFSM : EnemyFSM
 			fsmStates.Add(fsmState);
 			currentState = fsmState;
 			currentStateID = fsmState.ID;
+			Debug.Log("FSM state now :" + fsmState);
 			return;
 		}
 		

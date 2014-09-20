@@ -44,6 +44,7 @@ public class EnemyController : AdvancedFSM {
 	
 	protected override void FSMFixedUpdate()
 	{
+		Debug.Log("Actib state :" + CurrentState);
 		CurrentState.Reason(playerTransform, transform);
 		CurrentState.Act(playerTransform, transform, targetTransform);
 	}
@@ -67,7 +68,7 @@ public class EnemyController : AdvancedFSM {
 		//}
 		
 		MarchState March = new MarchState(targetTransform);
-		March.AddTransition(Transition.SawPlayer, FSMStateID.Attacking);
+		March.AddTransition(Transition.SawPlayer, FSMStateID.PlayerAttack);
 		March.AddTransition(Transition.NoHealth, FSMStateID.Dead);
 		
 		PlayerAttackState PlayerAttack = new PlayerAttackState(playerTransform);
@@ -124,6 +125,7 @@ public class EnemyController : AdvancedFSM {
 			//rigidbody.velocity = transform.TransformDirection(new Vector3(rndX, rndy, ndZ));
 		}
 		gamedata.score += 1;
+		gamedata.Money += 100;
 		Destroy(gameObject, 1.5f);
 	}
 

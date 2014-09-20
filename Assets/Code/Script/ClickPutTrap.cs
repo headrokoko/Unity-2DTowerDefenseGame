@@ -9,6 +9,7 @@ public class ClickPutTrap : MonoBehaviour {
 	private GameObject touchobj;
 	private Vector3 mousepos;
 	private Vector3 screenpos;
+	private GameData gamedata;
 
 	public ClickPutTrap(){
 		PutPos = Vector3.zero;
@@ -16,7 +17,7 @@ public class ClickPutTrap : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		gamedata = GameObject.Find("GameManager").GetComponent<GameData>();
 	}
 	
 	// Update is called once per frame
@@ -27,8 +28,7 @@ public class ClickPutTrap : MonoBehaviour {
 		screenpos = Camera.main.ScreenToWorldPoint(mousepos);
 		Trap.transform.position = screenpos;
 
-		if(Input.GetMouseButtonDown(0) && Physics.Raycast(CameraRay,out cameraRayHit,500.0f)){
-
+		if(Input.GetMouseButtonDown(0) && Physics.Raycast(CameraRay,out cameraRayHit,500.0f) && gamedata.Money >=100){
 			PutPos = cameraRayHit.point;
 			PutPos.z = 0.0f;
 			touchobj = cameraRayHit.collider.gameObject;
@@ -38,6 +38,7 @@ public class ClickPutTrap : MonoBehaviour {
 			//PutPos.position.y = Mathf.Round(PutPos.position.y);
 			//PutPos.position.z = Mathf.Round(PutPos.position.z);
 			if(touchobj.tag == "Floor"){
+			gamedata.Money -= 100;
 				PutTrap();
 			}
 		}
