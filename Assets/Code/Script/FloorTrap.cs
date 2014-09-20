@@ -29,7 +29,7 @@ public class FloorTrap : MonoBehaviour {
 			CollisionObj.rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 			CollisionObj.transform.rigidbody.AddForce((Vector3.back * BackPow) + (Vector3.up * UpPow));
 			CollisionObj.rigidbody.useGravity = true;
-			CollisionObj.collider.isTrigger = false;
+			CollisionObj.collider.isTrigger = true;
 			StartCoroutine("Reload");
 			//clone = Instantiate(PushWall,transform.position,transform.rotation) as Rigidbody;
 			//clone.transform.Translate(0,1.0f,1.6f);

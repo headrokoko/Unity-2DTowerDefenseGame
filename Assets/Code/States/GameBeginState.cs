@@ -22,7 +22,7 @@ namespace Assets.Code.States{
 		}
 		
 		public void Render(){
-			GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height),gamemanager.gameData.beginTexture,ScaleMode.StretchToFill);
+			GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height),gamemanager.gameData.startTexture,ScaleMode.StretchToFill);
 			if(GUI.Button(new Rect(250,450,250,50),"Start")){
 				Application.LoadLevel("TDGStage1");
 				Time.timeScale = 1;

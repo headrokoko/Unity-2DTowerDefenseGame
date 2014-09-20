@@ -10,6 +10,7 @@ public class PlayerControlConstant : MonoBehaviour {
 	private int count = 0;
 	private float Movepow;
 	private bool OnFloor = false;
+	private GameData gameData;
 
 	
 	
@@ -19,7 +20,7 @@ public class PlayerControlConstant : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		
+		gameData = GameObject.Find("GameManager").GetComponent<GameData>();
 	}
 	
 	// Update is called once per frame
@@ -47,6 +48,11 @@ public class PlayerControlConstant : MonoBehaviour {
 			Fire();
 		}
 
+	}
+	void OnTriggerEnter(Collider collider){
+		if(collider.gameObject.tag == "Enemy"){
+			gameData.playerHP -= 1;
+		}
 	}
 	//何かに触れたとき
 	void OnCollisionEnter(Collision CollisionObj){

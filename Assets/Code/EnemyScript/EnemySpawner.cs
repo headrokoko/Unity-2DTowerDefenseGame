@@ -16,17 +16,17 @@ public class EnemySpawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	if(SpwanCount == EnemyCount){
-			Debug.Log ("SpwanLimit");
-			CancelInvoke();
-			SpwanCount = 0;
-			}
+		Debug.Log ("SpwanLimit");
+		CancelInvoke();
+		SpwanCount = 0;
+	}
 	if(Input.GetKeyDown(KeyCode.Z)){
 		if(SpwanCount == 0){
-		SpwanContact();
+			SpwanContact();
 		}
 		else{
 			Debug.Log ("enemy is spwan now");
-			}
+		}
 	}
 	}
 

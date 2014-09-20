@@ -2,18 +2,23 @@
 using System.Collections;
 
 public class EnemyController : AdvancedFSM {
-	
-	public GameObject Bullet;
+
 	public int health = 10;
 	public float Range = 5f;
+	private GameData gamedata;
 	
 	//NPC FSMの初期化
+
+	public EnemyController(){
+	}
+
 	protected override void Initialize()
 	{
 		health = 100;
 		
 		elapsedTime = 0.0f;
 		shootRate = 2.0f;
+		gamedata = GameObject.Find("GameManager").GetComponent<GameData>();
 		
 		GameObject objPlayer = GameObject.FindGameObjectWithTag("Player");
 		GameObject objTarget = GameObject.FindGameObjectWithTag("Defense");
@@ -81,14 +86,14 @@ public class EnemyController : AdvancedFSM {
 	{
 		if (collision.gameObject.tag == "Dead")
 		{
-			Destroy(this.gameObject);
+			Explode();
 		}
 	}
 
 	void OnTriggerEnter(Collider collider){
 		//hpを減少させます
 		if(collider.gameObject.tag == "Bullet"){
-			health -= 100;
+			health -= 50;
 			if (health <= 0)
 			{
 				Debug.Log("Switch to Dead State");
@@ -96,30 +101,32 @@ public class EnemyController : AdvancedFSM {
 				Explode();
 			}
 		}
+		if (collider.gameObject.tag == "Dead")
+		{
+			Debug.Log("Switch to Dead State");
+			SetTransition(Transition.NoHealth);
+			Explode();
+		}
 		
 	}
 	
 	protected void Explode()
 	{
 		float rndX = Random.Range(10.0f, 30.0f);
+		float rndy = Random.Range(10.0f, 30.0f);
 		float rndZ = Random.Range(10.0f, 30.0f);
 		for (int i = 0; i < 3; i++)
 		{
-			rigidbody.AddExplosionForce(10000.0f, transform.position - new Vector3(rndX, 10.0f, rndZ), 40.0f, 10.0f);
-			rigidbody.velocity = transform.TransformDirection(new Vector3(rndX, 20.0f, rndZ));
+			rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+			rigidbody.useGravity = true;
+			transform.rigidbody.AddForce((Vector3.back * 300.0f) + (Vector3.up * 900.0f));
+			//rigidbody.AddExplosionForce(10000.0f, transform.position - new Vector3(rndX, 10.0f, rndZ), 40.0f, 10.0f);
+			//rigidbody.velocity = transform.TransformDirection(new Vector3(rndX, rndy, ndZ));
 		}
-		
+		gamedata.score += 1;
 		Destroy(gameObject, 1.5f);
 	}
-	
-	public void ShootBullet()
-	{
-		if (elapsedTime >= shootRate)
-		{
-			Instantiate(Bullet, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-			elapsedTime = 0.0f;
-		}
-	}
+
 	void OnDrawGizmos(){
 		Vector3 frontend = transform.position + (transform.forward * 10.0f) ;
 		Debug.DrawLine(transform.position,frontend,Color.red);

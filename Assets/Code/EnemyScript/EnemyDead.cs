@@ -2,9 +2,11 @@
 using System.Collections;
 
 public class EnemyDead : EnemyFSMState {
+	private GameData gameData;
 
 	public EnemyDead(){
 		stateID = FSMStateID.Dead;
+		gameData = GameObject.Find("GameManager").GetComponent<GameData>();
 	}
 	
 	public override void Reason(Transform player, Transform npc)
@@ -13,7 +15,6 @@ public class EnemyDead : EnemyFSMState {
 	
 	public override void Act(Transform player, Transform npc, Transform target)
 	{
-		Debug.Log("Destroy");
 	}
 
 

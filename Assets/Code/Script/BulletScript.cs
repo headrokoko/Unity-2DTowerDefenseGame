@@ -16,4 +16,10 @@ public class BulletScript : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	void OnTriggerEnter(Collider collider){
+		if(collider.gameObject.tag == "Enemy"){
+			Destroy(this.gameObject);
+		}
+	}
 }
