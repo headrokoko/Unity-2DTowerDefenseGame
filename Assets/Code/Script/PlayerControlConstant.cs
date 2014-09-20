@@ -11,7 +11,6 @@ public class PlayerControlConstant : MonoBehaviour {
 	private float Movepow;
 	private bool OnFloor = false;
 	private GameData gameData;
-
 	
 	
 	void Awake(){
