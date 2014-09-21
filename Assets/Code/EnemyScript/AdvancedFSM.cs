@@ -105,7 +105,7 @@ public class AdvancedFSM : EnemyFSM
 		FSMStateID id = currentState.GetOutputState(trans);
 		if (id == FSMStateID.None)
 		{
-			Debug.LogError("FSM ERROR: 現在の状態はこの遷移が指定する状態を持ちません。");
+			Debug.LogError(currentState + "FSM ERROR: 現在の状態はこの遷移が指定する状態を持ちません。");
 			return;
 		}
 		

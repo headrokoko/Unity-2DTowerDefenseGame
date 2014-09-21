@@ -16,14 +16,13 @@ public class PlayerAttackState : EnemyFSMState {
 	public override void Reason(Transform player, Transform npc)
 	{
 		//プレーヤーとの距離を確認
-		float dist = Vector3.Distance(npc.position, player.position);
+		float between = Vector3.Distance(npc.position, player.position);
 		//一定の距離内にPlayerがいなくなったらMarchstateに戻る
-		if (dist >= 10.0f)
+		if (between >= 10.0f)
 		{
 			Debug.Log("PlayerLost Swich MarchState");
-			npc.GetComponent<EnemyController>().SetTransition(Transition.LostPlayer);
+			//npc.GetComponent<EnemyController>().SetTransition(Transition.LostPlayer);
 		}  
-
 	}
 	
 	public override void Act(Transform player, Transform npc, Transform target)

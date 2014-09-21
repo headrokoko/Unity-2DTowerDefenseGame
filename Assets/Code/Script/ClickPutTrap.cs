@@ -28,7 +28,7 @@ public class ClickPutTrap : MonoBehaviour {
 		screenpos = Camera.main.ScreenToWorldPoint(mousepos);
 		Trap.transform.position = screenpos;
 
-		if(Input.GetMouseButtonDown(0) && Physics.Raycast(CameraRay,out cameraRayHit,500.0f) && gamedata.Money >=100){
+		if(Input.GetMouseButtonDown(0) && Physics.Raycast(CameraRay,out cameraRayHit,500.0f) && gamedata.Money > 100){
 			PutPos = cameraRayHit.point;
 			PutPos.z = 0.0f;
 			touchobj = cameraRayHit.collider.gameObject;

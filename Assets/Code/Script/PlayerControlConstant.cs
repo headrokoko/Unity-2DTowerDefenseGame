@@ -56,7 +56,7 @@ public class PlayerControlConstant : MonoBehaviour {
 	//何かに触れたとき
 	void OnCollisionEnter(Collision CollisionObj){
 		if(CollisionObj.gameObject.tag == "Floor"){
-			Debug.Log("ONFloor");
+			//Debug.Log("ONFloor");
 			Movepow = playerSpeed;
 			OnFloor = true;
 		}

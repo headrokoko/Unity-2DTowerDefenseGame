@@ -44,7 +44,7 @@ public class EnemyController : AdvancedFSM {
 	
 	protected override void FSMFixedUpdate()
 	{
-		Debug.Log("Actib state :" + CurrentState);
+		//Debug.Log("Actib state :" + CurrentState);
 		CurrentState.Reason(playerTransform, transform);
 		CurrentState.Act(playerTransform, transform, targetTransform);
 	}
