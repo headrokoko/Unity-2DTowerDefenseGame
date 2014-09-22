@@ -21,7 +21,7 @@ public class PlayerAttackState : EnemyFSMState {
 		if (between >= 10.0f)
 		{
 			Debug.Log("PlayerLost Swich MarchState");
-			//npc.GetComponent<EnemyController>().SetTransition(Transition.LostPlayer);
+			npc.GetComponent<EnemyController>().SetTransition(Transition.LostPlayer);
 		}  
 	}
 	

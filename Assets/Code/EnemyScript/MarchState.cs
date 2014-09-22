@@ -19,7 +19,7 @@ public class MarchState : EnemyFSMState {
 		{
 			if(hit.collider.tag == "Player"){
 				Debug.Log ("SawPlayer Swich AttackState");
-				//npc.GetComponent<EnemyController>().SetTransition(Transition.SawPlayer);
+				npc.GetComponent<EnemyController>().SetTransition(Transition.SawPlayer);
 			}
 		}
 		
