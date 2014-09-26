@@ -8,12 +8,11 @@ public class GuiBaseHP : MonoBehaviour {
 	private DefenseObjData BaseData;
 	// Use this for initialization
 	void Start () {
-		BaseData = GameObject.Find("Base").GetComponent<DefenseObjData>();	
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		BaseData = GameObject.Find("Base").GetComponent<DefenseObjData>();	
 		guiText.text = "Base HP :" + BaseData.DefObjHP.ToString();
-		Debug.Log("text" + BaseData.DefObjHP);
 	}
 }

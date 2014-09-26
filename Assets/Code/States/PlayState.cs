@@ -5,9 +5,11 @@ using Assets.Code.States;
 namespace Assets.Code.States{
 	public class PlayState : IState {
 		private GameStateManager manager;
+		private DefenseObjData basedata;
 
 		public PlayState(GameStateManager stateManager){
 			manager = stateManager;
+			basedata = GameObject.Find("Base").GetComponent<DefenseObjData>();
 		}
 		
 		public void StateUpdata(){
@@ -15,20 +17,14 @@ namespace Assets.Code.States{
 			if(Input.GetKeyDown(KeyCode.Return)){
 				manager.SwichState(new ResultState(manager));
 			}
-			if(Input.GetKeyDown(KeyCode.M)){
-				CameraChange();
-				manager.SwichState(new PlayStateFollowCam(manager));
-
+			//Baseの耐久値が０
+			if(basedata.DefObjHP <= 0){
+				manager.SwichState(new ResultState(manager));			
 			}
 		}
 		
 		public void Render(){
 
-			if(GUI.Button(new Rect(100,500,100,50),"Camera")){
-				CameraChange();
-				Debug.Log("camera Follow");
-				manager.SwichState(new PlayStateFollowCam(manager));
-			}
 		}
 
 		void CameraChange(){

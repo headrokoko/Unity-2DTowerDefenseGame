@@ -20,35 +20,35 @@ namespace Assets.Code.States{
 				Application.LoadLevel("TDGStage1");
 				Time.timeScale = 1;
 				Debug.Log("ステージ１");
-				gamemanager.SwichState(new PlayState(gamemanager));
+				gamemanager.SwichState(new PlayStateFollowCam(gamemanager));
 			}
 			
 			else if(GUI.Button(new Rect(50,250,250,50),"Stage2")){
 				Application.LoadLevel("TDGStage2");
 				Time.timeScale = 1;
 				Debug.Log("ステージ2");
-				gamemanager.SwichState(new PlayState(gamemanager));
+				gamemanager.SwichState(new PlayStateFollowCam(gamemanager));
 			}
 			
 			else if(GUI.Button(new Rect(50,300,250,50),"Stage3")){
 				Application.LoadLevel("TDGStage3");
 				Time.timeScale = 1;
 				Debug.Log("ステージ3");
-				gamemanager.SwichState(new PlayState(gamemanager));
+				gamemanager.SwichState(new PlayStateFollowCam(gamemanager));
 			}
 			
 			else if(GUI.Button(new Rect(50,350,250,50),"Stage4")){
 				Application.LoadLevel("TDGStage1");
 				Time.timeScale = 1;
 				Debug.Log("ステージ4");
-				gamemanager.SwichState(new PlayState(gamemanager));
+				gamemanager.SwichState(new PlayStateFollowCam(gamemanager));
 			}
 			
 			else if(GUI.Button(new Rect(50,400,250,50),"test")){
 				Application.LoadLevel("testscene");
 				Time.timeScale = 1;
-				Debug.Log("ステージ5");
-				gamemanager.SwichState(new PlayState(gamemanager));
+				Debug.Log("test Stage");
+				gamemanager.SwichState(new PlayStateFollowCam(gamemanager));
 			}
 		}
 		

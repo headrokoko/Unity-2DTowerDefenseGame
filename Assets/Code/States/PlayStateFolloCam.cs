@@ -5,6 +5,7 @@ using Assets.Code.States;
 namespace Assets.Code.States{
 	public class PlayStateFollowCam : IState {
 		private GameStateManager gamemanager;
+		private DefenseObjData basedata;
 		
 		public PlayStateFollowCam(GameStateManager gamestateManager){
 			gamemanager = gamestateManager;
@@ -15,24 +16,15 @@ namespace Assets.Code.States{
 			if(Input.GetKeyDown(KeyCode.Return)){
 				gamemanager.SwichState(new ResultState(gamemanager));
 			}
-			if(Input.GetKeyDown(KeyCode.M)){
-				CameraChange();
-				gamemanager.SwichState(new PlayState(gamemanager));
-				
+			basedata = GameObject.Find("Base").GetComponent<DefenseObjData>();
+			//Baseの耐久値が０
+			if(basedata.DefObjHP <= 0){
+				gamemanager.SwichState(new ResultState(gamemanager));			
 			}
 			
 		}
 
 		public void Render(){
-			if(GUI.Button(new Rect(100,500,100,50),"Camera")){
-				CameraChange();
-				Debug.Log("camera ZoomOut");
-				gamemanager.SwichState(new PlayState(gamemanager));
-			}
-
-			if(GUI.Button(new Rect(200,500,50,50),"I1")){
-				Debug.Log("Item1");
-			}
 		}
 		
 		void CameraChange(){

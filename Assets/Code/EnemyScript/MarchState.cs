@@ -19,30 +19,32 @@ public class MarchState : EnemyFSMState {
 		{
 			if(hit.collider.tag == "Player"){
 				Debug.Log ("SawPlayer Swich AttackState");
+				npc.renderer.material.color = Color.red;
 				npc.GetComponent<EnemyController>().SetTransition(Transition.SawPlayer);
 			}
 		}
+
 		
 	}
 	
 	public override void Act(Transform player, Transform npc, Transform target)
 	{
+		RaycastHit floorHit;
 		//Debug.Log ("marchstate");
 
-		//Find another random patrol point if the current point is reached
-		//ターゲット地点に到着した場合に、パトロール地点を再度策定
-		//if (Vector3.Distance(npc.position, destPos) <= 100.0f)
-		//{
-			//Debug.Log("Reached to the destination point\ncalculating the next point");
-			//FindNextPoint();
-		//}
+		//npcの下にfloorがあるか
+		if(Physics.Raycast(npc.transform.position,npc.transform.up * -1,out floorHit,2)){
+			Vector3 subTarget;
+			subTarget = target.position;
+			subTarget.y = npc.transform.position.y;
+			npc.transform.LookAt(subTarget,Vector3.up);
+			
+		}
+		else{
+			npc.transform.LookAt(target,Vector3.up);
 		
-		//ターゲットに回転
-		npc.transform.LookAt(target,Vector3.up);
-		//Quaternion targetRotation = Quaternion.LookRotation(destPos - npc.position);
-		//npc.rotation = Quaternion.Slerp(npc.rotation, targetRotation, Time.deltaTime * curRotSpeed);
-		
+		}
 		//前進
-		npc.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
+			npc.Translate(Vector3.forward * Time.deltaTime * moveSpeed);
 	}
 }
