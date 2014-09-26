@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GuiMoney : MonoBehaviour {
 
-	public GUIText MoneyText;
+	private GUIText MoneyText;
 	
 	private GameData gameData;
 	// Use this for initialization
