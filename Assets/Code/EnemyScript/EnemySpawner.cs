@@ -30,7 +30,7 @@ public class EnemySpawner : MonoBehaviour {
 	}
 	}
 
-	void SpwanContact(){
+	public void SpwanContact(){
 	InvokeRepeating("Spwan",0.0f,SpwanTime);
 	}
 
