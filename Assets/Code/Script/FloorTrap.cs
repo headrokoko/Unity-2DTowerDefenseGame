@@ -19,11 +19,11 @@ public class FloorTrap : MonoBehaviour {
 	}
 	//何かに触れたとき
 	void OnTriggerStay(Collider CollisionObj){
-		Debug.Log ("OnTrap");
+		//Debug.Log ("OnTrap");
 		if((CollisionObj.gameObject.tag == "Enemy")&(trap)){
 			trap = false;
 			TrapOn = true;
-			Debug.Log ("TrapOn");
+			//Debug.Log ("TrapOn");
 			GetComponent<Animator>().SetBool("TrapOn",TrapOn);
 			//接触したEnemyを飛ばす
 			CollisionObj.rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
@@ -39,11 +39,11 @@ public class FloorTrap : MonoBehaviour {
 	}
 
 	IEnumerator Reload(){
-		Debug.Log ("Reload");
+		//Debug.Log ("Reload");
 		yield return new WaitForSeconds(ReloadTime);
 		trap = true;
 		TrapOn = false;
 		GetComponent<Animator>().SetBool("TrapOn",TrapOn);
-		Debug.Log("trapready");
+		//Debug.Log("trapready");
 	}
 }

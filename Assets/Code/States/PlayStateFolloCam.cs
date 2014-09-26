@@ -6,6 +6,7 @@ namespace Assets.Code.States{
 	public class PlayStateFollowCam : IState {
 		private GameStateManager gamemanager;
 		private DefenseObjData basedata;
+		private SpwanController spwancontroller;
 		
 		public PlayStateFollowCam(GameStateManager gamestateManager){
 			gamemanager = gamestateManager;
@@ -13,13 +14,25 @@ namespace Assets.Code.States{
 		
 		public void StateUpdata(){
 			//Debug.Log("play state stateup");
+			basedata = GameObject.Find("Base").GetComponent<DefenseObjData>();
+			spwancontroller = GameObject.Find("EnemySpwanManager").GetComponent<SpwanController>();
+
 			if(Input.GetKeyDown(KeyCode.Return)){
+				Time.timeScale = 0;
 				gamemanager.SwichState(new ResultState(gamemanager));
 			}
-			basedata = GameObject.Find("Base").GetComponent<DefenseObjData>();
+
 			//Baseの耐久値が０
 			if(basedata.DefObjHP <= 0){
+				Time.timeScale = 0;
 				gamemanager.SwichState(new ResultState(gamemanager));			
+			}
+
+			//既定のWave数をこなす
+			if(spwancontroller.StageClear == true){
+				Time.timeScale = 0;
+				Debug.Log("All Wave Clear");
+				gamemanager.SwichState(new ResultState(gamemanager));	
 			}
 			
 		}
