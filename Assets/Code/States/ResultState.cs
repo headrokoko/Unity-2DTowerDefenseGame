@@ -17,6 +17,7 @@ namespace Assets.Code.States{
 			if(Input.GetKeyDown(KeyCode.Return)){
 				Application.LoadLevel("testScene");
 				gamedata.playerHP = 10;
+				gamedata.BaseHP = 10;
 				gamemanager.SwichState(new MenuState(gamemanager));
 			}
 			
@@ -27,6 +28,7 @@ namespace Assets.Code.States{
 			if(GUI.Button(new Rect(200,200,300,50),"Start Menu")){
 				Application.LoadLevel("testScene");
 				gamedata.playerHP = 10;
+				gamedata.BaseHP = 10;
 				gamemanager.SwichState(new MenuState(gamemanager));
 			}
 		}

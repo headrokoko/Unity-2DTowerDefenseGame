@@ -6,8 +6,10 @@ namespace Assets.Code.States{
 	public class StageSelectState : IState {
 		
 		private GameStateManager gamemanager;
+		private GameObject player;
 		public StageSelectState (GameStateManager gamestateManager){
 			gamemanager = gamestateManager;
+			player = GameObject.Find("Player");
 			Time.timeScale = 0;
 		}
 		
@@ -48,6 +50,7 @@ namespace Assets.Code.States{
 				Application.LoadLevel("testscene");
 				Time.timeScale = 1;
 				Debug.Log("test Stage");
+				player.transform.position = new Vector3(0.0f,2.0f,0.0f);
 				gamemanager.SwichState(new PlayStateFollowCam(gamemanager));
 			}
 		}

@@ -36,21 +36,7 @@ public class AttackStateManager : MonoBehaviour {
 
 	}
 
-	void OnGui(){
-		if(GUI.Button(new Rect(250,450,50,50),"Gun")){
-			Debug.Log("Gun shot mode");
-		}
-
-		else if(GUI.Button(new Rect(250,150,50,50),"Floor")){
-			Debug.Log("Floor trap mode");
-		}
-
-		else if(GUI.Button(new Rect(250,250,50,50),"Wall")){
-			Debug.Log("Wall trap mode");
-		}
-
-		else if(GUI.Button(new Rect(250,350,50,50),"Loof")){
-			Debug.Log("Loof trap mode");
-		}
+	public void AttackChange(){
 	}
+
 }

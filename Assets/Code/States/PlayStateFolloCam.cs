@@ -39,6 +39,21 @@ namespace Assets.Code.States{
 		}
 
 		public void Render(){
+			if(GUI.Button(new Rect(50,450,50,50),"Gun")){
+				Debug.Log("Gun shot mode");
+			}
+			
+			else if(GUI.Button(new Rect(100,450,50,50),"Floor")){
+				Debug.Log("Floor trap mode");
+			}
+			
+			else if(GUI.Button(new Rect(150,450,50,50),"Wall")){
+				Debug.Log("Wall trap mode");
+			}
+			
+			else if(GUI.Button(new Rect(200,450,50,50),"Loof")){
+				Debug.Log("Loof trap mode");
+			}
 		}
 
 		
