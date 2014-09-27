@@ -14,7 +14,7 @@ public class GunShotState : AttackStateManager {
 	}
 
 
-	public void StateUpdata () {
+	public void Action () {
 		if((Input.GetKeyDown(KeyCode.Mouse0)) && (FireFlameRate <= count)){
 			Fire();
 		}
