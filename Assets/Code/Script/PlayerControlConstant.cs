@@ -43,12 +43,12 @@ public class PlayerControlConstant : MonoBehaviour {
 			transform.eulerAngles = new Vector3 (0,180,0); 
 		}
 
-		if((Input.GetKeyDown(KeyCode.Mouse0)) && (FireFlameRate <= count)){
-			Fire();
-		}
+		//if((Input.GetKeyDown(KeyCode.Mouse0)) && (FireFlameRate <= count)){
+			//Fire();
+		//}
 
 	}
-	void OnTriggerEnter(Collider collider){
+	void OnTriggerStay(Collider collider){
 		if(collider.gameObject.tag == "Enemy"){
 			gameData.playerHP -= 1;
 		}

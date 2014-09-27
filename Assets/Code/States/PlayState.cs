@@ -5,11 +5,12 @@ using Assets.Code.States;
 namespace Assets.Code.States{
 	public class PlayState : IState {
 		private GameStateManager manager;
-		private DefenseObjData basedata;
+		private GameData gamedata;
+
 
 		public PlayState(GameStateManager stateManager){
 			manager = stateManager;
-			basedata = GameObject.Find("Base").GetComponent<DefenseObjData>();
+			gamedata = GameObject.Find("GameManager").GetComponent<GameData>();
 		}
 		
 		public void StateUpdata(){
@@ -18,7 +19,7 @@ namespace Assets.Code.States{
 				manager.SwichState(new ResultState(manager));
 			}
 			//Baseの耐久値が０
-			if(basedata.DefObjHP <= 0){
+			if(gamedata.BaseHP <= 0){
 				manager.SwichState(new ResultState(manager));			
 			}
 		}

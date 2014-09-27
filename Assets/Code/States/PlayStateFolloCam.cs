@@ -5,16 +5,17 @@ using Assets.Code.States;
 namespace Assets.Code.States{
 	public class PlayStateFollowCam : IState {
 		private GameStateManager gamemanager;
-		private DefenseObjData basedata;
+		private GameData gamedata;
 		private SpwanController spwancontroller;
 		
 		public PlayStateFollowCam(GameStateManager gamestateManager){
 			gamemanager = gamestateManager;
+			Debug.Log("Follor com state");
+			gamedata = GameObject.Find("GameManager").GetComponent<GameData>();
 		}
 		
 		public void StateUpdata(){
 			//Debug.Log("play state stateup");
-			basedata = GameObject.Find("Base").GetComponent<DefenseObjData>();
 			spwancontroller = GameObject.Find("EnemySpwanManager").GetComponent<SpwanController>();
 
 			if(Input.GetKeyDown(KeyCode.Return)){
@@ -23,7 +24,7 @@ namespace Assets.Code.States{
 			}
 
 			//Baseの耐久値が０
-			if(basedata.DefObjHP <= 0){
+			if(gamedata.BaseHP <= 0){
 				Time.timeScale = 0;
 				gamemanager.SwichState(new ResultState(gamemanager));			
 			}
@@ -39,6 +40,7 @@ namespace Assets.Code.States{
 
 		public void Render(){
 		}
+
 		
 		void CameraChange(){
 			foreach(GameObject camera in gamemanager.gameData.cameras){
