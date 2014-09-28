@@ -28,6 +28,7 @@ public class GameStateManager : MonoBehaviour {
 	
 	void Start () {
 		activeState = new GameBeginState(this);
+		Debug.Log("First scene State " + activeState);
 		gameData = GetComponent<GameData> ();
 	}
 	

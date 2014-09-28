@@ -28,12 +28,12 @@ public class ClickPutTrap : MonoBehaviour {
 		screenpos = Camera.main.ScreenToWorldPoint(mousepos);
 		Trap.transform.position = screenpos;
 
-		if(Input.GetMouseButtonDown(0) && Physics.Raycast(CameraRay,out cameraRayHit,500.0f) && gamedata.Money > 100){
+		if(Input.GetMouseButtonDown(0) && Physics.Raycast(CameraRay,out cameraRayHit,500.0f) && gamedata.Money >= 100){
 			PutPos = cameraRayHit.point;
 			PutPos.z = 0.0f;
 			touchobj = cameraRayHit.collider.gameObject;
-			Debug.Log("touch obj tag:" + touchobj.tag);
-			Debug.Log(PutPos);
+			//Debug.Log("touch obj tag:" + touchobj.tag);
+			//Debug.Log(PutPos);
 			//PutPos.position.x = Mathf.Round(PutPos.position.x);
 			//PutPos.position.y = Mathf.Round(PutPos.position.y);
 			//PutPos.position.z = Mathf.Round(PutPos.position.z);
@@ -46,7 +46,7 @@ public class ClickPutTrap : MonoBehaviour {
 	}
 
 	void PutTrap(){
-		Debug.Log("Put Trap");
+		//Debug.Log("Put Trap");
 		Instantiate(Trap, PutPos ,Trap.transform.rotation);
 
 	}

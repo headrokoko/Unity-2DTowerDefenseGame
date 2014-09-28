@@ -1,37 +1,37 @@
 fileFormatVersion: 2
-guid: a4b87234596cf5c4895caa703e8b6ed7
+guid: fd55d116cb9093f4ba7cf9c77f44032f
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: __________________
-    100004: __________________|Bone
-    100006: __________________|Bone.001
-    100008: Cube
-    100010: SpringTrap
-    100012: SpringTrap|Bone
-    100014: SpringTrap|Bone.001
-    100016: SpringTrap|SpringTrapBase
-    100018: SpringTrap|SpringTrapMove
-    400000: //RootNode
-    400002: __________________
-    400004: __________________|Bone
-    400006: __________________|Bone.001
-    400008: Cube
-    400010: SpringTrap
-    400012: SpringTrap|Bone
-    400014: SpringTrap|Bone.001
-    400016: SpringTrap|SpringTrapBase
-    400018: SpringTrap|SpringTrapMove
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cube
-    7400000: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2Action"
-    7400002: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|SpringTrapAction"
-    7400004: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2|Spring 1"
-    7400006: SpringTrap|SpringTrapAction
+    100000: __________________.001
+    100002: __________________.001|Bone
+    100004: __________________.001|Bone.001
+    100006: //RootNode
+    100008: BladeWall
+    100010: BladeWall.001
+    100012: BladeWall|Bone
+    100014: BladeWall|Bone.001
+    100016: BladeWall|BladeWallBase
+    100018: BladeWall|BladeWallMove
+    400000: __________________.001
+    400002: __________________.001|Bone
+    400004: __________________.001|Bone.001
+    400006: //RootNode
+    400008: BladeWall
+    400010: BladeWall.001
+    400012: BladeWall|Bone
+    400014: BladeWall|Bone.001
+    400016: BladeWall|BladeWallBase
+    400018: BladeWall|BladeWallMove
+    4300000: BladeWall
+    4300002: BladeWall.001
+    7400000: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2.001|BladeWall"
+    7400002: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2.001|SpringTrapAction"
+    7400004: BladeWall|BladeWall
+    7400006: BladeWall|SpringTrapAction
     9500000: //RootNode
-    13700000: Cube
+    13700000: BladeWall
+    13700002: BladeWall.001
   materials:
     importMaterials: 1
     materialName: 0
@@ -41,7 +41,7 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
@@ -56,7 +56,7 @@ ModelImporter:
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     weldVertices: 1

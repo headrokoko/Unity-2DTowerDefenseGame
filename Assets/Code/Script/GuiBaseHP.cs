@@ -2,18 +2,15 @@
 using System.Collections;
 
 public class GuiBaseHP : MonoBehaviour {
-	
-	private GUIText BaseHPTex;
-	
-	private DefenseObjData BaseData;
+		
+	private GameData gameData;
 	// Use this for initialization
 	void Start () {
-		BaseData = GameObject.Find("Base").GetComponent<DefenseObjData>();	
+		gameData = GameObject.Find("GameManager").GetComponent<GameData>();	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		guiText.text = "Base HP :" + BaseData.DefObjHP.ToString();
-		Debug.Log("text" + BaseData.DefObjHP);
+		guiText.text = "Base HP :" + gameData.BaseHP.ToString();
 	}
 }

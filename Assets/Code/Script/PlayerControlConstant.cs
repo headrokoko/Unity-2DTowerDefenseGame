@@ -11,6 +11,7 @@ public class PlayerControlConstant : MonoBehaviour {
 	private float Movepow;
 	private bool OnFloor = false;
 	private GameData gameData;
+	private int contactTime;
 	
 	
 	void Awake(){
@@ -43,16 +44,34 @@ public class PlayerControlConstant : MonoBehaviour {
 			transform.eulerAngles = new Vector3 (0,180,0); 
 		}
 
-		if((Input.GetKeyDown(KeyCode.Mouse0)) && (FireFlameRate <= count)){
-			Fire();
-		}
+		//if((Input.GetKeyDown(KeyCode.Mouse0)) && (FireFlameRate <= count)){
+			//Fire();
+		//}
 
 	}
-	void OnTriggerEnter(Collider collider){
-		if(collider.gameObject.tag == "Enemy"){
+	void OnTriggerStay(Collider collider){
+		if((collider.gameObject.tag == "Enemy")&&(contactTime == 0)){
 			gameData.playerHP -= 1;
+			if(transform.eulerAngles.y == 0){
+				rigidbody.AddForce(-300, 200.0f,0.0f);
+			}
+			else if(transform.eulerAngles.y != 0){
+				rigidbody.AddForce(300, 200.0f,0.0f);
+			}
+		}
+		contactTime++;
+
+		if(contactTime >= 60){
+			contactTime = 0;
 		}
 	}
+
+	void OnTriggerExit(Collider collider){
+		if(collider.gameObject.tag == "Enemy"){
+			contactTime = 0;
+		}
+	}
+
 	//何かに触れたとき
 	void OnCollisionEnter(Collision CollisionObj){
 		if(CollisionObj.gameObject.tag == "Floor"){
