@@ -66,12 +66,10 @@ namespace Assets.Code.States{
 			
 			else if(GUI.Button(new Rect(150,450,50,50),"Wall")){
 				Debug.Log("Wall trap mode");
-				//AttackManager.AttackChange(new WallTrapState(AttackManager));
 			}
 			
 			else if(GUI.Button(new Rect(200,450,50,50),"Loof")){
 				Debug.Log("Loof trap mode");
-				//AttackManager.AttackChange(new LoofTrapState(AttackManager));
 			}
 		}
 

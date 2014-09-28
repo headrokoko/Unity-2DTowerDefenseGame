@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Assets.Code.States;
-
 public class AttackStateManager : MonoBehaviour {
-
 	private AttackStateManager actAttackState;
 	private GameData gamedata;
 	public Rigidbody Bullet;
@@ -19,15 +17,12 @@ public class AttackStateManager : MonoBehaviour {
 	private Vector3 PutPos;
 	private GameObject touchobj;
 	private RaycastHit cameraRayHit;
-	
-
 	// Use this for initialization
-	void Start () { 
+	void Start () {
 		gamedata = GameObject.Find("GameManager").GetComponent<GameData>();
 		gun = new GunShotState(Bullet);
 		floor = new FloorTrapState(Floor);
 	}
-	
 	// Update is called once per frame
 	public void Update () {
 		if(weaponNum == 0){
@@ -40,7 +35,6 @@ public class AttackStateManager : MonoBehaviour {
 			mousepos = Input.mousePosition;
 			screenpos = Camera.main.ScreenToWorldPoint(mousepos);
 			Floor.transform.position = screenpos;
-			
 			if(Input.GetMouseButtonDown(0) && Physics.Raycast(CameraRay,out cameraRayHit,500.0f) && gamedata.Money >= 100){
 				PutPos = cameraRayHit.point;
 				PutPos.z = 0.0f;
@@ -52,10 +46,8 @@ public class AttackStateManager : MonoBehaviour {
 			}
 		}
 	}
-
 	public void AttackChange(int newWeaponNum){
 		weaponNum = newWeaponNum;
 		Debug.Log("Atack mode ;" + weaponNum);
 	}
-
 }

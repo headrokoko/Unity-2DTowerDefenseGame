@@ -21,8 +21,7 @@ namespace Assets.Code.States{
 				PlayerPos = Player;
 				Debug.Log("Gun shot");
 				Fire();
-		}
-
+			}
 		}
 	
 		void Fire(){
