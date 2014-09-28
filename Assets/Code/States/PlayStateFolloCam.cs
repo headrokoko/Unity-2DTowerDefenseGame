@@ -7,11 +7,13 @@ namespace Assets.Code.States{
 		private GameStateManager gamemanager;
 		private GameData gamedata;
 		private SpwanController spwancontroller;
+		private AttackStateManager Attackmanager;
 		
 		public PlayStateFollowCam(GameStateManager gamestateManager){
 			gamemanager = gamestateManager;
 			Debug.Log("Follor com state");
 			gamedata = GameObject.Find("GameManager").GetComponent<GameData>();
+			Attackmanager = GameObject.Find("Player").GetComponent<AttackStateManager>();
 		}
 		
 		public void StateUpdata(){
@@ -35,18 +37,30 @@ namespace Assets.Code.States{
 				Debug.Log("All Wave Clear");
 				gamemanager.SwichState(new ResultState(gamemanager));	
 			}
+
+			if(Input.GetKeyDown(KeyCode.F1)){
+				Debug.Log("Gun shot mode");
+				Attackmanager.weaponNum = 0;
+			}
+
+			else if(Input.GetKeyDown(KeyCode.F2)){
+				Debug.Log("Floor trap mode");
+				Attackmanager.weaponNum = 1;
+			}
 			
 		}
 
 		public void Render(){
 			if(GUI.Button(new Rect(50,450,50,50),"Gun")){
 				Debug.Log("Gun shot mode");
+				Attackmanager.weaponNum = 0;
 				//AttackManager.AttackChange(new GunShotState(AttackManager));
 
 			}
 			
 			else if(GUI.Button(new Rect(100,450,50,50),"Floor")){
 				Debug.Log("Floor trap mode");
+				Attackmanager.weaponNum = 1;
 				//.AttackChange(new FloorTrapState(AttackManager));
 			}
 			
