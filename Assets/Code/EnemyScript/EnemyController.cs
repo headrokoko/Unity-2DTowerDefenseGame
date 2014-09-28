@@ -8,6 +8,7 @@ public class EnemyController : AdvancedFSM {
 
 	public int BulletDamage = 20;
 	private GameData gamedata;
+	private bool deadcount = true;
 	
 	//NPC FSMの初期化
 
@@ -49,6 +50,12 @@ public class EnemyController : AdvancedFSM {
 		//Debug.Log("Actib state :" + CurrentState);
 		CurrentState.Reason(playerTransform, transform);
 		CurrentState.Act(playerTransform, transform, targetTransform);
+		if((health <= 0) && deadcount){
+			deadcount = false;
+			GetComponent<BoxCollider>().enabled = false;
+			SetTransition(Transition.NoHealth);
+			Explode();
+		}
 	}
 	
 	public void SetTransition(Transition t) 
@@ -101,7 +108,6 @@ public class EnemyController : AdvancedFSM {
 			{
 				Debug.Log("Switch to Dead State");
 				SetTransition(Transition.NoHealth);
-				Explode();
 			}
 		}
 		if (collider.gameObject.tag == "Dead")

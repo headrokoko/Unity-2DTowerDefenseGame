@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WallTrapState : MonoBehaviour {
+public class WallTrapState : AttackStateManager {
 
-	// Use this for initialization
-	void Start () {
-	
+	private GameObject WTrap;
+
+	public WallTrapState(GameObject trap){
+		WTrap = trap;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public void PutTrap(Vector3 putpos){
+		
+		Instantiate(WTrap, putpos ,WTrap.transform.rotation);
 	}
 }

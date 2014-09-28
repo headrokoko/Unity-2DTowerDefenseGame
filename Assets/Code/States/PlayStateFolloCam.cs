@@ -48,6 +48,11 @@ namespace Assets.Code.States{
 				Attackmanager.weaponNum = 1;
 			}
 			
+			else if(Input.GetKeyDown(KeyCode.F3)){
+				Debug.Log("Wall trap mode");
+				Attackmanager.weaponNum = 2;
+			}
+			
 		}
 
 		public void Render(){
@@ -66,6 +71,7 @@ namespace Assets.Code.States{
 			
 			else if(GUI.Button(new Rect(150,450,50,50),"Wall")){
 				Debug.Log("Wall trap mode");
+				Attackmanager.weaponNum = 2;
 			}
 			
 			else if(GUI.Button(new Rect(200,450,50,50),"Loof")){

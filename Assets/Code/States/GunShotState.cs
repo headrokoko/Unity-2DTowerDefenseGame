@@ -4,21 +4,24 @@ using Assets.Code.States;
 namespace Assets.Code.States{
 	public class GunShotState : AttackStateManager {
 
-		public int FireFlameRate;
+		private int firerate;
 		private int count = 0;
 		private AttackStateManager Amanager;
 		private Transform PlayerPos; 
 		private Rigidbody Bul;
 		// Use this for initialization
 
-		public GunShotState(Rigidbody bullet){
+		public GunShotState(Rigidbody bullet,int rate){
 			Bullet = bullet;
+			firerate = rate;
 		}
 
 
 		public void GunAction (Transform Player) {
-			if((Input.GetKeyDown(KeyCode.Mouse0)) && (FireFlameRate <= count)){
+			count++;
+			if((Input.GetKeyDown(KeyCode.Mouse0)) && (firerate <= count)){
 				PlayerPos = Player;
+				count = 0;
 				Debug.Log("Gun shot");
 				Fire();
 			}

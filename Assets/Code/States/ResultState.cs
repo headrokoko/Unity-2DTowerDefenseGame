@@ -18,6 +18,7 @@ namespace Assets.Code.States{
 				Application.LoadLevel("testScene");
 				gamedata.playerHP = 10;
 				gamedata.BaseHP = 10;
+				gamedata.score = 0;
 				gamemanager.SwichState(new MenuState(gamemanager));
 			}
 			
@@ -29,6 +30,7 @@ namespace Assets.Code.States{
 				Application.LoadLevel("testScene");
 				gamedata.playerHP = 10;
 				gamedata.BaseHP = 10;
+				gamedata.score = 0;
 				gamemanager.SwichState(new MenuState(gamemanager));
 			}
 		}

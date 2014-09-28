@@ -11,6 +11,8 @@ ModelImporter:
     100010: BladeWall.001
     100012: BladeWall|Bone
     100014: BladeWall|Bone.001
+    100016: BladeWall|BladeWallBase
+    100018: BladeWall|BladeWallMove
     400000: __________________.001
     400002: __________________.001|Bone
     400004: __________________.001|Bone.001
@@ -19,6 +21,8 @@ ModelImporter:
     400010: BladeWall.001
     400012: BladeWall|Bone
     400014: BladeWall|Bone.001
+    400016: BladeWall|BladeWallBase
+    400018: BladeWall|BladeWallMove
     4300000: BladeWall
     4300002: BladeWall.001
     7400000: "\u30A2\u30FC\u30DE\u30C1\u30E5\u30A2.001|BladeWall"
