@@ -42,7 +42,7 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationCompression: 3
-    animationRotationError: .5
+    animationRotationError: 2
     animationPositionError: .5
     animationScaleError: .5
     animationWrapMode: 0
@@ -56,7 +56,7 @@ ModelImporter:
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     weldVertices: 1
