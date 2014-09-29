@@ -23,7 +23,7 @@ public class FloorTrap : MonoBehaviour {
 			trap = false;
 			TrapBool = true;
 			//Debug.Log ("TrapOn");
-			GetComponent<Animator>().SetBool("TrapOn",TrapBool);
+			GetComponent<Animator>().SetBool("OnTrap",TrapBool);
 			//接触したEnemyを飛ばす
 			CollisionObj.rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 			CollisionObj.transform.rigidbody.AddForce((Vector3.back * BackPow) + (Vector3.up * UpPow));
@@ -42,7 +42,7 @@ public class FloorTrap : MonoBehaviour {
 		yield return new WaitForSeconds(ReloadTime);
 		trap = true;
 		TrapBool = false;
-		GetComponent<Animator>().SetBool("TrapOn",TrapBool);
+		GetComponent<Animator>().SetBool("OnTrap",TrapBool);
 		//Debug.Log("trapready");
 	}
 }
