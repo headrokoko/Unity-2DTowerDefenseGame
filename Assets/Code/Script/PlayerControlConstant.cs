@@ -12,7 +12,7 @@ public class PlayerControlConstant : MonoBehaviour {
 	private bool OnFloor = false;
 	private GameData gameData;
 	private int contactTime;
-	
+	private GameObject UnityChan;
 	
 	void Awake(){
 
@@ -21,6 +21,7 @@ public class PlayerControlConstant : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gameData = GameObject.Find("GameManager").GetComponent<GameData>();
+		UnityChan = GameObject.Find("unitychan");
 	}
 	
 	// Update is called once per frame
@@ -31,23 +32,25 @@ public class PlayerControlConstant : MonoBehaviour {
 			//スペース押したらジャンプ
 			if(Input.GetKeyDown(KeyCode.Space)){
 				rigidbody.AddForce(Vector3.up * JumpPower);
+				UnityChan.GetComponent<Animator>().SetBool("JumpOn",true);
 			}
 		}
 			//画面左右の動き
 			if(Input.GetKey(KeyCode.D)){
 			transform.Translate(Movepow,0,0);
 			transform.eulerAngles = new Vector3 (0,0,0); 
+			UnityChan.GetComponent<Animator>().SetBool("RunOn",true);
 			}
 
 		else if (Input.GetKey(KeyCode.A)){
 			transform.Translate(Movepow,0,0);
 			transform.eulerAngles = new Vector3 (0,180,0); 
+			UnityChan.GetComponent<Animator>().SetBool("RunOn",true);
 		}
 
-		//if((Input.GetKeyDown(KeyCode.Mouse0)) && (FireFlameRate <= count)){
-			//Fire();
-		//}
-
+		else {
+		UnityChan.GetComponent<Animator>().SetBool("RunOn",false);
+		}
 	}
 	void OnTriggerStay(Collider collider){
 		if((collider.gameObject.tag == "Enemy")&&(contactTime == 0)){
@@ -75,6 +78,7 @@ public class PlayerControlConstant : MonoBehaviour {
 	//何かに触れたとき
 	void OnCollisionEnter(Collision CollisionObj){
 		if(CollisionObj.gameObject.tag == "Floor"){
+			UnityChan.GetComponent<Animator>().SetBool("JumpOn",false);
 			//Debug.Log("ONFloor");
 			Movepow = playerSpeed;
 			OnFloor = true;
