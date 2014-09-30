@@ -57,12 +57,7 @@ public class PlayerControlConstant : MonoBehaviour {
 	void OnTriggerStay(Collider collider){
 		if((collider.gameObject.tag == "Enemy")&&(contactTime == 0)){
 			gameData.playerHP -= 1;
-			if(transform.eulerAngles.y == 0){
-				rigidbody.AddForce(-300, 200.0f,0.0f);
-			}
-			else if(transform.eulerAngles.y != 0){
-				rigidbody.AddForce(300, 200.0f,0.0f);
-			}
+			UnityChan.GetComponent<Animator>().SetBool("DamageOn",true);
 		}
 		contactTime++;
 
@@ -74,6 +69,7 @@ public class PlayerControlConstant : MonoBehaviour {
 	void OnTriggerExit(Collider collider){
 		if(collider.gameObject.tag == "Enemy"){
 			contactTime = 0;
+			UnityChan.GetComponent<Animator>().SetBool("DamageOn",false);
 		}
 	}
 
