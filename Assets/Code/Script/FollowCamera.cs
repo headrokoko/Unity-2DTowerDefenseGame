@@ -18,4 +18,13 @@ public class FollowCamera : MonoBehaviour {
 		transform.position = playerpos.position + new Vector3(0.0f,height,-betweenPlayer);
 		transform.LookAt(playerpos);
 	}
+
+	public void CameraChange(bool Cposbool){
+		if(Cposbool){
+			height = 5.0f;
+		}
+		else{
+			height = -1.0f;
+		}
+	}
 }

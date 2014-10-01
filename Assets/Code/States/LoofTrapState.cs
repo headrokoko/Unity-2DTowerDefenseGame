@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LoofTrapState : MonoBehaviour {
+public class LoofTrapState : AttackStateManager {
 
-	// Use this for initialization
-	void Start () {
-	
+	private GameObject LTrap;
+
+	public LoofTrapState(GameObject ltrap){
+		LTrap = ltrap;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	public void PutTrap(Vector3 putpos){
+		Instantiate(LTrap, putpos ,LTrap.transform.rotation);
 	}
 }

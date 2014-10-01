@@ -7,6 +7,7 @@ public class EnemyController : AdvancedFSM {
 	public float Range = 5f;
 
 	public int BulletDamage = 20;
+	public int SlipDamage = 1;
 	private GameData gamedata;
 	private bool deadcount = true;
 	
@@ -86,7 +87,7 @@ public class EnemyController : AdvancedFSM {
 		
 		EnemyDead EDead = new EnemyDead();
 		EDead.AddTransition(Transition.NoHealth, FSMStateID.Dead);
-		
+
 		AddFSMState(March);
 		AddFSMState(PlayerAttack);
 		AddFSMState(EDead);
@@ -117,6 +118,17 @@ public class EnemyController : AdvancedFSM {
 			Explode();
 		}
 		
+	}
+
+	void OnTriggerStay(Collider collider){
+		if(collider.gameObject.tag == "Slip"){
+			health -= SlipDamage;
+			if (health <= 0)
+			{
+				Debug.Log("Switch to Dead State");
+				SetTransition(Transition.NoHealth);
+			}
+		}
 	}
 	
 	protected void Explode()
