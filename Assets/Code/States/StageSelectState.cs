@@ -8,9 +8,11 @@ namespace Assets.Code.States{
 		private GameStateManager gamemanager;
 		private GameObject player;
 		private GameData gamedata;
+		private AudioSource StartSe;
 		public StageSelectState (GameStateManager gamestateManager){
 			gamemanager = gamestateManager;
 			gamedata = GameObject.Find("GameManager").GetComponent<GameData>();
+			StartSe = GameObject.Find("FollowCamera").GetComponent<AudioSource>();
 			player = GameObject.Find("Player");
 			Time.timeScale = 0;
 		}
@@ -56,6 +58,7 @@ namespace Assets.Code.States{
 				Application.LoadLevel("testscene");
 				gamedata.Money = 1000;
 				Time.timeScale = 1;
+				StartSe.PlayOneShot(StartSe.clip);
 				Debug.Log("test Stage");
 				player.transform.position = new Vector3(0.0f,2.0f,0.0f);
 				gamemanager.SwichState(new PlayStateFollowCam(gamemanager));

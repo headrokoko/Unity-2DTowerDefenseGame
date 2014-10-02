@@ -40,12 +40,14 @@ public class PlayerControlConstant : MonoBehaviour {
 			transform.Translate(Movepow,0,0);
 			transform.eulerAngles = new Vector3 (0,0,0); 
 			UnityChan.GetComponent<Animator>().SetBool("RunOn",true);
+			UnityChan.transform.position = new Vector3(transform.position.x,transform.position.y - 1.0f,transform.position.z);
 			}
 
 		else if (Input.GetKey(KeyCode.A)){
 			transform.Translate(Movepow,0,0);
 			transform.eulerAngles = new Vector3 (0,180,0); 
 			UnityChan.GetComponent<Animator>().SetBool("RunOn",true);
+			UnityChan.transform.position = new Vector3(transform.position.x,transform.position.y - 1.0f,transform.position.z);
 		}
 
 		else {
@@ -55,12 +57,7 @@ public class PlayerControlConstant : MonoBehaviour {
 	void OnTriggerStay(Collider collider){
 		if((collider.gameObject.tag == "Enemy")&&(contactTime == 0)){
 			gameData.playerHP -= 1;
-			if(transform.eulerAngles.y == 0){
-				rigidbody.AddForce(-300, 200.0f,0.0f);
-			}
-			else if(transform.eulerAngles.y != 0){
-				rigidbody.AddForce(300, 200.0f,0.0f);
-			}
+			UnityChan.GetComponent<Animator>().SetBool("DamageOn",true);
 		}
 		contactTime++;
 
@@ -72,6 +69,7 @@ public class PlayerControlConstant : MonoBehaviour {
 	void OnTriggerExit(Collider collider){
 		if(collider.gameObject.tag == "Enemy"){
 			contactTime = 0;
+			UnityChan.GetComponent<Animator>().SetBool("DamageOn",false);
 		}
 	}
 
@@ -79,6 +77,7 @@ public class PlayerControlConstant : MonoBehaviour {
 	void OnCollisionEnter(Collision CollisionObj){
 		if(CollisionObj.gameObject.tag == "Floor"){
 			UnityChan.GetComponent<Animator>().SetBool("JumpOn",false);
+			UnityChan.GetComponent<Animator>().SetBool("FallOn",false);
 			//Debug.Log("ONFloor");
 			Movepow = playerSpeed;
 			OnFloor = true;
@@ -101,6 +100,7 @@ public class PlayerControlConstant : MonoBehaviour {
 		if(CollisionObj.gameObject.tag == "Floor"){
 			//Debug.Log("TakeOffFloor");
 			OnFloor = false;
+			UnityChan.GetComponent<Animator>().SetBool("FallOn",true);
 		}
 	}
 
