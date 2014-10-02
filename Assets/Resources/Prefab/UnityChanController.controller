@@ -59,7 +59,7 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110200000}
   m_DstState: {fileID: 110205266}
-  m_TransitionDuration: .0516510271
+  m_TransitionDuration: .00810672436
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
@@ -139,8 +139,8 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110205266}
   m_DstState: {fileID: 110237634}
-  m_TransitionDuration: .205865249
-  m_TransitionOffset: .0935718268
+  m_TransitionDuration: .111377083
+  m_TransitionOffset: .154616967
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: JumpOn
@@ -259,8 +259,8 @@ Transition:
   m_Name: 
   m_SrcState: {fileID: 110200000}
   m_DstState: {fileID: 110237634}
-  m_TransitionDuration: 2.25933743
-  m_TransitionOffset: .17667307
+  m_TransitionDuration: .0321441516
+  m_TransitionOffset: .410522491
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: JumpOn
@@ -299,7 +299,7 @@ State:
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 0147e212f97e3d449a4b9e4f5d057180, type: 3}
+  - {fileID: 7400000, guid: e54e2e1fa0a994b389fe0654511fac47, type: 3}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 72, y: 132, z: 0}
   m_IKOnFeet: 0
