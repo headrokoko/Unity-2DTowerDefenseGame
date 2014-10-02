@@ -21,7 +21,7 @@ public class PlayerControlConstant : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gameData = GameObject.Find("GameManager").GetComponent<GameData>();
-		UnityChan = GameObject.Find("Unity-Chan");
+		UnityChan = GameObject.Find("unitychan");
 	}
 	
 	// Update is called once per frame
