@@ -763,7 +763,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 63b408d81e1f0b14dba263887d26d8b9, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63b408d81e1f0b14dba263887d26d8b9, type: 2}
@@ -4723,7 +4723,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9d8757de7348f04418a533a1670fb551, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9d8757de7348f04418a533a1670fb551, type: 2}
       propertyPath: m_LocalScale.x
@@ -8147,7 +8147,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 857000cb845e0774388a745d1ae06528, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 857000cb845e0774388a745d1ae06528, type: 2}
@@ -8371,7 +8371,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 99fd56756159db846a9ae722e8cbfdde, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99fd56756159db846a9ae722e8cbfdde, type: 2}
@@ -8415,7 +8415,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4e59fdd631e577849a72823a50409649, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4e59fdd631e577849a72823a50409649, type: 2}
@@ -10920,7 +10920,7 @@ GameObject:
   - 4: {fileID: 2090691938}
   - 95: {fileID: 2090691939}
   m_Layer: 0
-  m_Name: unitychan
+  m_Name: Unity-Chan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
