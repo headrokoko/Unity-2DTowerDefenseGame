@@ -1,49 +1,49 @@
 ﻿using UnityEngine;
-using Limone.Assets.Code.Interfaces;
 using Limone;
 
 namespace Limone{
-	namespace Assets.Code.States{
-		public class GameStateManager : MonoBehaviour {
-		
-			private IState activeState;
-			private IState activeCameraState;
-			[HideInInspector]
-			public GameData gameData;
-			public static GameStateManager instance;
-		
-			void Awake(){
-				if(instance == null){
-					instance = this;
-					DontDestroyOnLoad(gameObject);
-				}
-				else{
-					DestroyImmediate(gameObject);	
-				}
+	public class GameStateManager : MonoBehaviour {
+	
+		private IState activeState;
+		private IState activeCameraState;
+		[HideInInspector]
+		public GameData gameData;
+		public static GameStateManager instance;
+
+		public bool SEbool = false;
+	
+		void Awake(){
+			if(instance == null){
+				instance = this;
+				DontDestroyOnLoad(gameObject);
 			}
-		
-			void OnGUI(){
-				//if(activeState == null){
-				activeState.Render();
-				//}		
+			else{
+				DestroyImmediate(gameObject);	
 			}
-		
-			void Start () {
-				activeState = new GameBeginState(this);
-				Debug.Log("First scene State " + activeState);
-				gameData = GetComponent<GameData> ();
+		}
+	
+		void OnGUI(){
+			//if(activeState == null){
+			activeState.Render();
+			//}		
+		}
+	
+		void Start () {
+			activeState = new GameBeginState(this);
+			Debug.Log("First scene State " + activeState);
+			gameData = GetComponent<GameData> ();
+		}
+	
+		void Update () {
+			if(activeState != null){
+				GameObject.Find("Player").GetComponent<AudioSource>().enabled = SEbool;
+				activeState.StateUpdata();
 			}
-		
-			void Update () {
-				if(activeState != null){
-					activeState.StateUpdata();
-				}
-			}
-		
-			public void SwichState(IState newState){
-				activeState = newState;
-				Debug.Log(activeState);
-			}
+		}
+	
+		public void SwichState(IState newState){
+			activeState = newState;
+			Debug.Log(activeState);
 		}
 	}
 }

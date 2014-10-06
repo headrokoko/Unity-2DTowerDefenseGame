@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Limone.Assets.Code.States;
+using Limone;
 
 namespace Limone{
 	public class AttackStateManager : MonoBehaviour {
@@ -10,6 +10,8 @@ namespace Limone{
 		public GameObject Floor;
 		public GameObject Wall;
 		public GameObject Loof;
+		public AudioClip GunSE;
+		public AudioClip TrapSE;
 		private GameObject Weapon;
 		public int weaponNum = 0;
 		private GunShotState gun;
@@ -24,10 +26,10 @@ namespace Limone{
 		// Use this for initialization
 		void Start () {
 			gamedata = GameObject.Find("GameManager").GetComponent<GameData>();
-			gun = new GunShotState(Bullet,FireRate);
-			floor = new FloorTrapState(Floor);
-			wall = new WallTrapState(Wall);
-			loof = new LoofTrapState(Loof);
+			gun = new GunShotState(Bullet,FireRate,GunSE);
+			floor = new FloorTrapState(Floor,TrapSE);
+			wall = new WallTrapState(Wall,TrapSE);
+			loof = new LoofTrapState(Loof,TrapSE);
 		}
 		// Update is called once per frame
 		public void Update () {

@@ -1,10 +1,7 @@
 ﻿
 namespace Limone{
-	namespace Assets.Code.Interfaces{
-
-		public interface IState {
-			void StateUpdata();
-			void Render();
-		}
+	public interface IState {
+		void StateUpdata();
+		void Render();
 	}
 }

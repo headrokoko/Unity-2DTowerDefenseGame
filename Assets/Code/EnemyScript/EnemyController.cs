@@ -6,9 +6,10 @@ namespace Limone{
 
 	public int health = 10;
 	public float Range = 5f;
-
 	public int BulletDamage = 20;
 	public int SlipDamage = 1;
+	public AudioClip deadse;
+
 	private GameData gamedata;
 	private bool deadcount = true;
 	
@@ -135,6 +136,7 @@ namespace Limone{
 			float rndX = Random.Range(10.0f, 30.0f);
 			float rndy = Random.Range(10.0f, 30.0f);
 			float rndZ = Random.Range(10.0f, 30.0f);
+			GetComponent<AudioSource>().PlayOneShot(deadse);
 			for (int i = 0; i < 3; i++)
 			{
 				rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
