@@ -1,8 +1,25 @@
 UnityGameSample
 ===============
+<br>現在製作しているゲーム
 
-2DTowerDefenseGame
-Asset List
-UnityChan
-Substance_Free
-UnityTestTools
+開発中の画面
+![image](20141006GameSS.jpeg)
+<br>
+
+開発環境 Unity ver 4.5.4f1
+
+使用しているアセット
+<br>UnityChan(インポートが必要です)
+<br>Substances_Free(インポートは必要ありません)
+
+操作方法
+<br>左右に移動:A、D
+<br>ジャンプ:スペースキー
+<br>攻撃、トラップ設置:マウス左クリック
+<br>攻撃方法の切替:画面下にあるGun,Floor,Wall,Loofボタンをクリック
+<br>もしくは下記のショートカットキーで切替られます
+<br>弾を発射して直接攻撃:F1
+<br>床トラップ:F2(カメラがプレイヤーのやや上からの視点に切り替わります)
+<br>壁トラップ:F3
+<br>天井トラップ:F4(カメラがプレイヤーのやや下からの視点に切り替わります)
+<br>※カメラの切り替えは床トラップと天井トラップを選択したときだけ切り替わります
