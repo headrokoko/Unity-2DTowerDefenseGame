@@ -64,25 +64,25 @@ namespace Limone{
 		}
 
 		public void Render(){
-			if(GUI.Button(new Rect((Screen.width/2) - 300,(Screen.height/2) + 200,50,50),"Gun")){
+			if(GUI.Button(new Rect((Screen.width/10) * 1,(Screen.height/10) * 8,(Screen.width/10) * 1,(Screen.height/10) * 1),"Gun")){
 				Debug.Log("Gun shot mode");
 				Attackmanager.weaponNum = 0;
 				//AttackManager.AttackChange(new GunShotState(AttackManager));
 			}
 		
-			else if(GUI.Button(new Rect((Screen.width/2) - 250,(Screen.height/2) + 200,50,50),"Floor")){
+			else if(GUI.Button(new Rect((Screen.width/10) * 2,(Screen.height/10) * 8,(Screen.width/10) * 1,(Screen.height/10) * 1),"Floor")){
 				Debug.Log("Floor trap mode");
 				Attackmanager.weaponNum = 1;
 				Fcamera.CameraChange(true);
 				//.AttackChange(new FloorTrapState(AttackManager));
 			}
 		
-			else if(GUI.Button(new Rect((Screen.width/2) - 200,(Screen.height/2) + 200,50,50),"Wall")){
+			else if(GUI.Button(new Rect((Screen.width/10) * 3,(Screen.height/10) * 8,(Screen.width/10) * 1,(Screen.height/10) * 1),"Wall")){
 				Debug.Log("Wall trap mode");
 				Attackmanager.weaponNum = 2;
 			}
 		
-			else if(GUI.Button(new Rect((Screen.width/2) - 150,(Screen.height/2) + 200,50,50),"Loof")){
+			else if(GUI.Button(new Rect((Screen.width/10) * 4,(Screen.height/10) * 8,(Screen.width/10) * 1,(Screen.height/10) * 1),"Loof")){
 				Debug.Log("Loof trap mode");
 				Attackmanager.weaponNum = 3;
 				Fcamera.CameraChange(false);

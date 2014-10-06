@@ -21,7 +21,7 @@ namespace Limone{
 	
 		public void Render(){
 			GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height),gamemanager.gameData.stageselectTexture,ScaleMode.StretchToFill);
-			if(GUI.Button(new Rect((Screen.width/2) - 300,(Screen.height/2) - 50,250,50),"Stage1")){
+			if(GUI.Button(new Rect((Screen.width/10) * 1,(Screen.height/10) * 4,(Screen.width/10) * 2,(Screen.height/10) * 1),"Stage1")){
 				Application.LoadLevel("TDGStage1");
 				gamedata.Money = 1000;
 				Time.timeScale = 1;
@@ -30,7 +30,7 @@ namespace Limone{
 				gamemanager.SwichState(new PlayStateFollowCam(gamemanager));
 			}
 		
-			else if(GUI.Button(new Rect((Screen.width/2) - 300,(Screen.height/2),250,50),"Stage2")){
+			else if(GUI.Button(new Rect((Screen.width/10) * 1,(Screen.height/10) * 5,(Screen.width/10) * 2,(Screen.height/10) * 1),"Stage2")){
 				Application.LoadLevel("TDGStage2");
 				gamedata.Money = 1000;
 				Time.timeScale = 1;
@@ -39,7 +39,7 @@ namespace Limone{
 				gamemanager.SwichState(new PlayStateFollowCam(gamemanager));
 			}
 		
-			else if(GUI.Button(new Rect((Screen.width/2) - 300,(Screen.height/2) + 50,250,50),"Stage3")){
+			else if(GUI.Button(new Rect((Screen.width/10) * 1,(Screen.height/10) * 6,(Screen.width/10) * 2,(Screen.height/10) * 1),"Stage3")){
 				Application.LoadLevel("TDGStage3");
 				gamedata.Money = 1000;
 				Time.timeScale = 1;
@@ -48,7 +48,7 @@ namespace Limone{
 				gamemanager.SwichState(new PlayStateFollowCam(gamemanager));
 			}
 		
-			else if(GUI.Button(new Rect((Screen.width/2) - 300,(Screen.height/2) + 100,250,50),"Stage4")){
+			else if(GUI.Button(new Rect((Screen.width/10) * 1,(Screen.height/10) * 7,(Screen.width/10) * 2,(Screen.height/10) * 1),"Stage4")){
 				Application.LoadLevel("TDGStage1");
 				gamedata.Money = 1000;
 				Time.timeScale = 1;
@@ -57,7 +57,7 @@ namespace Limone{
 				gamemanager.SwichState(new PlayStateFollowCam(gamemanager));
 			}
 		
-			else if(GUI.Button(new Rect((Screen.width/2) - 300,(Screen.height/2) + 150,250,50),"test")){
+			else if(GUI.Button(new Rect((Screen.width/10) * 1,(Screen.height/10) * 8,(Screen.width/10) * 2,(Screen.height/10) * 1),"test")){
 				Application.LoadLevel("testscene");
 				gamedata.Money = 1000;
 				Time.timeScale = 1;

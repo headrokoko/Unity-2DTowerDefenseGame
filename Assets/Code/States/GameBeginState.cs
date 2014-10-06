@@ -22,7 +22,7 @@ namespace Limone{
 	
 		public void Render(){
 			GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height),gamemanager.gameData.startTexture,ScaleMode.StretchToFill);
-			if(GUI.Button(new Rect(Screen.width/2,(Screen.height/2) + 100 ,250,50),"Start")){
+			if(GUI.Button(new Rect((Screen.width/10)*5,(Screen.height/10)*8 ,(Screen.width/10)*2,(Screen.height/10)*1),"Start")){
 				Application.LoadLevel("TDGStage1");
 				Time.timeScale = 1;
 				Debug.Log("ステージ１");
