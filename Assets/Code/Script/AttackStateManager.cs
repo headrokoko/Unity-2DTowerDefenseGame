@@ -32,7 +32,7 @@ namespace Limone{
 		// Update is called once per frame
 		public void Update () {
 			if(weaponNum == 0){
-				Debug.Log("gun shot");
+				//Debug.Log("gun shot");
 				gun.GunAction(transform);
 			}
 			//FloorTrap
