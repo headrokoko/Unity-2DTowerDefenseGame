@@ -3,7 +3,7 @@ UnityGameSample
 <br>現在製作しているゲーム
 
 開発中の画面
-![image](20141006GameSS.jpeg)
+![image](20141006GameSS.jpg)
 <br>
 
 開発環境 Unity ver 4.5.4f1
