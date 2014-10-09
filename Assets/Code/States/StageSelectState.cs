@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using Limone;
 
 namespace Limone{
 	public class StageSelectState : IState {
@@ -49,7 +48,7 @@ namespace Limone{
 			}
 		
 			else if(GUI.Button(new Rect((Screen.width/10) * 1,(Screen.height/10) * 7,(Screen.width/10) * 2,(Screen.height/10) * 1),"Stage4")){
-				Application.LoadLevel("TDGStage1");
+				Application.LoadLevel("TDGStage4");
 				gamedata.Money = 1000;
 				Time.timeScale = 1;
 				StartSe.PlayOneShot(StartSe.clip);

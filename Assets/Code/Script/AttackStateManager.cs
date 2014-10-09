@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Limone;
 
 namespace Limone{
 	public class AttackStateManager : MonoBehaviour {

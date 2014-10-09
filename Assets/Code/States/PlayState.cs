@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using Limone;
 
 namespace Limone{
 		public class PlayState : IState {

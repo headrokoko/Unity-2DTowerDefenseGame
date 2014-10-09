@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using Limone;
+using System.Collections;
 
 namespace Limone{
 	public class GameStateManager : MonoBehaviour {
