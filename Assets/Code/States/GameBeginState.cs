@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
-using Limone;
+using Assets.Code.Interfaces;
+using Assets.Code.States;
 
-namespace Limone{
+namespace Assets.Code.States{
 	public class GameBeginState : IState {
-	
+		
 		private GameStateManager gamemanager;
 		public GameBeginState(GameStateManager gamestateManager){
 			gamemanager = gamestateManager;
@@ -19,15 +20,16 @@ namespace Limone{
 				gamemanager.SwichState(new MenuState(gamemanager));
 			}
 		}
-	
+		
 		public void Render(){
 			GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height),gamemanager.gameData.startTexture,ScaleMode.StretchToFill);
-			if(GUI.Button(new Rect((Screen.width/10)*5,(Screen.height/10)*8 ,(Screen.width/10)*2,(Screen.height/10)*1),"Start")){
+			if(GUI.Button(new Rect(250,450,250,50),"Start")){
 				Application.LoadLevel("TDGStage1");
 				Time.timeScale = 1;
 				Debug.Log("ステージ１");
 				gamemanager.SwichState(new MenuState(gamemanager));
 			}
 		}
+		
 	}
 }

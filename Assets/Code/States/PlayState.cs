@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
-using Limone;
+using Assets.Code.Interfaces;
+using Assets.Code.States;
 
-namespace Limone{
-		public class PlayState : IState {
+namespace Assets.Code.States{
+	public class PlayState : IState {
 		private GameStateManager manager;
 		private GameData gamedata;
 
@@ -11,7 +12,7 @@ namespace Limone{
 			manager = stateManager;
 			gamedata = GameObject.Find("GameManager").GetComponent<GameData>();
 		}
-	
+		
 		public void StateUpdata(){
 			//Debug.Log("play state stateup");
 			if(Input.GetKeyDown(KeyCode.Return)){
@@ -22,8 +23,9 @@ namespace Limone{
 				manager.SwichState(new ResultState(manager));			
 			}
 		}
-	
+		
 		public void Render(){
+
 		}
 
 		void CameraChange(){
@@ -35,6 +37,8 @@ namespace Limone{
 					camera.SetActive(false);
 				}
 			}
+
 		}
+
 	}
 }

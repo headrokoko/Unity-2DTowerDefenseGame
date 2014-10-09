@@ -1,22 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace Limone{
-	public class WallTrapState : AttackStateManager {
+public class WallTrapState : AttackStateManager {
 
-		private GameObject WTrap;
-		private AudioClip putSE;
-		private AudioSource putsound;
+	private GameObject WTrap;
 
-		public WallTrapState(GameObject trap,AudioClip se){
-			WTrap = trap;
-			putSE = se;
-			putsound = GameObject.Find("Player").GetComponent<AudioSource>();
-		}
+	public WallTrapState(GameObject trap){
+		WTrap = trap;
+	}
 
-		public void PutTrap(Vector3 putpos){
-			Instantiate(WTrap, putpos ,WTrap.transform.rotation);
-			putsound.PlayOneShot(putSE);
-		}
+	public void PutTrap(Vector3 putpos){
+		
+		Instantiate(WTrap, putpos ,WTrap.transform.rotation);
 	}
 }
