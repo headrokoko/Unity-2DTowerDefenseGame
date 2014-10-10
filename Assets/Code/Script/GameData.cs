@@ -19,7 +19,6 @@ namespace Limone{
 		public int playerHP;
 		[HideInInspector]
 		public int BaseHP;
-		[HideInInspector]
 		public int score;
 		public int Money;
 

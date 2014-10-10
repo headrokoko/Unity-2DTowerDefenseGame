@@ -20,6 +20,7 @@ namespace Limone{
 		// Update is called once per frame
 		//　中継スクリプト(GuiScoreController)から値を持ってきている
 		void Update () {
+			//guiText.text = gameData.score.ToString();
 			guiText.text = controller.GetScoreText(gameData.score);
 		}
 

@@ -16,7 +16,7 @@ namespace Limone.Test{
 		[SetUp] public void Init(){
 			this.iplayerHP = GetPlayerHPMock();
 			this.playerHP = GetPlayerHPControllerMock(iplayerHP);
-			this.playerHP.PlayerHPController.FormatPlayerHP().Returns("score :10");
+			this.playerHP.PlayerHPController.FormatPlayerHP().Returns("PlayerHP :10");
 			this.playerHP.PlayerHPController.GetGameData().Returns(10);
 		}
 
