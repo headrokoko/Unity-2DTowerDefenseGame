@@ -2,7 +2,6 @@
 using System;
 using NSubstitute;
 
-
 namespace Limone.Test{
 
 	[TestFixture]

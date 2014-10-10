@@ -4,7 +4,7 @@ namespace Limone{
 
 	public interface IGUIScoreController
 	{
-		void GenericInit();
+		void ScoreInit();
 		int GetGameData();
 		string FormatScore();
 	}

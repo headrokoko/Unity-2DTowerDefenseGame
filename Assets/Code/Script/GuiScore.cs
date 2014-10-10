@@ -4,7 +4,6 @@ using System.Collections;
 namespace Limone{
 	public class GuiScore : MonoBehaviour,IGUIScoreController {
 
-
 		private GameData gameData;
 		// Use this for initialization
 		public GuiScoreController controller;
@@ -15,7 +14,7 @@ namespace Limone{
 		}
 
 		void Start () {
-			GenericInit();
+			ScoreInit();
 		}
 		
 		// Update is called once per frame
@@ -32,7 +31,7 @@ namespace Limone{
 			return gameData.score;
 		}
 
-		public void GenericInit(){
+		public void ScoreInit(){
 			gameData = GameObject.Find("GameManager").GetComponent<GameData>();
 		}
 	}
