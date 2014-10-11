@@ -1,4 +1,4 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
 using System;
 using NSubstitute;
 
@@ -15,8 +15,6 @@ namespace Limone.Test
 		{
 			this.iscore = GetEffectMock ();
 			this.score = GetControllerMock (iscore);
-			this.score.generalController.FormatScore ().Returns ("Score :100");
-			this.score.generalController.GetGameData ().Returns (100);
 		}
 
 		[TearDown] public void Cleanup()
@@ -56,8 +54,9 @@ namespace Limone.Test
 		}
 		private GuiScoreController GetControllerMock(IGeneralController iscore) {
 			var score = Substitute.For<GuiScoreController> ();
+			iscore.FormatScore ().Returns ("Score :100");
+			iscore.GetGameData ().Returns (100);
 			score.SetGuiScoreController (iscore);
-			//status.CalcTime ().Returns (0.0f);
 			return score;
 		}
 	}
