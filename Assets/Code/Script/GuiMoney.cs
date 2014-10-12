@@ -4,7 +4,7 @@ using System.Collections;
 namespace Limone{
 	public class GuiMoney : MonoBehaviour {
 
-		private GUIText MoneyText;
+		//private GUIText MoneyText;
 		
 		private GameData gameData;
 		// Use this for initialization

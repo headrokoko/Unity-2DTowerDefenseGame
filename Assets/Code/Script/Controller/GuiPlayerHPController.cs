@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System;
 
 namespace Limone{
-
+	[Serializable]
 	public class GuiPlayerHPController {
 
 		public IGUIPlayerHPController PlayerHPController;

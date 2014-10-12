@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Limone;
 
 namespace Limone{
 	public class GuiScore : MonoBehaviour,IGUIScoreController {
 
 		private GameData gameData;
+		public GUIText ScoreText;
+
 		// Use this for initialization
 		public GuiScoreController controller;
 
@@ -17,8 +20,8 @@ namespace Limone{
 			ScoreInit();
 		}
 		
-		// Update is called once per frame
-		//　中継スクリプト(GuiScoreController)から値を持ってきている
+		//Update is called once per frame
+		//中継スクリプト(GuiScoreController)から値を持ってきている
 		void Update () {
 			//guiText.text = gameData.score.ToString();
 			guiText.text = controller.GetScoreText(gameData.score);
