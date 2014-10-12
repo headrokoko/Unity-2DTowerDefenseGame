@@ -1,18 +1,42 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Limone;
 
 namespace Limone{
-	public class GuiBaseHP : MonoBehaviour {
-			
+	public class GuiBaseHP : MonoBehaviour,IGUIBaseHPController {
+		
 		private GameData gameData;
+		public GUIText BaseHPText;
+		
 		// Use this for initialization
-		void Start () {
-			gameData = GameObject.Find("GameManager").GetComponent<GameData>();	
+		public GuiBaseHPController controller;
+		
+		public void OnEnable(){
+			//下のthisにはインターフェース(IGUIBaseHPController)が入る
+			controller.SetGuiBaseHPController(this);
 		}
 		
-		// Update is called once per frame
+		void Start () {
+			BaseHPInit();
+		}
+		
+		//Update is called once per frame
+		//中継スクリプト(GuiBaseHPController)から値を持ってきている
 		void Update () {
-			guiText.text = "Base HP :" + gameData.BaseHP.ToString();
+			//guiText.text = gameData.baseHP.ToString();
+			guiText.text = controller.GetBaseHPText(gameData.BaseHP);
+		}
+		
+		public string FormatBaseHP(){
+			return controller.GetBaseHPText(GetGameData());
+		}
+		
+		public int GetGameData(){
+			return gameData.BaseHP;
+		}
+		
+		public void BaseHPInit(){
+			gameData = GameObject.Find("GameManager").GetComponent<GameData>();
 		}
 	}
 }

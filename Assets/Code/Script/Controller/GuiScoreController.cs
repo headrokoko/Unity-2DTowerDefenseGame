@@ -9,7 +9,6 @@ namespace Limone{
 		public IGUIScoreController scoreController;
 
 		public GuiScoreController(){
-			Debug.Log("GuiScoreController this = " + this);
 		}
 
 		public void SetGuiScoreController(IGUIScoreController scoreController){
@@ -18,7 +17,7 @@ namespace Limone{
 		}
 
 		public string GetScoreText(int score){
-			return "score :" + score.ToString();
+			return "Score :" + score.ToString();
 		}
 
 	}

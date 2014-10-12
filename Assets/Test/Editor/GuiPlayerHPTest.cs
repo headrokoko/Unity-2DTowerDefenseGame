@@ -49,7 +49,7 @@ namespace Limone.Test{
 		[Category("PlayerHP Format Test")]
 		public void GetGameDataTest(){
 			string text = playerHP.GetPlayerHPText(iplayerHP.GetGameData());
-			Assert.That("PlayerHP :100",Is.EqualTo(text));
+			Assert.That("PlayerHP :10",Is.EqualTo(text));
 		}
 
 		private IGUIPlayerHPController GetPlayerHPMock(){

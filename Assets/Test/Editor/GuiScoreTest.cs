@@ -15,7 +15,7 @@ namespace Limone.Test{
 		[SetUp] public void Init(){
 			this.iscore = GetScoreMock();
 			this.score = GetControllerMock(iscore);
-			this.score.scoreController.FormatScore().Returns("score :100");
+			this.score.scoreController.FormatScore().Returns("Score :100");
 			this.score.scoreController.GetGameData().Returns(100);
 		}
 
