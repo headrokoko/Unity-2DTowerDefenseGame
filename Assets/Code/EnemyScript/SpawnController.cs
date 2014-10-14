@@ -2,7 +2,7 @@
 using System.Collections;
 
 namespace Limone{
-	public class SpwanController : MonoBehaviour {
+	public class SpawnController : MonoBehaviour {
 
 		public float Interval;
 		public int WaveNum;
@@ -11,12 +11,12 @@ namespace Limone{
 		public bool StageClear = false;
 
 		private GameObject[] enemy;
-		private EnemySpawner[] ESpwaners;
+		private EnemySpawner[] ESpawners;
 
 		// Use this for initialization
 		void Start () {
-			ESpwaners = GetComponentsInChildren<EnemySpawner>();
-			Debug.Log("chidren :" + ESpwaners);
+			ESpawners = GetComponentsInChildren<EnemySpawner>();
+			Debug.Log("chidren :" + ESpawners);
 			InvokeRepeating("EnemySarch",1.0f,3.0f);
 		}
 	
@@ -46,9 +46,9 @@ namespace Limone{
 		void ChildrenComand(){
 			WaveCount++;
 			Debug.Log("Now Wave num ;" + WaveCount);
-			ESpwaners[0].SpwanContact();
-			ESpwaners[1].SpwanContact();
-			ESpwaners[2].SpwanContact();
+			ESpawners[0].SpawnContact();
+			ESpawners[1].SpawnContact();
+			ESpawners[2].SpawnContact();
 		}
 	}
 }

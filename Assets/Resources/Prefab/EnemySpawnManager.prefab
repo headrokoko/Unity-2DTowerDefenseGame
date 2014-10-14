@@ -13,7 +13,7 @@ GameObject:
   - 23: {fileID: 2300000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Enemy spwaner
+  m_Name: Enemy spawner
   m_TagString: Spwaner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ GameObject:
   - 23: {fileID: 2300002}
   - 114: {fileID: 11400002}
   m_Layer: 0
-  m_Name: Enemy spwaner
+  m_Name: Enemy spawner
   m_TagString: Spwaner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,7 +48,7 @@ GameObject:
   - 4: {fileID: 400004}
   - 114: {fileID: 11400004}
   m_Layer: 0
-  m_Name: EnemySpwanManager
+  m_Name: EnemySpawnManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ GameObject:
   - 23: {fileID: 2300004}
   - 114: {fileID: 11400006}
   m_Layer: 0
-  m_Name: Enemy spwaner
+  m_Name: Enemy spawner
   m_TagString: Spwaner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -218,8 +218,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 5400000, guid: 99fd56756159db846a9ae722e8cbfdde, type: 2}
   EnemyCount: 10
-  SpwanStartTime: 5
-  SpwanTime: 3
+  SpawnStartTime: 5
+  SpawnTime: 1
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,8 +233,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 5400000, guid: 99fd56756159db846a9ae722e8cbfdde, type: 2}
   EnemyCount: 10
-  SpwanStartTime: 5
-  SpwanTime: 3
+  SpawnStartTime: 5
+  SpawnTime: 1
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -262,8 +262,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 5400000, guid: 99fd56756159db846a9ae722e8cbfdde, type: 2}
   EnemyCount: 10
-  SpwanStartTime: 5
-  SpwanTime: 3
+  SpawnStartTime: 5
+  SpawnTime: 1
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

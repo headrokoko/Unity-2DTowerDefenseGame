@@ -4,7 +4,7 @@ namespace Limone{
 	public class PlayStateFollowCam : IState {
 		private GameStateManager gamemanager;
 		private GameData gamedata;
-		private SpwanController spwancontroller;
+		private SpawnController spawncontroller;
 		private AttackStateManager Attackmanager;
 		private FollowCamera Fcamera;
 	
@@ -19,7 +19,7 @@ namespace Limone{
 	
 		public void StateUpdata(){
 			//Debug.Log("play state stateup");
-			spwancontroller = GameObject.Find("EnemySpwanManager").GetComponent<SpwanController>();
+			spawncontroller = GameObject.Find("EnemySpawnManager").GetComponent<SpawnController>();
 
 			if(Input.GetKeyDown(KeyCode.Return)){
 				Time.timeScale = 0;
@@ -33,7 +33,7 @@ namespace Limone{
 			}
 
 			//既定のWave数をこなす
-			if(spwancontroller.StageClear == true){
+			if(spawncontroller.StageClear == true){
 				Time.timeScale = 0;
 				Debug.Log("All Wave Clear");
 				gamemanager.SwichState(new ResultState(gamemanager));	

@@ -6,23 +6,23 @@ namespace Limone{
 
 		public Rigidbody enemy;
 		public int EnemyCount = 10;
-		public float SpwanStartTime = 5.0f;
-		public float SpwanTime = 1.0f;
-		private int SpwanCount = 0;
+		public float SpawnStartTime = 5.0f;
+		public float SpawnTime = 1.0f;
+		private int SpawnCount = 0;
 		// Use this for initialization
 		void Start () {
 		}
 
 		// Update is called once per frame
 		void Update () {
-		if(SpwanCount == EnemyCount){
-			Debug.Log ("SpwanLimit");
+		if(SpawnCount == EnemyCount){
+			Debug.Log ("SpawnLimit");
 			CancelInvoke();
-			SpwanCount = 0;
+			SpawnCount = 0;
 		}
 			if(Input.GetKeyDown(KeyCode.Z)){
-				if(SpwanCount == 0){
-					SpwanContact();
+				if(SpawnCount == 0){
+					SpawnContact();
 				}
 				else{
 				Debug.Log ("enemy is spwan now");
@@ -30,12 +30,12 @@ namespace Limone{
 			}
 		}
 
-		public void SpwanContact(){
-		InvokeRepeating("Spwan",0.0f,SpwanTime);
+		public void SpawnContact(){
+		InvokeRepeating("Spawn",0.0f,SpawnTime);
 		}
 
-		void Spwan(){
-		SpwanCount++;
+		void Spawn(){
+		SpawnCount++;
 		Rigidbody clone;
 		Debug.Log ("spwanenemy");
 		clone = Instantiate(enemy,transform.position,transform.rotation)as Rigidbody;
