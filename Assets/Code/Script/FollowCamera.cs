@@ -1,17 +1,22 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 namespace Limone{
-	public class FollowCamera : MonoBehaviour {
+	public class FollowCamera : MonoBehaviour,IFollowCameraController {
 
 		public float betweenPlayer = 15.0f;
 		public float height = 5.0f;
+		public FollowCameraController follocamcontroller;
 
 		private Transform playerpos;
 
+		public void OnEnable(){
+			
+		}
+
 		// Use this for initialization
 		void Start () {
-			playerpos = GameObject.Find("Player").transform;	
+			FollowCamInit();
 		}
 		
 		// Update is called once per frame
@@ -27,6 +32,13 @@ namespace Limone{
 			else{
 				height = -1.0f;
 			}
+		}
+
+		public void FollowCamInit(){
+			playerpos = GameObject.Find("Player").transform;	
+		}
+
+		public void GetPlayerPos(){
 		}
 	}
 }

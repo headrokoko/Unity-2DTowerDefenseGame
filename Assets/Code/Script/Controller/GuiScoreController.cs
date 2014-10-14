@@ -13,7 +13,6 @@ namespace Limone{
 
 		public void SetGuiScoreController(IGUIScoreController scoreController){
 			this.scoreController = scoreController;
-			Debug.Log("GuiScoreController this = " + this);
 		}
 
 		public string GetScoreText(int score){

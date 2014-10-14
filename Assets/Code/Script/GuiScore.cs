@@ -6,7 +6,6 @@ namespace Limone{
 	public class GuiScore : MonoBehaviour,IGUIScoreController {
 
 		private GameData gameData;
-		public GUIText ScoreText;
 
 		// Use this for initialization
 		public GuiScoreController controller;
