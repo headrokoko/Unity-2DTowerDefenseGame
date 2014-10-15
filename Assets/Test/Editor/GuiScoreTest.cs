@@ -44,7 +44,7 @@ namespace Limone.Test{
 		}
 
 		[Test]
-		[Category("Score Format Test")]
+		[Category("Get GameData Test")]
 		public void GetGameDataTest(){
 			string text = score.GetScoreText(iscore.GetGameData());
 			Assert.That("Score :100",Is.EqualTo(text));

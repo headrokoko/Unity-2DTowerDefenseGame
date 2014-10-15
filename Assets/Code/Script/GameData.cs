@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace Limone{
-	public class GameData : MonoBehaviour {
+	public class GameData : MonoBehaviour,IGameDataController {
 		
 		// athenaeum test
 		public Texture2D startTexture;
@@ -22,16 +22,24 @@ namespace Limone{
 		public int score;
 		public int Money;
 
+		public GameDataController gamedatacontroller;
 
+		public void OnEnable(){
+			//下のthisにはインターフェース(IGameDataController)が入る
+			gamedatacontroller.SetPlayerHPDataController(this);
+			gamedatacontroller.SetBaseHPDataController(this);
+			gamedatacontroller.SetScoreDataController(this);
+			gamedatacontroller.SetMoneyDataController(this);
+		}
 		
 		void Start() {
-			playerHP = initPlayerHP;
+			GameDataInit();
 		}
 
 		void Update(){
 			if(playerHP == 0){
-				playerHP = 10;
-				BaseHP -= 3;
+				playerHP = gamedatacontroller.GetPlayerHP(10);
+				BaseHP = gamedatacontroller.GetBaseHP(BaseHP - 3);
 			}
 		}
 		void Reset() {
@@ -39,15 +47,40 @@ namespace Limone{
 			score = beginScore;
 		}
 		
-		public void SetPlayerHP(int hp) 
-		{
+		public void SetPlayerHP(int hp){
 			initPlayerHP = hp;
 			playerHP = hp;
 		}
 		
-		public void SetScore()
-		{
+		public void SetScore(){
 			beginScore = score;
+		}
+		public void GameDataInit(){
+			playerHP = initPlayerHP;
+		}
+		public int GetPlayerHPdata(){
+			return playerHP;
+		}
+		public int GetBaseHPdata(){
+			return BaseHP;
+		}
+		public int GetScoredata(){
+			return score;
+		}
+		public int GetMoneydata(){
+			return Money;
+		}
+		public int FormatPlayerHP(){
+			return gamedatacontroller.GetPlayerHP(GetPlayerHPdata());
+		}
+		public int FormatBaseHP(){
+			return gamedatacontroller.GetBaseHP(GetBaseHPdata());
+		}
+		public int FormatScore(){
+			return gamedatacontroller.GetScore(GetScoredata());
+		}
+		public int FormatMoney(){
+			return gamedatacontroller.Getmonery(GetMoneydata());
 		}
 	}
 }
