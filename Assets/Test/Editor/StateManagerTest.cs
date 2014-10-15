@@ -37,11 +37,21 @@ namespace Limone.Test{
 			}
 		
 		[Test]
-		[Category("State Format Test")]
-			public void GetGameDataTest(){
+		[Category("Get State Name Test")]
+			public void GetStateNameTest(){
 				string state = statemanager.GetStateName(istatemanager.GetStateName());
 				Assert.That("GameBeginState",Is.EqualTo(state));
+		}
+
+		[Test]
+		[Category("State Pattern Test")]
+		public void StatePatternTest(){
+			string[] StateName = new string[] {"GameBeginState","MenuState","StageSelectState","PlayStateFolloCam","ResultState"};
+			foreach(string statename in StateName){
+				string state = statemanager.GetStateName(istatemanager.GetStateName());
+				Assert.That(statename,Is.EqualTo(statename));
 			}
+		}
 		
 		private IStateManagerController GetStateManagerMock(){
 			return Substitute.For<IStateManagerController>();
