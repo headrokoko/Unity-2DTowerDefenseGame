@@ -3,7 +3,7 @@ using System;
 
 namespace Limone{
 	[Serializable]
-	public class GuiPlayerHPController {
+	public class GuiPlayerHPController{
 
 		public IGUIPlayerHPController PlayerHPController;
 

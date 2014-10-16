@@ -2,7 +2,7 @@
 using System.Collections;
 
 namespace Limone{
-	public class BladeWall : MonoBehaviour {
+	public class BladeWall : MonoBehaviour,IBladeWallController {
 
 		public int damage = 50;
 		public float ReloadTime = 3.0f;
@@ -37,6 +37,9 @@ namespace Limone{
 			TrapBool = false;
 			GetComponent<Animator>().SetBool("OnTrap",TrapBool);
 			Debug.Log("Walltrapready");
+		}
+		public void BladeWallInit(){
+		
 		}
 	}
 }

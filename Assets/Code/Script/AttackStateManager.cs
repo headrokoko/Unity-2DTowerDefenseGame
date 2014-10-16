@@ -2,7 +2,7 @@
 using System.Collections;
 
 namespace Limone{
-	public class AttackStateManager : MonoBehaviour {
+	public class AttackStateManager : MonoBehaviour,IAttackStateController {
 		private AttackStateManager actAttackState;
 		private GameData gamedata;
 		public Rigidbody Bullet;
@@ -24,11 +24,7 @@ namespace Limone{
 		private GameObject touchobj;
 		// Use this for initialization
 		void Start () {
-			gamedata = GameObject.Find("GameManager").GetComponent<GameData>();
-			gun = new GunShotState(Bullet,FireRate,GunSE);
-			floor = new FloorTrapState(Floor,TrapSE);
-			wall = new WallTrapState(Wall,TrapSE);
-			loof = new LoofTrapState(Loof,TrapSE);
+			AttackStateManagerInit();
 		}
 		// Update is called once per frame
 		public void Update () {
@@ -91,6 +87,13 @@ namespace Limone{
 		public void AttackChange(int newWeaponNum){
 			weaponNum = newWeaponNum;
 			Debug.Log("Atack mode ;" + weaponNum);
+		}
+		public void AttackStateManagerInit(){
+			gamedata = GameObject.Find("GameManager").GetComponent<GameData>();
+			gun = new GunShotState(Bullet,FireRate,GunSE);
+			floor = new FloorTrapState(Floor,TrapSE);
+			wall = new WallTrapState(Wall,TrapSE);
+			loof = new LoofTrapState(Loof,TrapSE);
 		}
 	}
 }

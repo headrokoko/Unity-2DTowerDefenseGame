@@ -2,7 +2,7 @@
 using System.Collections;
 
 namespace Limone{
-	public class FloorTrap : MonoBehaviour {
+	public class FloorTrap : MonoBehaviour,IFloorTrapController {
 
 		public float BackPow = 500;
 		public float UpPow = 500;
@@ -45,6 +45,8 @@ namespace Limone{
 			TrapBool = false;
 			GetComponent<Animator>().SetBool("OnTrap",TrapBool);
 			//Debug.Log("trapready");
+		}
+		public void FloorTrapInit(){
 		}
 	}
 }
