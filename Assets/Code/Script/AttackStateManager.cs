@@ -22,6 +22,12 @@ namespace Limone{
 		private Vector3 screenpos;
 		private Vector3 PutPos;
 		private GameObject touchobj;
+
+		public AttackStateController attackstatecontroller;
+		
+		public void OnEnable(){
+			attackstatecontroller.SetAttackStateManagerController(this);
+		}
 		// Use this for initialization
 		void Start () {
 			AttackStateManagerInit();

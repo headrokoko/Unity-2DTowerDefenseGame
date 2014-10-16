@@ -9,6 +9,13 @@ namespace Limone{
 		private bool trap = true;
 		private bool TrapBool = false;
 
+		public BladeWallController bladewallcontroller;
+
+		
+		public void OnEnable(){
+			bladewallcontroller.SetBladeWallController(this);
+		}
+
 		// Use this for initialization
 		void Start () {
 	

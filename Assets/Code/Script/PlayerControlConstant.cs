@@ -2,7 +2,7 @@
 using System.Collections;
 
 namespace Limone{
-	public class PlayerControlConstant : MonoBehaviour {
+	public class PlayerControlConstant : MonoBehaviour,IPlayerController {
 		
 		public float playerSpeed;
 		public float JumpPower;
@@ -14,6 +14,12 @@ namespace Limone{
 		private GameData gameData;
 		private int contactTime;
 		private GameObject UnityChan;
+
+		public PlayerControllerController playercontroller;
+
+		public void OnEnable(){
+			playercontroller.SetPlayerControllerController(this);
+		}
 		
 		void Awake(){
 
@@ -21,8 +27,7 @@ namespace Limone{
 		
 		// Use this for initialization
 		void Start () {
-			gameData = GameObject.Find("GameManager").GetComponent<GameData>();
-			UnityChan = GameObject.Find("unitychan");
+			PlayerControllerInit();
 		}
 		
 		// Update is called once per frame
@@ -110,6 +115,11 @@ namespace Limone{
 			bullet = Instantiate(Bullet, transform.position, transform.rotation) as Rigidbody;
 			bullet.velocity = transform.TransformDirection(Vector3.right * 10);
 			count = 0;
+		}
+
+		public void PlayerControllerInit(){
+			gameData = GameObject.Find("GameManager").GetComponent<GameData>();
+			UnityChan = GameObject.Find("unitychan");
 		}
 	}
 }

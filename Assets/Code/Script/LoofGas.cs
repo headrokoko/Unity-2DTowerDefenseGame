@@ -2,11 +2,17 @@
 using System.Collections;
 
 namespace Limone{
-	public class LoofGas : MonoBehaviour {
+	public class LoofGas : MonoBehaviour,ILoofGasController {
 
 		public GameObject gasObj;
 		public bool gasbool = true;
 		public float ReloadTime = 10.0f;
+
+		public LoofGasController loofgas;
+
+		public void OnEnable(){
+			loofgas.SetLoofGasController(this);
+		}
 		// Use this for initialization
 		void Start () {
 		
@@ -27,7 +33,6 @@ namespace Limone{
 			}
 
 		}
-
 		
 		IEnumerator Reload(){
 			Debug.Log ("Reload");
@@ -35,6 +40,9 @@ namespace Limone{
 			gasbool = true;
 			Debug.Log("LoofGas Ready");
 			particleSystem.Stop();
+		}
+
+		public void LoofGasInit(){
 		}
 	}
 }

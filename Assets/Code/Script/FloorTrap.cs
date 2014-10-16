@@ -9,6 +9,12 @@ namespace Limone{
 		public float ReloadTime = 3.0f;
 		private bool trap = true;
 		private bool TrapBool = false;
+
+		public FloorTrapController floortrapcontroller;
+		
+		public void OnEnable(){
+			floortrapcontroller.SetFloorTrapController(this);
+		}
 		// Use this for initialization
 		void Start () {
 		
