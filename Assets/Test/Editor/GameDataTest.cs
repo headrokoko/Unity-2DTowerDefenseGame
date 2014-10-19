@@ -165,25 +165,25 @@ namespace Limone.Test{
 
 		private GameDataController GetPlayerHPMock(IGameDataController PlayerHP){
 			var playerHP = Substitute.For<GameDataController>();
-			playerHP.SetPlayerHPDataController(PlayerHP);
+			playerHP.SetGameDataController(PlayerHP);
 			return playerHP;
 		}
 
 		private GameDataController GetBaseHPMock(IGameDataController BaseHP){
 			var baseHP = Substitute.For<GameDataController>();
-			baseHP.SetBaseHPDataController(BaseHP);
+			baseHP.SetGameDataController(BaseHP);
 			return baseHP;
 		}
 
 		private GameDataController GetScoreMock(IGameDataController Score){
 			var score = Substitute.For<GameDataController>();
-			score.SetScoreDataController(Score);
+			score.SetGameDataController(Score);
 			return score;			
 		}
 
 		private GameDataController GetMoneyMock(IGameDataController Money){
 			var money = Substitute.For<GameDataController>();
-			money.SetMoneyDataController(Money);
+			money.SetGameDataController(Money);
 			return money;
 		}
 

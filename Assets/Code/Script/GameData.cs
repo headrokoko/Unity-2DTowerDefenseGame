@@ -8,7 +8,7 @@ namespace Limone{
 		public Texture2D startTexture;
 		public Texture2D menuTexture;
 		public Texture2D stageselectTexture;
-		public Texture2D tradeTexture;
+		//public Texture2D tradeTexture;
 		public Texture2D resultTexture;
 		
 		public List<GameObject> cameras;
@@ -26,10 +26,8 @@ namespace Limone{
 
 		public void OnEnable(){
 			//下のthisにはインターフェース(IGameDataController)が入る
-			gamedatacontroller.SetPlayerHPDataController(this);
-			gamedatacontroller.SetBaseHPDataController(this);
-			gamedatacontroller.SetScoreDataController(this);
-			gamedatacontroller.SetMoneyDataController(this);
+			gamedatacontroller.SetGameDataController(this);
+			Debug.Log(startTexture);
 		}
 		
 		void Start() {
@@ -70,6 +68,7 @@ namespace Limone{
 		public int GetMoneydata(){
 			return Money;
 		}
+
 		public int FormatPlayerHP(){
 			return gamedatacontroller.GetPlayerHP(GetPlayerHPdata());
 		}
@@ -82,5 +81,39 @@ namespace Limone{
 		public int FormatMoney(){
 			return gamedatacontroller.Getmonery(GetMoneydata());
 		}
+		
+		public string GetStartTextureName(){
+			return startTexture.ToString();
+		}
+		public string GetMenuTextureName(){
+			return menuTexture.ToString();
+		}
+		public string GetStageSelectTextureName(){
+			return stageselectTexture.ToString();
+		}
+		//public string GetTradeTextureName(){
+			//return tradeTexture.ToString();
+		//}
+		public string GetResultTextureName(){
+			return resultTexture.ToString();
+		}
+
+		public string FormatStartTextureName(){
+			Debug.Log(startTexture);
+			return gamedatacontroller.GetStartTexture(GetStartTextureName());
+		}
+		public string FormatMenuTextureName(){
+			return gamedatacontroller.GetMenuTecture(GetMenuTextureName());
+		}
+		public string FormatStageSelectTextureName(){
+			return gamedatacontroller.GetStageSelectTexture(GetStageSelectTextureName());
+		}
+		//public string FormatTradeTextureName(){
+			//return gamedatacontroller.GetTradeTexture(GetTradeTextureName());
+		//}
+		public string FormatResultTextureName(){
+			return gamedatacontroller.GetResultTexture(GetResultTextureName());
+		}
+
 	}
 }

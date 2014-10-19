@@ -10,19 +10,12 @@ namespace Limone{
 
 		public GameDataController(){
 		}
+		
+		public void SetGameDataController(IGameDataController gamedatacontroller){
+			this.gamedataController = gamedatacontroller;
+		}
 
-		public void SetPlayerHPDataController(IGameDataController gamedatacontroller){
-			this.gamedataController = gamedatacontroller;
-		}
-		public void SetBaseHPDataController(IGameDataController gamedatacontroller){
-			this.gamedataController = gamedatacontroller;
-		}
-		public void SetScoreDataController(IGameDataController gamedatacontroller){
-			this.gamedataController = gamedatacontroller;
-		}
-		public void SetMoneyDataController(IGameDataController gamedatacontroller){
-			this.gamedataController = gamedatacontroller;
-		}
+
 		public int GetPlayerHP(int playerHP){
 			return playerHP;
 		}
@@ -34,6 +27,22 @@ namespace Limone{
 		}
 		public int Getmonery(int money){
 			return money;
+		}
+		
+		public string GetStartTexture(string StartTexture){
+			return StartTexture;
+		}
+		public string GetMenuTecture(string MenuTexure){
+			return MenuTexure;
+		}
+		public string GetStageSelectTexture(string StageSelectTexture){
+			return StageSelectTexture;
+		}
+		public string GetTradeTexture(string TradeTexture){
+			return TradeTexture;
+		}
+		public string GetResultTexture(string ResultTexture){
+			return ResultTexture;
 		}
 	}
 }
