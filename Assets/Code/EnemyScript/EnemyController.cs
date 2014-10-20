@@ -2,16 +2,18 @@
 using System.Collections;
 
 namespace Limone{
-	public class EnemyController : AdvancedFSM {
+	public class EnemyController : AdvancedFSM,IEnemyDataController {
 
-	public int health = 10;
-	public float Range = 5f;
-	public int BulletDamage = 20;
-	public int SlipDamage = 1;
-	public AudioClip deadse;
+		public int health = 10;
+		public float Range = 5f;
+		public int BulletDamage = 20;
+		public int SlipDamage = 1;
+		public AudioClip deadse;
 
-	private GameData gamedata;
-	private bool deadcount = true;
+		private GameData gamedata;
+		private bool deadcount = true;
+		public EnemyDataController Edatacontroller;
+	
 	
 		//NPC FSMの初期化
 		public EnemyController(){
@@ -153,6 +155,32 @@ namespace Limone{
 		void OnDrawGizmos(){
 			Vector3 frontend = transform.position + (transform.forward * 10.0f) ;
 			Debug.DrawLine(transform.position,frontend,Color.red);
+		}
+
+		public int GetEnemyHealth(){
+			return health;
+		}
+		public int GetBulletDamage(){
+			return BulletDamage;
+		}
+		public int GetSlipDamage(){
+			return SlipDamage;
+		}
+		public float GetRange(){
+			return Range;
+		}
+
+		public int FormatEnemyHealth(){
+			return Edatacontroller.GetEnemyHealth(GetEnemyHealth());
+		}
+		public int FormatBulletDamage(){
+			return Edatacontroller.GetBulletDamage(GetBulletDamage());
+		}
+		public int FormatSlipDamage(){
+			return Edatacontroller.GetSlipDamage(GetSlipDamage());
+		}
+		public float FormatRange(){
+			return Edatacontroller.GetRange(GetRange());
 		}
 	}
 }

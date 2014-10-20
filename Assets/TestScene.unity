@@ -759,7 +759,6 @@ MonoBehaviour:
   startTexture: {fileID: 2800000, guid: 52207cebe9e2a1849976b529682da511, type: 3}
   menuTexture: {fileID: 2800000, guid: 478502ff8f98f554fad309dc70ac856d, type: 3}
   stageselectTexture: {fileID: 2800000, guid: 2ab21de6fc772bb43ba8b7b6ac23ddd5, type: 3}
-  tradeTexture: {fileID: 0}
   resultTexture: {fileID: 2800000, guid: f6485a08a7ffa7f4a95c2cdd5486cebc, type: 3}
   cameras:
   - {fileID: 1713631030}
