@@ -81,26 +81,31 @@ namespace Limone{
 		public int FormatMoney(){
 			return gamedatacontroller.Getmonery(GetMoneydata());
 		}
-		
+
 		public string GetStartTextureName(){
+			Debug.Log("StartTexName :" + startTexture);
 			return startTexture.ToString();
 		}
 		public string GetMenuTextureName(){
+			Debug.Log("MenuTexName :" + menuTexture);
 			return menuTexture.ToString();
 		}
 		public string GetStageSelectTextureName(){
+			Debug.Log("StageSelectTexName :" + stageselectTexture);
 			return stageselectTexture.ToString();
 		}
 		//public string GetTradeTextureName(){
 			//return tradeTexture.ToString();
 		//}
 		public string GetResultTextureName(){
+			Debug.Log("ResultTexName :" + resultTexture);
 			return resultTexture.ToString();
 		}
 
 		public string FormatStartTextureName(){
 			Debug.Log(startTexture);
-			return gamedatacontroller.GetStartTexture(GetStartTextureName());
+			string texname = GetStartTextureName();
+			return texname;
 		}
 		public string FormatMenuTextureName(){
 			return gamedatacontroller.GetMenuTecture(GetMenuTextureName());

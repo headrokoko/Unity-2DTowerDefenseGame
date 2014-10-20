@@ -8,41 +8,40 @@ namespace Limone.Test{
 	[Category("Background Texture Test")]
 	public class BackgroundTextureTest {
 		public IGameDataController Igamedata;
-		public GameDataController StartTexture;
-		public GameDataController MenuTexture;
-		//public GameDataController TradeTexture;
-		public GameDataController StageSelectTexture;
-		public GameDataController ResultTexture;
+		public GameDataController gamedata;
+		public GameData gdata;
 
 		[SetUp] public void Init(){
 			this.Igamedata = GetGameDataMock();
-			this.StartTexture = GetStartTextureMock(Igamedata);
+			this.gamedata = GetStartTextureMock(Igamedata);
+			this.gamedata.gamedataController.FormatStartTextureName().Returns("start");
+			this.gamedata.gamedataController.GetStartTextureName().Returns("start");
 		}
 
 		[Test]
 		[Category("StartTexture Empty check Test")]
-		public void GetStartTextureNameTest(){
-			string texturename = StartTexture.GetStartTexture(Igamedata.GetStartTextureName());
-			Assert.That(string.Empty,Is.Not.EqualTo(texturename));
+		public void GetStartTextureEmptyTest(){
+			string texturename = gamedata.GetStartTexture();
+			Assert.IsNotEmpty(texturename);
 		}
 
 		[Test]
 		[Category("MenuTexture Empty check Test")]
-		public void GetMenuTextureNameTest(){
+		public void GetMenuTextureEmptyTest(){
 			string texturename = Igamedata.GetMenuTextureName();
 			Assert.That(string.Empty,Is.Not.EqualTo(texturename));		
 		}
 
 		[Test]
 		[Category("StageSelectTexture Empty check Test")]
-		public void GetStageSelectTextureNameTest(){
+		public void GetStageSelectTextureEmptyTest(){
 			string texturename = Igamedata.GetStageSelectTextureName();
 			Assert.That(string.Empty,Is.Not.EqualTo(texturename));		
 		}
 		
 		[Test]
 		[Category("ResultTexture Empty check Test")]
-		public void GetResultTextureNameTest(){
+		public void GetResultTextureEmptyTest(){
 			string texturename = Igamedata.GetResultTextureName();
 			Assert.That(string.Empty,Is.Not.EqualTo(texturename));		
 		}

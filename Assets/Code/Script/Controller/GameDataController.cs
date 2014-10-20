@@ -6,6 +6,11 @@ namespace Limone{
 	[Serializable]
 	public class GameDataController{
 
+		public Texture2D startTex;
+		public Texture2D menuTex;
+		public Texture2D stageselectTex;
+		public Texture2D resultTex;
+
 		public IGameDataController gamedataController;
 
 		public GameDataController(){
@@ -29,8 +34,9 @@ namespace Limone{
 			return money;
 		}
 		
-		public string GetStartTexture(string StartTexture){
-			return StartTexture;
+		public string GetStartTexture(){
+			string texname = gamedataController.GetStartTextureName();
+			return texname;
 		}
 		public string GetMenuTecture(string MenuTexure){
 			return MenuTexure;
