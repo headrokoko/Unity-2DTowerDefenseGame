@@ -24,6 +24,9 @@ namespace Limone{
 
 		public GameDataController gamedatacontroller;
 
+		public GameData(){
+		}
+
 		public void OnEnable(){
 			//下のthisにはインターフェース(IGameDataController)が入る
 			gamedatacontroller.SetGameDataController(this);
@@ -55,6 +58,7 @@ namespace Limone{
 		}
 		public void GameDataInit(){
 			playerHP = initPlayerHP;
+			gamedatacontroller = new GameDataController();
 		}
 		public int GetPlayerHPdata(){
 			return playerHP;
@@ -82,8 +86,10 @@ namespace Limone{
 			return gamedatacontroller.Getmonery(GetMoneydata());
 		}
 
+		public Texture2D GiveStartTexture(){
+			return startTexture;
+		}
 		public string GetStartTextureName(){
-			Debug.Log("StartTexName :" + startTexture);
 			return startTexture.ToString();
 		}
 		public string GetMenuTextureName(){

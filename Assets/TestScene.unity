@@ -772,6 +772,7 @@ MonoBehaviour:
     menuTex: {fileID: 0}
     stageselectTex: {fileID: 0}
     resultTex: {fileID: 0}
+    GData: {fileID: 0}
 --- !u!1 &143467954
 GameObject:
   m_ObjectHideFlags: 0

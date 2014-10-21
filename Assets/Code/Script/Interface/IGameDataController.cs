@@ -26,6 +26,7 @@ namespace Limone{
 		string FormatStageSelectTextureName();
 		//string FormatTradeTextureName();
 		string FormatResultTextureName();
+
 	}
 
 }

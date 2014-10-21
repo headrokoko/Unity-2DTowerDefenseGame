@@ -11,13 +11,18 @@ namespace Limone{
 		public Texture2D stageselectTex;
 		public Texture2D resultTex;
 
-		public IGameDataController gamedataController;
+		public IGameDataController IgamedataController;
+		public GameData GData;
 
 		public GameDataController(){
+			GData = new GameData();
 		}
 		
-		public void SetGameDataController(IGameDataController gamedatacontroller){
-			this.gamedataController = gamedatacontroller;
+		void Start() {
+		}
+
+		public void SetGameDataController(IGameDataController igamedatacontroller){
+			this.IgamedataController = igamedatacontroller;
 		}
 
 
@@ -34,9 +39,12 @@ namespace Limone{
 			return money;
 		}
 		
-		public string GetStartTexture(){
-			string texname = gamedataController.GetStartTextureName();
-			return texname;
+		public Texture2D GetStartTexture(){
+			startTex = GData.GiveStartTexture();
+			if(startTex == null){
+				Debug.LogError("テクスチャが設定されていません");
+			}
+			return startTex;
 		}
 		public string GetMenuTecture(string MenuTexure){
 			return MenuTexure;

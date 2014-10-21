@@ -20,23 +20,23 @@ namespace Limone.Test{
 		[SetUp] public void Init(){
 			this.IPlayerHP = GetGameDataMock();
 			this.PlayerHPdata = GetPlayerHPMock(IPlayerHP);
-			this.PlayerHPdata.gamedataController.FormatPlayerHP().Returns(10);
-			this.PlayerHPdata.gamedataController.GetPlayerHPdata().Returns(10);
+			this.PlayerHPdata.IgamedataController.FormatPlayerHP().Returns(10);
+			this.PlayerHPdata.IgamedataController.GetPlayerHPdata().Returns(10);
 
 			this.IBaseHP = GetGameDataMock();
 			this.BaseHPdata = GetBaseHPMock(IBaseHP);
-			this.BaseHPdata.gamedataController.FormatBaseHP().Returns(5);
-			this.BaseHPdata.gamedataController.GetBaseHPdata().Returns(5);
+			this.BaseHPdata.IgamedataController.FormatBaseHP().Returns(5);
+			this.BaseHPdata.IgamedataController.GetBaseHPdata().Returns(5);
 
 			this.IScore = GetGameDataMock();
 			this.Scoredata = GetScoreMock(IScore);
-			this.Scoredata.gamedataController.FormatScore().Returns(100);
-			this.Scoredata.gamedataController.GetScoredata().Returns(100);
+			this.Scoredata.IgamedataController.FormatScore().Returns(100);
+			this.Scoredata.IgamedataController.GetScoredata().Returns(100);
 
 			this.IMoney = GetGameDataMock();
 			this.Moneydata = GetMoneyMock(IMoney);
-			this.Moneydata.gamedataController.FormatMoney().Returns(1000);
-			this.Moneydata.gamedataController.GetMoneydata().Returns(1000);
+			this.Moneydata.IgamedataController.FormatMoney().Returns(1000);
+			this.Moneydata.IgamedataController.GetMoneydata().Returns(1000);
 
 		}
 

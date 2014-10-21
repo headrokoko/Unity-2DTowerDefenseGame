@@ -14,14 +14,14 @@ namespace Limone.Test{
 		[SetUp] public void Init(){
 			this.Igamedata = GetGameDataMock();
 			this.gamedata = GetStartTextureMock(Igamedata);
-			this.gamedata.gamedataController.FormatStartTextureName().Returns("start");
-			this.gamedata.gamedataController.GetStartTextureName().Returns("start");
+			this.gamedata.IgamedataController.FormatStartTextureName().Returns("start");
+			this.gamedata.IgamedataController.GetStartTextureName().Returns("start");
 		}
 
 		[Test]
 		[Category("StartTexture Empty check Test")]
 		public void GetStartTextureEmptyTest(){
-			string texturename = gamedata.GetStartTexture();
+			string texturename = Igamedata.GetStartTextureName().ToString();
 			Assert.IsNotEmpty(texturename);
 		}
 
@@ -54,6 +54,7 @@ namespace Limone.Test{
 		private GameDataController GetStartTextureMock(IGameDataController StartTexture){
 			var starttexture = Substitute.For<GameDataController>();
 			starttexture.SetGameDataController(StartTexture);
+			gdata = new GameData();
 
 			return starttexture;
 		}
