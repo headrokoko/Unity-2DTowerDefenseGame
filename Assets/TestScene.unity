@@ -767,6 +767,11 @@ MonoBehaviour:
   BaseHP: 10
   score: 0
   Money: 200
+  gamedatacontroller:
+    startTex: {fileID: 0}
+    menuTex: {fileID: 0}
+    stageselectTex: {fileID: 0}
+    resultTex: {fileID: 0}
 --- !u!1 &143467954
 GameObject:
   m_ObjectHideFlags: 0

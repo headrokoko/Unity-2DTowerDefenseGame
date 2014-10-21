@@ -15,9 +15,7 @@ namespace Limone{
 		public int weaponNum = 0;
 		private GunShotState gun;
 		public int FireRate = 30;
-		private FloorTrapState floor;
-		private WallTrapState wall;
-		private LoofTrapState loof;
+		private PutTrapState PutTrap;
 		private Vector3 mousepos;
 		private Vector3 screenpos;
 		private Vector3 PutPos;
@@ -51,7 +49,7 @@ namespace Limone{
 					touchobj = cameraRayHit.collider.gameObject;
 					if(touchobj.tag == "Floor"){
 						gamedata.Money -= 100;
-						floor.PutTrap(PutPos);
+						PutTrap.PutFloorTrap(PutPos);
 					}
 				}
 			}
@@ -68,7 +66,7 @@ namespace Limone{
 					touchobj = cameraRayHit.collider.gameObject;
 					if(touchobj.tag == "Wall"){
 						gamedata.Money -= 100;
-						wall.PutTrap(PutPos);
+						PutTrap.PutWallTrap(PutPos);
 					}
 				}
 			}
@@ -85,7 +83,7 @@ namespace Limone{
 					touchobj = cameraRayHit.collider.gameObject;
 					if(touchobj.tag == "Loof"){
 						gamedata.Money -= 100;
-						loof.PutTrap(PutPos);
+						PutTrap.PutLoofTrap(PutPos);
 					}
 				}
 			}
@@ -97,9 +95,7 @@ namespace Limone{
 		public void AttackStateManagerInit(){
 			gamedata = GameObject.Find("GameManager").GetComponent<GameData>();
 			gun = new GunShotState(Bullet,FireRate,GunSE);
-			floor = new FloorTrapState(Floor,TrapSE);
-			wall = new WallTrapState(Wall,TrapSE);
-			loof = new LoofTrapState(Loof,TrapSE);
+			PutTrap = new PutTrapState(Floor,Wall,Loof,TrapSE);
 		}
 	}
 }
