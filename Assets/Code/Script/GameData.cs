@@ -42,6 +42,7 @@ namespace Limone{
 				playerHP = gamedatacontroller.GetPlayerHP(10);
 				BaseHP = gamedatacontroller.GetBaseHP(BaseHP - 3);
 			}
+			Debug.Log("startTex NAme :" + startTexture);
 		}
 		void Reset() {
 			playerHP = initPlayerHP;
@@ -87,10 +88,14 @@ namespace Limone{
 		}
 
 		public Texture2D GiveStartTexture(){
-			return startTexture;
+			Texture2D sendTex = gamedatacontroller.GetStartTexture(startTexture);
+			Debug.Log("与えるテクスチャ" + sendTex);
+			return sendTex;
 		}
 		public string GetStartTextureName(){
-			return startTexture.ToString();
+			string texname = gamedatacontroller.GetStartTexture(startTexture).ToString();
+			Debug.Log("スタートテクスチャの名前 ;" + texname);
+			return texname;
 		}
 		public string GetMenuTextureName(){
 			Debug.Log("MenuTexName :" + menuTexture);

@@ -15,7 +15,6 @@ namespace Limone{
 		public GameData GData;
 
 		public GameDataController(){
-			GData = new GameData();
 		}
 		
 		void Start() {
@@ -39,8 +38,8 @@ namespace Limone{
 			return money;
 		}
 		
-		public Texture2D GetStartTexture(){
-			startTex = GData.GiveStartTexture();
+		public Texture2D GetStartTexture(Texture2D tex){
+			startTex = tex;
 			if(startTex == null){
 				Debug.LogError("テクスチャが設定されていません");
 			}
