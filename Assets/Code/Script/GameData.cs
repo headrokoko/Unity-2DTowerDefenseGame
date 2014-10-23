@@ -13,14 +13,14 @@ namespace Limone{
 		
 		public List<GameObject> cameras;
 		
-		private int initPlayerHP = 10;
+		public int initPlayerHP = 10;
 		private int beginScore;
 
-		public int playerHP;
+		public int playerHP = 10;
 		[HideInInspector]
-		public int BaseHP;
-		public int score;
-		public int Money;
+		public int BaseHP = 15;
+		public int score = 0;
+		public int Money = 1000;
 
 		public GameDataController gamedatacontroller;
 
@@ -39,8 +39,8 @@ namespace Limone{
 
 		void Update(){
 			if(playerHP == 0){
-				playerHP = gamedatacontroller.GetPlayerHP(10);
-				BaseHP = gamedatacontroller.GetBaseHP(BaseHP - 3);
+				playerHP = gamedatacontroller.GetInitPlayerHP();
+				BaseHP = (gamedatacontroller.GetBaseHP() - 3);
 			}
 			Debug.Log("startTex NAme :" + startTexture);
 		}
@@ -62,29 +62,19 @@ namespace Limone{
 			gamedatacontroller = new GameDataController();
 		}
 		public int GetPlayerHPdata(){
-			return playerHP;
+			return gamedatacontroller.GetPlayerHP();
+		}
+		public int GetInitPlayerHPdata(){
+			return gamedatacontroller.GetInitPlayerHP();
 		}
 		public int GetBaseHPdata(){
-			return BaseHP;
+			return gamedatacontroller.GetBaseHP();
 		}
 		public int GetScoredata(){
-			return score;
+			return gamedatacontroller.GetScore();
 		}
 		public int GetMoneydata(){
-			return Money;
-		}
-
-		public int FormatPlayerHP(){
-			return gamedatacontroller.GetPlayerHP(GetPlayerHPdata());
-		}
-		public int FormatBaseHP(){
-			return gamedatacontroller.GetBaseHP(GetBaseHPdata());
-		}
-		public int FormatScore(){
-			return gamedatacontroller.GetScore(GetScoredata());
-		}
-		public int FormatMoney(){
-			return gamedatacontroller.Getmonery(GetMoneydata());
+			return gamedatacontroller.Getmonery();
 		}
 
 		public Texture2D GiveStartTexture(){

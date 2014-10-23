@@ -8,183 +8,87 @@ namespace Limone.Test{
 	[Category("GameData Test")]
 
 	public class GameDataTest{
-		public IGameDataController IPlayerHP;
-		public IGameDataController IBaseHP;
-		public IGameDataController IScore;
-		public IGameDataController IMoney;
-		public GameDataController PlayerHPdata;
-		public GameDataController BaseHPdata;
-		public GameDataController Scoredata;
-		public GameDataController Moneydata;
+		public IGameDataController IGameData;
+		public GameDataController gamedatacontroller;
 		
 		[SetUp] public void Init(){
-			this.IPlayerHP = GetGameDataMock();
-			this.PlayerHPdata = GetPlayerHPMock(IPlayerHP);
-			this.PlayerHPdata.IgamedataController.FormatPlayerHP().Returns(10);
-			this.PlayerHPdata.IgamedataController.GetPlayerHPdata().Returns(10);
-
-			this.IBaseHP = GetGameDataMock();
-			this.BaseHPdata = GetBaseHPMock(IBaseHP);
-			this.BaseHPdata.IgamedataController.FormatBaseHP().Returns(5);
-			this.BaseHPdata.IgamedataController.GetBaseHPdata().Returns(5);
-
-			this.IScore = GetGameDataMock();
-			this.Scoredata = GetScoreMock(IScore);
-			this.Scoredata.IgamedataController.FormatScore().Returns(100);
-			this.Scoredata.IgamedataController.GetScoredata().Returns(100);
-
-			this.IMoney = GetGameDataMock();
-			this.Moneydata = GetMoneyMock(IMoney);
-			this.Moneydata.IgamedataController.FormatMoney().Returns(1000);
-			this.Moneydata.IgamedataController.GetMoneydata().Returns(1000);
-
+			this.IGameData = GetGameDataMock();
+			this.gamedatacontroller = GetGameDataControllerMock(IGameData);
 		}
 
 		
 		[TearDown] public void Cleanup(){
 		}
-		
 		[Test]
-		[Category("PlayerHP Test")]
-		public void PlayerHPTest(){
-			int PlayerHP = PlayerHPdata.GetPlayerHP(10);
-			Assert.That(10,Is.EqualTo(PlayerHP));
+		[Category("PlayerHP Type Test")]
+		public void PlayerHPTypeTest(){
+			Assert.That(gamedatacontroller.GetPlayerHP(),Is.TypeOf(typeof(int)));
 		}
 
 		[Test]
-		[Category("PlayerHP Range Test")]
-		public void PlayerHPRangeTest([Range(-5,5,1)]int x){
-			int PlayerHP = PlayerHPdata.GetPlayerHP(x);
-			Assert.That(x,Is.EqualTo(PlayerHP));
+		[Category("PlayerHP Get Value Test")]
+		public void PlayerHPGetValueTest(){
+			Assert.That(10,Is.EqualTo(gamedatacontroller.GetPlayerHP()));
 		}
 
 		[Test]
-		[Category("PlayerHP Format Test")]
-		public void PlayerFormatTest(){
-			int PlayerHP = IPlayerHP.FormatPlayerHP();
-			Assert.That(10,Is.EqualTo(PlayerHP));
+		[Category("InitPlayerHP Type Test")]
+		public void InitPlayerHPTypeTest(){
+			Assert.That(gamedatacontroller.GetInitPlayerHP(),Is.TypeOf(typeof(int)));
+		}
+		
+		[Test]
+		[Category("PlayerHP Get Value Test")]
+		public void InitPlayerHPGetValueTest(){
+			Assert.That(10,Is.EqualTo(gamedatacontroller.GetInitPlayerHP()));
 		}
 
 		[Test]
-		[Category("Get PlayerHP Test")]
-		public void GetPlayerHPTest(){
-			int PlayerHP = PlayerHPdata.GetPlayerHP(IPlayerHP.GetPlayerHPdata());
-			Assert.That(10,Is.EqualTo(PlayerHP));
+		[Category("BaseHP Type Test")]
+		public void BaseHPTypeTest(){
+			Assert.That(gamedatacontroller.GetBaseHP(),Is.TypeOf(typeof(int)));
 		}
 		
 		[Test]
-		[Category("BaseHP Test")]
-		public void BaseHPTest(){
-			int baseHP = BaseHPdata.GetBaseHP(5);
-			Assert.That(5,Is.EqualTo(baseHP));
+		[Category("BaseHP Get Value Test")]
+		public void BaseHPGetValueTest(){
+			int baseHP = gamedatacontroller.GetBaseHP();
+			Assert.That(15,Is.EqualTo(baseHP));
 		}
 		
 		[Test]
-		[Category("BaseHP Range Test")]
-		public void BaseHPRangeTest([Range(-2,2,1)]int x){
-			int baseHP = BaseHPdata.GetBaseHP(x);
-			Assert.That(x,Is.EqualTo(baseHP));
+		[Category("Score Type Test")]
+		public void ScoreTypeTest(){
+			Assert.That(gamedatacontroller.GetScore(),Is.TypeOf(typeof(int)));
 		}
 		
 		[Test]
-		[Category("BaseHP Format Test")]
-		public void BaseHPFormatTest(){
-			int baseHP = IBaseHP.FormatBaseHP();
-			Assert.That(5,Is.EqualTo(baseHP));
+		[Category("Score Get Value Test")]
+		public void ScoreGetValueTest(){
+			int score = gamedatacontroller.GetScore();
+			Assert.That(0,Is.EqualTo(score));
 		}
 		
 		[Test]
-		[Category("Get BaseHP Test")]
-		public void GetBaseHPTest(){
-			int baseHP = BaseHPdata.GetBaseHP(IBaseHP.GetBaseHPdata());
-			Assert.That(5,Is.EqualTo(baseHP));
+		[Category("Money Type Test")]
+		public void MoneyTypeTest(){
+			Assert.That(gamedatacontroller.Getmonery(),Is.TypeOf(typeof(int)));
 		}
-		
-		[Test]
-		[Category("Score Test")]
-		public void ScoreTest(){
-			int score = Scoredata.GetScore(100);
-			Assert.That(100,Is.EqualTo(score));
-		}
-		
-		[Test]
-		[Category("Score Range Test")]
-		public void ScoreRangeTest([Range(-2,2,1)]int x){
-			int score = Scoredata.GetScore(x);
-			Assert.That(x,Is.EqualTo(score));
-		}
-		
-		[Test]
-		[Category("Score Format Test")]
-		public void ScoreFormatTest(){
-			int score = IScore.FormatScore();
-			Assert.That(100,Is.EqualTo(score));
-		}
-		
-		[Test]
-		[Category("Get Score Test")]
-		public void GetScoreTest(){
-			int score = Scoredata.GetScore(IScore.GetScoredata());
-			Assert.That(100,Is.EqualTo(score));
-		}
-		
-		[Test]
-		[Category("Money Test")]
-		public void MoneyTest(){
-			int money = Moneydata.Getmonery(1000);
-			Assert.That(1000,Is.EqualTo(money));
-		}
-		
-		[Test]
-		[Category("Money Range Test")]
-		public void MoneyRangeTest([Range(-3,3,1)]int x){
-			int money = Moneydata.Getmonery(x);
-			Assert.That(x,Is.EqualTo(money));
-		}
-		
-		[Test]
-		[Category("Money Format Test")]
-		public void MoneyFormatTest(){
-			int money = IMoney.FormatMoney();
-			Assert.That(1000,Is.EqualTo(money));
-		}
-		
 		[Test]
 		[Category("Get Money Test")]
-		public void GetMoneyTest(){
-			int money = Moneydata.Getmonery(IMoney.GetMoneydata());
+		public void MoneyGetValueTest(){
+			int money = gamedatacontroller.Getmonery();
 			Assert.That(1000,Is.EqualTo(money));
 		}
-
-	
-		
 
 		private IGameDataController GetGameDataMock(){
 			return Substitute.For<IGameDataController>();
 		}
 
-		private GameDataController GetPlayerHPMock(IGameDataController PlayerHP){
-			var playerHP = Substitute.For<GameDataController>();
-			playerHP.SetGameDataController(PlayerHP);
-			return playerHP;
-		}
-
-		private GameDataController GetBaseHPMock(IGameDataController BaseHP){
-			var baseHP = Substitute.For<GameDataController>();
-			baseHP.SetGameDataController(BaseHP);
-			return baseHP;
-		}
-
-		private GameDataController GetScoreMock(IGameDataController Score){
-			var score = Substitute.For<GameDataController>();
-			score.SetGameDataController(Score);
-			return score;			
-		}
-
-		private GameDataController GetMoneyMock(IGameDataController Money){
-			var money = Substitute.For<GameDataController>();
-			money.SetGameDataController(Money);
-			return money;
+		private GameDataController GetGameDataControllerMock(IGameDataController Igamedata){
+			var gamedatacontroller = Substitute.For<GameDataController>();
+			gamedatacontroller.SetGameDataController(Igamedata);
+			return gamedatacontroller;
 		}
 
 	}

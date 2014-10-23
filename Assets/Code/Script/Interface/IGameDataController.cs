@@ -6,14 +6,10 @@ namespace Limone{
 	{
 		void GameDataInit();
 		int GetPlayerHPdata();
+		int GetInitPlayerHPdata();
 		int GetBaseHPdata();
 		int GetScoredata();
 		int GetMoneydata();
-
-		int FormatPlayerHP();
-		int FormatBaseHP();
-		int FormatScore();
-		int FormatMoney();
 		
 		string GetStartTextureName();
 		string GetMenuTextureName();

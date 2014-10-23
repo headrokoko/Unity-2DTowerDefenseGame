@@ -11,10 +11,13 @@ namespace Limone{
 		public Texture2D stageselectTex;
 		public Texture2D resultTex;
 
+		public int PlayerHP;
+
 		public IGameDataController IgamedataController;
 		public GameData GData;
 
 		public GameDataController(){
+			GData = new GameData();
 		}
 		
 		void Start() {
@@ -25,17 +28,20 @@ namespace Limone{
 		}
 
 
-		public int GetPlayerHP(int playerHP){
-			return playerHP;
+		public int GetPlayerHP(){
+			return GData.playerHP;
 		}
-		public int GetBaseHP(int BaseHP){
-			return BaseHP;
+		public int GetInitPlayerHP(){
+			return GData.initPlayerHP;
 		}
-		public int GetScore(int score){
-			return score;
+		public int GetBaseHP(){
+			return GData.BaseHP;
 		}
-		public int Getmonery(int money){
-			return money;
+		public int GetScore(){
+			return GData.score;
+		}
+		public int Getmonery(){
+			return GData.Money;
 		}
 		
 		public Texture2D GetStartTexture(Texture2D tex){

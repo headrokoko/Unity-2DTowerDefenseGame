@@ -763,6 +763,7 @@ MonoBehaviour:
   cameras:
   - {fileID: 1713631030}
   - {fileID: 214023259}
+  initPlayerHP: 10
   playerHP: 10
   BaseHP: 10
   score: 0
@@ -772,6 +773,7 @@ MonoBehaviour:
     menuTex: {fileID: 0}
     stageselectTex: {fileID: 0}
     resultTex: {fileID: 0}
+    PlayerHP: 0
     GData: {fileID: 0}
 --- !u!1 &143467954
 GameObject:
