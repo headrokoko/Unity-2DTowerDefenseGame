@@ -4,7 +4,7 @@ using System.Collections;
 namespace Limone{
 	public class EnemyController : AdvancedFSM,IEnemyDataController {
 
-		public int health = 10;
+		public int health = 100;
 		public float Range = 5f;
 		public int BulletDamage = 20;
 		public int SlipDamage = 1;
@@ -21,11 +21,13 @@ namespace Limone{
 
 		protected override void Initialize()
 		{
-			health = 100;
+			gamedata = GameObject.Find("GameManager").GetComponent<GameData>();
+			Edatacontroller = new EnemyDataController();
+
+			health = Edatacontroller.GetEnemyHealth();
 		
 			elapsedTime = 0.0f;
 			shootRate = 2.0f;
-			gamedata = GameObject.Find("GameManager").GetComponent<GameData>();
 		
 			GameObject objPlayer = GameObject.FindGameObjectWithTag("Player");
 			GameObject objTarget = GameObject.FindGameObjectWithTag("Defense");
@@ -171,16 +173,16 @@ namespace Limone{
 		}
 
 		public int FormatEnemyHealth(){
-			return Edatacontroller.GetEnemyHealth(GetEnemyHealth());
+			return Edatacontroller.GetEnemyHealth();
 		}
 		public int FormatBulletDamage(){
-			return Edatacontroller.GetBulletDamage(GetBulletDamage());
+			return Edatacontroller.GetBulletDamage();
 		}
 		public int FormatSlipDamage(){
-			return Edatacontroller.GetSlipDamage(GetSlipDamage());
+			return Edatacontroller.GetSlipDamage();
 		}
 		public float FormatRange(){
-			return Edatacontroller.GetRange(GetRange());
+			return Edatacontroller.GetRange();
 		}
 	}
 }

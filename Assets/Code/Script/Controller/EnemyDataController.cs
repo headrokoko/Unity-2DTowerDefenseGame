@@ -7,28 +7,30 @@ namespace Limone{
 	public class EnemyDataController{
 
 		public IEnemyDataController EDatacontroller;
+		public EnemyController Edata;
 
 		public EnemyDataController(){
+			Edata = new EnemyController();
 		}
 		
 		public void SetEnemyDataController(IEnemyDataController eDatacontroller){
 			this.EDatacontroller = eDatacontroller;
 		}
 
-		public int GetEnemyHealth(int enemyhealth){
-			return enemyhealth;
+		public int GetEnemyHealth(){
+			return Edata.health;
 		}
 
-		public int GetBulletDamage(int bulletdamage){
-			return bulletdamage;
+		public int GetBulletDamage(){
+			return Edata.BulletDamage;
 		}
 
-		public int GetSlipDamage(int slipdamage){
-			return slipdamage;
+		public int GetSlipDamage(){
+			return Edata.SlipDamage;
 		}
 
-		public float GetRange(float range){
-			return range;
+		public float GetRange(){
+			return Edata.SlipDamage;
 		}
 	}
 
