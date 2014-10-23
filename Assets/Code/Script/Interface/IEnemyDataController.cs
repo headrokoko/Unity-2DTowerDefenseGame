@@ -7,9 +7,5 @@ namespace Limone{
 		int GetBulletDamage();
 		int GetSlipDamage();
 		float GetRange();
-		int FormatEnemyHealth();	
-		int FormatBulletDamage();
-		int FormatSlipDamage();
-		float FormatRange();
 	}
 }

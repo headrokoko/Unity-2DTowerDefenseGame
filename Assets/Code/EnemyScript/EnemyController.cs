@@ -17,11 +17,12 @@ namespace Limone{
 	
 		//NPC FSMの初期化
 		public EnemyController(){
+			Edatacontroller = new EnemyDataController();
 		}
 
 		protected override void Initialize()
 		{
-			health = 100;
+			health = Edatacontroller.GetEnemyHealth();
 		
 			elapsedTime = 0.0f;
 			shootRate = 2.0f;
@@ -158,29 +159,16 @@ namespace Limone{
 		}
 
 		public int GetEnemyHealth(){
-			return health;
+			return Edatacontroller.GetEnemyHealth();
 		}
 		public int GetBulletDamage(){
-			return BulletDamage;
+			return Edatacontroller.GetBulletDamage();
 		}
 		public int GetSlipDamage(){
-			return SlipDamage;
+			return Edatacontroller.GetSlipDamage();
 		}
 		public float GetRange(){
-			return Range;
-		}
-
-		public int FormatEnemyHealth(){
-			return Edatacontroller.GetEnemyHealth(GetEnemyHealth());
-		}
-		public int FormatBulletDamage(){
-			return Edatacontroller.GetBulletDamage(GetBulletDamage());
-		}
-		public int FormatSlipDamage(){
-			return Edatacontroller.GetSlipDamage(GetSlipDamage());
-		}
-		public float FormatRange(){
-			return Edatacontroller.GetRange(GetRange());
+			return Edatacontroller.GetRange();
 		}
 	}
 }
