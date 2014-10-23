@@ -5,7 +5,7 @@ namespace Limone{
 	public class EnemyController : AdvancedFSM,IEnemyDataController {
 
 		public int health = 100;
-		public float Range = 5f;
+		public float Range = 5.0f;
 		public int BulletDamage = 20;
 		public int SlipDamage = 1;
 		public AudioClip deadse;

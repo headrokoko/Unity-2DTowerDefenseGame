@@ -38,7 +38,27 @@ namespace Limone.Test{
 		public void RangeTypeTest(){
 			Assert.That(enemydatacontroller.GetRange(),Is.TypeOf(typeof(float)));
 		}
-
+		//Enemy Data Get Value Test
+		[Test]
+		[Category("Enemy Health Get Value Test")]
+		public void EnemyHealthGetValueTest(){
+			Assert.That(100,Is.EqualTo(enemydatacontroller.GetEnemyHealth()));
+		}
+		[Test]
+		[Category("Bullet Damage Get Value Test")]
+		public void BulletDamageGetValueTest(){
+			Assert.That(20,Is.EqualTo(enemydatacontroller.GetBulletDamage()));
+		}
+		[Test]
+		[Category("Slip Damage Get Value Test")]
+		public void SlipDamageGetValueTest(){
+			Assert.That(1,Is.EqualTo(enemydatacontroller.GetSlipDamage()));
+		}
+		[Test]
+		[Category("Range Get Value Test")]
+		public void RangeGetValueTest(){
+			Assert.That(5.0f,Is.EqualTo(enemydatacontroller.GetRange()));
+		}
 
 		private IEnemyDataController EnemyDataMock(){
 			return Substitute.For<IEnemyDataController>();

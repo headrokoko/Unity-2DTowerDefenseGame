@@ -30,7 +30,7 @@ namespace Limone{
 		}
 
 		public float GetRange(){
-			return Edata.SlipDamage;
+			return Edata.Range;
 		}
 	}
 
