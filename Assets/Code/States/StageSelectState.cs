@@ -26,6 +26,7 @@ namespace Limone{
 				Time.timeScale = 1;
 				StartSe.PlayOneShot(StartSe.clip);
 				Debug.Log("ステージ１");
+				player.transform.position = new Vector3(0.0f,2.0f,0.0f);
 				gamemanager.SwichState(new PlayStateFollowCam(gamemanager));
 			}
 		
@@ -35,6 +36,7 @@ namespace Limone{
 				Time.timeScale = 1;
 				StartSe.PlayOneShot(StartSe.clip);
 				Debug.Log("ステージ2");
+				player.transform.position = new Vector3(0.0f,2.0f,0.0f);
 				gamemanager.SwichState(new PlayStateFollowCam(gamemanager));
 			}
 		
@@ -44,6 +46,7 @@ namespace Limone{
 				Time.timeScale = 1;
 				StartSe.PlayOneShot(StartSe.clip);
 				Debug.Log("ステージ3");
+				player.transform.position = new Vector3(0.0f,2.0f,0.0f);
 				gamemanager.SwichState(new PlayStateFollowCam(gamemanager));
 			}
 		
@@ -53,6 +56,7 @@ namespace Limone{
 				Time.timeScale = 1;
 				StartSe.PlayOneShot(StartSe.clip);
 				Debug.Log("ステージ4");
+				player.transform.position = new Vector3(0.0f,2.0f,0.0f);
 				gamemanager.SwichState(new PlayStateFollowCam(gamemanager));
 			}
 		
