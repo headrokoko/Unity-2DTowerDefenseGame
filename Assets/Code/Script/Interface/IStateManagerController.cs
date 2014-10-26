@@ -4,7 +4,6 @@ namespace Limone{
 	public interface IStateManagerController {
 
 		void StateManagerInit();
-		string FormatStateManager();
-		string GetStateName();
+		string SwichState(IState istate);
 	}
 }

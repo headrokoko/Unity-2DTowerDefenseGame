@@ -5,7 +5,7 @@ using Limone;
 namespace Limone{
 	public class GameStateManager : MonoBehaviour,IStateManagerController {
 	
-		private IState activeState;
+		public IState activeState;
 		private IState activeCameraState;
 		public StateManagerController statecontroller;
 		[HideInInspector]
@@ -45,23 +45,17 @@ namespace Limone{
 			}
 		}
 	
-		public void SwichState(IState newState){
+		public string SwichState(IState newState){
 			activeState = newState;
 			Debug.Log(activeState);
+			return activeState.ToString();
 		}
+
 
 		public void StateManagerInit(){
 			activeState = new GameBeginState(this);
 			Debug.Log("First scene State " + activeState);
 			gameData = GetComponent<GameData> ();	
-		}
-
-		public string FormatStateManager(){
-			return statecontroller.GetStateName(GetStateName());
-		}
-
-		public string GetStateName(){
-			return activeState.ToString();
 		}
 	}
 }
