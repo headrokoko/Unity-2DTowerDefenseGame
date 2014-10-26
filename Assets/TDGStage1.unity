@@ -2688,7 +2688,7 @@ GameObject:
   - 4: {fileID: 469524052}
   - 114: {fileID: 469524053}
   m_Layer: 0
-  m_Name: EnemySpwanManager
+  m_Name: EnemySpawnManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3286,7 +3286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1c925b59ef9394b8e6fcb320fb8d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreText: {fileID: 578762970}
 --- !u!132 &578762970
 GUIText:
   m_ObjectHideFlags: 0
@@ -4556,7 +4555,7 @@ Transform:
   m_Children:
   - {fileID: 1428481561}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &863000144
 GameObject:
   m_ObjectHideFlags: 0
@@ -5289,15 +5288,22 @@ MonoBehaviour:
   startTexture: {fileID: 2800000, guid: 52207cebe9e2a1849976b529682da511, type: 3}
   menuTexture: {fileID: 2800000, guid: 478502ff8f98f554fad309dc70ac856d, type: 3}
   stageselectTexture: {fileID: 2800000, guid: 2ab21de6fc772bb43ba8b7b6ac23ddd5, type: 3}
-  tradeTexture: {fileID: 0}
   resultTexture: {fileID: 2800000, guid: f6485a08a7ffa7f4a95c2cdd5486cebc, type: 3}
   cameras:
   - {fileID: 1356419517}
   - {fileID: 626223916}
+  initPlayerHP: 10
   playerHP: 10
   BaseHP: 10
   score: 0
   Money: 200
+  gamedatacontroller:
+    startTex: {fileID: 0}
+    menuTex: {fileID: 0}
+    stageselectTex: {fileID: 0}
+    resultTex: {fileID: 0}
+    PlayerHP: 0
+    GData: {fileID: 0}
 --- !u!1 &1079384607
 GameObject:
   m_ObjectHideFlags: 0
@@ -5422,6 +5428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b53594a6c5ad49c46ad144a04a217868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BaseHPText: {fileID: 0}
 --- !u!132 &1115997055
 GUIText:
   m_ObjectHideFlags: 0
@@ -6353,7 +6360,7 @@ Transform:
   m_PrefabInternal: {fileID: 2077578026}
   m_GameObject: {fileID: 1283957053}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 0, y: -8.7937201e-07, z: 2.20401025}
+  m_LocalPosition: {x: 0, y: -2.94995743e-08, z: 2.96419573}
   m_LocalScale: {x: 16.2894669, y: 1, z: 8.16878319}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7117,7 +7124,7 @@ Transform:
   - {fileID: 8635987}
   - {fileID: 489995637}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1 &1408105229
 GameObject:
   m_ObjectHideFlags: 0
@@ -7493,7 +7500,7 @@ GameObject:
   - 23: {fileID: 1473326613}
   - 114: {fileID: 1473326612}
   m_Layer: 0
-  m_Name: Enemy spwaner
+  m_Name: Enemy spawner
   m_TagString: Spwaner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7525,8 +7532,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 5400000, guid: 99fd56756159db846a9ae722e8cbfdde, type: 2}
   EnemyCount: 10
-  SpwanStartTime: 5
-  SpwanTime: 3
+  SpawnStartTime: 5
+  SpawnTime: 1
 --- !u!23 &1473326613
 Renderer:
   m_ObjectHideFlags: 0
@@ -7795,7 +7802,7 @@ Transform:
   m_Children:
   - {fileID: 197549662}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
 --- !u!114 &1597567805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7947,7 +7954,7 @@ GameObject:
   - 23: {fileID: 1629973614}
   - 114: {fileID: 1629973613}
   m_Layer: 0
-  m_Name: Enemy spwaner
+  m_Name: Enemy spawner
   m_TagString: Spwaner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7967,8 +7974,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 5400000, guid: 99fd56756159db846a9ae722e8cbfdde, type: 2}
   EnemyCount: 10
-  SpwanStartTime: 5
-  SpwanTime: 3
+  SpawnStartTime: 5
+  SpawnTime: 1
 --- !u!23 &1629973614
 Renderer:
   m_ObjectHideFlags: 0
@@ -8429,7 +8436,7 @@ GameObject:
   - 23: {fileID: 1805916970}
   - 114: {fileID: 1805916969}
   m_Layer: 0
-  m_Name: Enemy spwaner
+  m_Name: Enemy spawner
   m_TagString: Spwaner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8461,8 +8468,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 5400000, guid: 99fd56756159db846a9ae722e8cbfdde, type: 2}
   EnemyCount: 10
-  SpwanStartTime: 5
-  SpwanTime: 3
+  SpawnStartTime: 5
+  SpawnTime: 1
 --- !u!23 &1805916970
 Renderer:
   m_ObjectHideFlags: 0
@@ -9062,11 +9069,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4e59fdd631e577849a72823a50409649, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -8.7937201e-07
+      value: -2.94995743e-08
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4e59fdd631e577849a72823a50409649, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 2.20401025
+      value: 2.96419573
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4e59fdd631e577849a72823a50409649, type: 2}
       propertyPath: m_LocalRotation.x

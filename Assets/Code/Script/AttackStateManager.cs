@@ -20,6 +20,7 @@ namespace Limone{
 		private Vector3 screenpos;
 		private Vector3 PutPos;
 		private GameObject touchobj;
+		private RaycastHit cameraRayHit;
 
 		public AttackStateController attackstatecontroller;
 		
@@ -38,56 +39,72 @@ namespace Limone{
 			}
 			//FloorTrap
 			else if(weaponNum == 1){
-				RaycastHit cameraRayHit;
-				var CameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-				mousepos = Input.mousePosition;
-				screenpos = Camera.main.ScreenToWorldPoint(mousepos);
-				Floor.transform.position = screenpos;
-				if(Input.GetMouseButtonDown(0) && Physics.Raycast(CameraRay,out cameraRayHit,500.0f) && gamedata.Money >= 100){
-					PutPos = cameraRayHit.point;
-					PutPos.z = 0.0f;
-					touchobj = cameraRayHit.collider.gameObject;
-					if(touchobj.tag == "Floor"){
-						gamedata.Money -= 100;
-						PutTrap.PutFloorTrap(PutPos);
-					}
-				}
+				FloorTrap();
 			}
 			//WallTrap
 			else if(weaponNum == 2){
-				RaycastHit cameraRayHit;
-				var CameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-				mousepos = Input.mousePosition;
-				screenpos = Camera.main.ScreenToWorldPoint(mousepos);
-				Wall.transform.position = screenpos;
-				if(Input.GetMouseButtonDown(0) && Physics.Raycast(CameraRay,out cameraRayHit,500.0f) && gamedata.Money >= 100){
-					PutPos = cameraRayHit.point;
-					PutPos.z = 2.3f;
-					touchobj = cameraRayHit.collider.gameObject;
-					if(touchobj.tag == "Wall"){
-						gamedata.Money -= 100;
-						PutTrap.PutWallTrap(PutPos);
-					}
-				}
+				WallTrap();
 			}
 			//LoofTrap
 			else if(weaponNum == 3){
-				RaycastHit cameraRayHit;
-				var CameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-				mousepos = Input.mousePosition;
-				screenpos = Camera.main.ScreenToWorldPoint(mousepos);
-				Loof.transform.position = screenpos;
-				if(Input.GetMouseButtonDown(0) && Physics.Raycast(CameraRay,out cameraRayHit,500.0f) && gamedata.Money >= 100){
-					PutPos = cameraRayHit.point;
-					PutPos.z = 0.0f;
-					touchobj = cameraRayHit.collider.gameObject;
-					if(touchobj.tag == "Loof"){
-						gamedata.Money -= 100;
-						PutTrap.PutLoofTrap(PutPos);
-					}
+				LoofTrap();
+			}
+		}
+
+		public void FloorTrap(){
+			var CameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+			GetClickPos();
+			ClickPosOffset();
+			Floor.transform.position = screenpos;
+			if(Input.GetMouseButtonDown(0) && Physics.Raycast(CameraRay,out cameraRayHit,500.0f) && gamedata.Money >= 100){
+				TrapPosOffset(0.0f);
+				touchobj = cameraRayHit.collider.gameObject;
+				if(touchobj.tag == "Floor"){
+					gamedata.Money -= 100;
+					PutTrap.PutFloorTrap(PutPos);
 				}
 			}
 		}
+		public void WallTrap(){
+			var CameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+			GetClickPos();
+			ClickPosOffset();
+			Wall.transform.position = screenpos;
+			if(Input.GetMouseButtonDown(0) && Physics.Raycast(CameraRay,out cameraRayHit,500.0f) && gamedata.Money >= 100){
+				TrapPosOffset(2.3f);
+				touchobj = cameraRayHit.collider.gameObject;
+				if(touchobj.tag == "Wall"){
+					gamedata.Money -= 100;
+					PutTrap.PutWallTrap(PutPos);
+				}
+			}
+		}
+		public void LoofTrap(){
+			var CameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+			GetClickPos();
+			ClickPosOffset();
+			Loof.transform.position = screenpos;
+			if(Input.GetMouseButtonDown(0) && Physics.Raycast(CameraRay,out cameraRayHit,500.0f) && gamedata.Money >= 100){
+				TrapPosOffset(0.0f);
+				touchobj = cameraRayHit.collider.gameObject;
+				if(touchobj.tag == "Loof"){
+					gamedata.Money -= 100;
+					PutTrap.PutLoofTrap(PutPos);
+				}
+			}
+		}
+
+		public void GetClickPos(){
+			mousepos = Input.mousePosition;
+		}
+		public void ClickPosOffset(){
+			screenpos = Camera.main.ScreenToWorldPoint(mousepos);
+		}
+		public void TrapPosOffset(float offset){
+			PutPos = cameraRayHit.point;
+			PutPos.z = offset;
+		}
+
 		public void AttackChange(int newWeaponNum){
 			weaponNum = newWeaponNum;
 			Debug.Log("Atack mode ;" + weaponNum);
