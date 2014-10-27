@@ -24,6 +24,8 @@ namespace Limone{
 	
 		public void Render(){
 		}
+		public void Init(){
+		}
 
 		void CameraChange(){
 			foreach(GameObject camera in manager.gameData.cameras){

@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
-using Limone;
 
 namespace Limone{
 	public class GameBeginState : IState {
 	
 		private GameStateManager gamemanager;
 		private GameDataController Gamecontroller;
+		private AttackStateManager attackmanager;
+
 		public GameBeginState(GameStateManager gamestateManager){
 			gamemanager = gamestateManager;
 			Gamecontroller = new GameDataController();
@@ -20,6 +21,9 @@ namespace Limone{
 				Time.timeScale = 1;
 				gamemanager.SwichState(new MenuState(gamemanager));
 			}
+		}
+
+		void Init(){
 		}
 	
 		public void Render(){

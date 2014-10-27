@@ -13,10 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   optionsFoldout: 0
   filtersFoldout: 0
-  runOnRecompilation: 0
+  runOnRecompilation: 1
   horizontalSplit: 1
   autoSaveSceneBeforeRun: 0
-  runTestOnANewScene: 0
+  runTestOnANewScene: 1
   categoriesMask: 0
   testFilter: 
   showFailed: 1

@@ -742,6 +742,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 369fcaa220294a842bc8fc69e5dd2089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statecontroller:
+    statemanager: {fileID: 0}
   gameData: {fileID: 0}
   SEbool: 0
 --- !u!114 &135345562

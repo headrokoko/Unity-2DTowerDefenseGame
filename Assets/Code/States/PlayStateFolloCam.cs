@@ -2,34 +2,41 @@
 
 namespace Limone{
 	public class PlayStateFollowCam : IState {
+
 		private GameStateManager gamemanager;
 		private GameData gamedata;
 		private SpawnController spawncontroller;
 		private AttackStateManager Attackmanager;
 		private FollowCamera Fcamera;
-	
+		private bool inibool = true;
+
 		public PlayStateFollowCam(GameStateManager gamestateManager){
 			gamemanager = gamestateManager;
-			Debug.Log("Follor com state");
+			gamemanager.SEbool = true;
+		}
+		
+		void Init(){
 			gamedata = GameObject.Find("GameManager").GetComponent<GameData>();
 			Attackmanager = GameObject.Find("Player").GetComponent<AttackStateManager>();
 			Fcamera = GameObject.Find("FollowCamera").GetComponent<FollowCamera>();
-			gamemanager.SEbool = true;
+			Debug.Log("Follor com state");
 		}
 	
 		public void StateUpdata(){
+			if(inibool){
+				inibool = false;
+				Init ();
+			}
 			//Debug.Log("play state stateup");
 			spawncontroller = GameObject.Find("EnemySpawnManager").GetComponent<SpawnController>();
 
 			if(Input.GetKeyDown(KeyCode.Return)){
-				Time.timeScale = 0;
-				gamemanager.SwichState(new ResultState(gamemanager));
+				StateMove();
 			}
 
 			//Baseの耐久値が０
 			if(gamedata.BaseHP <= 0){
-				Time.timeScale = 0;
-				gamemanager.SwichState(new ResultState(gamemanager));			
+				StateMove();	
 			}
 
 			//既定のWave数をこなす
@@ -60,6 +67,13 @@ namespace Limone{
 				Attackmanager.weaponNum = 3;
 				Fcamera.CameraChange(false);
 			}
+		}
+
+		public void StateMove(){
+			Time.timeScale = 0;
+			gamemanager.SEbool = false;
+			gamemanager.SwichState(new ResultState(gamemanager));
+			inibool = true;
 		}
 
 		public void Render(){

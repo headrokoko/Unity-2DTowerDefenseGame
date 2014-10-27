@@ -51,11 +51,14 @@ namespace Limone{
 			return activeState.ToString();
 		}
 
-
 		public void StateManagerInit(){
 			activeState = new GameBeginState(this);
 			Debug.Log("First scene State " + activeState);
 			gameData = GetComponent<GameData> ();	
+		}
+
+		public string FormatState(){
+			return statecontroller.GetStateName();
 		}
 	}
 }

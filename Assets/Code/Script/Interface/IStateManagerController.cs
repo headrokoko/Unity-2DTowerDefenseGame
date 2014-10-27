@@ -5,5 +5,6 @@ namespace Limone{
 
 		void StateManagerInit();
 		string SwichState(IState istate);
+		string FormatState();
 	}
 }

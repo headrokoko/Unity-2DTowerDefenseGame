@@ -33,14 +33,14 @@ namespace Limone{
 			Debug.Log(startTexture);
 		}
 		
-		void Start() {
+		public void Init(){
 			GameDataInit();
 		}
 
 		void Update(){
 			if(playerHP == 0){
-				playerHP = gamedatacontroller.GetInitPlayerHP();
-				BaseHP = (gamedatacontroller.GetBaseHP() - 3);
+				playerHP = initPlayerHP;
+				BaseHP = BaseHP - 3;
 			}
 			Debug.Log("startTex NAme :" + startTexture);
 		}
