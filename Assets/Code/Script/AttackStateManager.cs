@@ -16,9 +16,12 @@ namespace Limone{
 		private GunShotState gun;
 		public int FireRate = 30;
 		private PutTrapState PutTrap;
-		private Vector3 mousepos;
-		private Vector3 screenpos;
-		private Vector3 PutPos;
+
+		[HideInInspector]
+		public Vector3 mousepos;
+		[HideInInspector]
+		public Vector3 screenpos;
+		public Vector3 PutPos;
 		private GameObject touchobj;
 		private RaycastHit cameraRayHit;
 
@@ -94,15 +97,27 @@ namespace Limone{
 			}
 		}
 
-		public void GetClickPos(){
+		public string FormatClickPos(){
+			return mousepos.ToString();
+		}
+		public string FormatClickPosOffset(){
+			return screenpos.ToString();
+		}
+
+		public string GetClickPos(){
 			mousepos = Input.mousePosition;
+			return mousepos.ToString();
 		}
-		public void ClickPosOffset(){
+
+		public string ClickPosOffset(){
 			screenpos = Camera.main.ScreenToWorldPoint(mousepos);
+			return screenpos.ToString();
 		}
-		public void TrapPosOffset(float offset){
+
+		public string TrapPosOffset(float offset){
 			PutPos = cameraRayHit.point;
 			PutPos.z = offset;
+			return PutPos.z.ToString();
 		}
 
 		public void AttackChange(int newWeaponNum){
