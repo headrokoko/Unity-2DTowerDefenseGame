@@ -114,10 +114,10 @@ namespace Limone{
 			return screenpos.ToString();
 		}
 
-		public string TrapPosOffset(float offset){
+		public float TrapPosOffset(float offset){
 			PutPos = cameraRayHit.point;
 			PutPos.z = offset;
-			return PutPos.z.ToString();
+			return PutPos.z;
 		}
 
 		public void AttackChange(int newWeaponNum){

@@ -341,6 +341,11 @@ MonoBehaviour:
   TrapSE: {fileID: 8300000, guid: b1b76a8158b94d247bd5609062d04a6b, type: 3}
   weaponNum: 0
   FireRate: 30
+  mousepos: {x: 0, y: 0, z: 0}
+  screenpos: {x: 0, y: 0, z: 0}
+  PutPos: {x: 0, y: 0, z: 0}
+  attackstatecontroller:
+    attackstatemanager: {fileID: 0}
 --- !u!114 &11574416
 MonoBehaviour:
   m_ObjectHideFlags: 0
