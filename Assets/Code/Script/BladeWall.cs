@@ -16,23 +16,14 @@ namespace Limone{
 			bladewallcontroller.SetBladeWallController(this);
 		}
 
-		// Use this for initialization
-		void Start () {
-	
-		}	
-	
-		// Update is called once per frame
-		void Update () {
-	
-		}
-
 		void OnTriggerStay(Collider collider){
 			if((collider.gameObject.tag == "Enemy") && trap){
+				IntegrationTest.Pass(gameObject);
 				Debug.Log("BladeWall ON");
 				trap = false;
 				TrapBool = true;
 				GetComponent<Animator>().SetBool("OnTrap",TrapBool);
-				collider.GetComponent<EnemyController>().health -= damage;
+				//collider.GetComponent<EnemyController>().health -= damage;
 				StartCoroutine("Reload");
 			}
 		}

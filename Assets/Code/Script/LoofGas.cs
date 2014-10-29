@@ -13,17 +13,10 @@ namespace Limone{
 		public void OnEnable(){
 			loofgas.SetLoofGasController(this);
 		}
-		// Use this for initialization
-		void Start () {
-		
-		}
-		
-		// Update is called once per frame
-		void Update () {
-		}
 
 		void OnTriggerEnter(Collider collider){
 			if((collider.gameObject.tag == "Enemy") && gasbool){
+				IntegrationTest.Pass(gameObject);
 				Debug.Log("LoofGas ON");
 				Transform putpos = transform;
 				Instantiate(gasObj, putpos.position + new Vector3(0.0f,-2.0f,0.0f),putpos.rotation);

@@ -27,6 +27,7 @@ namespace Limone{
 		void OnTriggerStay(Collider CollisionObj){
 			//Debug.Log ("OnTrap");
 			if((CollisionObj.gameObject.tag == "Enemy") && trap){
+				IntegrationTest.Pass(gameObject);
 				trap = false;
 				TrapBool = true;
 				//Debug.Log ("TrapOn");
