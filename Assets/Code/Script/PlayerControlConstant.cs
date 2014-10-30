@@ -14,6 +14,7 @@ namespace Limone{
 		private GameData gameData;
 		private int contactTime;
 		private GameObject UnityChan;
+		private bool renderbool = false;
 
 		public PlayerControllerController playercontroller;
 
@@ -100,6 +101,10 @@ namespace Limone{
 				Movepow = playerSpeed;
 				OnFloor = true;
 			}
+
+			if(OnFloor && renderbool){
+				IntegrationTest.Pass(gameObject);
+			}
 		}
 		//Floorから離れたとき
 		void OnCollisionExit(Collision CollisionObj){
@@ -120,6 +125,9 @@ namespace Limone{
 		public void PlayerControllerInit(){
 			gameData = GameObject.Find("GameManager").GetComponent<GameData>();
 			UnityChan = GameObject.Find("unitychan");
+		}
+		void OnBecameVisible(){
+			renderbool = true;
 		}
 	}
 }
