@@ -4,7 +4,7 @@ using System.Collections;
 namespace Limone{
 	public class BladeWall : MonoBehaviour,IBladeWallController {
 
-		public int damage = 50;
+		public GameObject obj;
 		public float ReloadTime = 3.0f;
 		private bool trap = true;
 		private bool TrapBool = false;
@@ -18,10 +18,11 @@ namespace Limone{
 
 		void OnTriggerStay(Collider collider){
 			if((collider.gameObject.tag == "Enemy") && trap){
-				IntegrationTest.Pass(gameObject);
 				Debug.Log("BladeWall ON");
 				trap = false;
 				TrapBool = true;
+				Transform putpos = transform;
+				Instantiate(obj, putpos.position + new Vector3(0.0f,0.0f,-2.0f),putpos.rotation);
 				GetComponent<Animator>().SetBool("OnTrap",TrapBool);
 				//collider.GetComponent<EnemyController>().health -= damage;
 				StartCoroutine("Reload");
@@ -35,9 +36,19 @@ namespace Limone{
 			TrapBool = false;
 			GetComponent<Animator>().SetBool("OnTrap",TrapBool);
 			Debug.Log("Walltrapready");
+			Integration();
 		}
 		public void BladeWallInit(){
 		
+		}
+		//リロード完了でテストをパス
+		public void Integration(){
+			if(trap){
+				IntegrationTest.Pass(gameObject);
+			}
+			else{
+				IntegrationTest.Fail(gameObject);
+			}
 		}
 	}
 }

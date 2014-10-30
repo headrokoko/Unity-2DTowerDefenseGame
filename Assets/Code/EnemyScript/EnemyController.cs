@@ -8,6 +8,7 @@ namespace Limone{
 		public float Range = 5.0f;
 		public int BulletDamage = 20;
 		public int SlipDamage = 1;
+		public int ImpactDamage = 50;
 		public AudioClip deadse;
 
 		private GameData gamedata;
@@ -116,6 +117,16 @@ namespace Limone{
 					SetTransition(Transition.NoHealth);
 				}
 			}
+
+			if(collider.gameObject.tag == "Impact"){
+				health -= ImpactDamage;
+				if (health <= 0)
+				{
+					Debug.Log("Switch to Dead State");
+					SetTransition(Transition.NoHealth);
+				}
+			}
+
 			if (collider.gameObject.tag == "Dead")
 			{
 				Debug.Log("Switch to Dead State");

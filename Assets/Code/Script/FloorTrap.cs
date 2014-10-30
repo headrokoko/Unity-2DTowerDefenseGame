@@ -27,7 +27,6 @@ namespace Limone{
 		void OnTriggerStay(Collider CollisionObj){
 			//Debug.Log ("OnTrap");
 			if((CollisionObj.gameObject.tag == "Enemy") && trap){
-				IntegrationTest.Pass(gameObject);
 				trap = false;
 				TrapBool = true;
 				//Debug.Log ("TrapOn");
@@ -50,10 +49,20 @@ namespace Limone{
 			yield return new WaitForSeconds(ReloadTime);
 			trap = true;
 			TrapBool = false;
+			Integration();
 			GetComponent<Animator>().SetBool("OnTrap",TrapBool);
 			//Debug.Log("trapready");
 		}
 		public void FloorTrapInit(){
+		}
+		//リロード完了でテストをパス
+		public void Integration(){
+			if(trap){
+				IntegrationTest.Pass(gameObject);
+			}
+			else{
+				IntegrationTest.Fail(gameObject);
+			}
 		}
 	}
 }

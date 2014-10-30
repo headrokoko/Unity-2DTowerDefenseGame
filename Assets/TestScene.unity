@@ -4130,6 +4130,7 @@ MonoBehaviour:
   Range: 5
   BulletDamage: 20
   SlipDamage: 1
+  ImpactDamage: 50
   deadse: {fileID: 8300000, guid: 816ea0e74e178654cbff25a4c5db9b95, type: 3}
   Edatacontroller:
     Edata: {fileID: 0}

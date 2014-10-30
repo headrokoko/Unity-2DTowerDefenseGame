@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf9a1adfcf3e564f960fc2d14238f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  obj: {fileID: 100000, guid: 23c0e8159590f2645970a5963a8c33bc, type: 2}
   ReloadTime: 3
 --- !u!95 &39913231
 Animator:
@@ -947,7 +947,7 @@ GameObject:
   - 4: {fileID: 972947807}
   - 114: {fileID: 972947808}
   m_Layer: 0
-  m_Name: Trap Wall Trigger Test
+  m_Name: Trap Wall Trigger to instance Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -978,7 +978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1dba0b27b0864740a8720e920aa88c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeout: 5
+  timeout: 10
   ignored: 0
   succeedAfterAllAssertionsAreExecuted: 0
   expectException: 0
@@ -1370,6 +1370,7 @@ MonoBehaviour:
   gasObj: {fileID: 100000, guid: 97de265fd7ea8b54cbe83ce5cd8b3493, type: 2}
   gasbool: 1
   ReloadTime: 5
+  putbool: 0
 --- !u!199 &1221992354
 ParticleSystemRenderer:
   m_ObjectHideFlags: 0
@@ -3438,7 +3439,7 @@ GameObject:
   - 4: {fileID: 2011209938}
   - 114: {fileID: 2011209937}
   m_Layer: 0
-  m_Name: Trap Loof Trigger Test
+  m_Name: Trap Loof Trigger to instance Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3455,7 +3456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1dba0b27b0864740a8720e920aa88c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeout: 5
+  timeout: 10
   ignored: 0
   succeedAfterAllAssertionsAreExecuted: 0
   expectException: 0

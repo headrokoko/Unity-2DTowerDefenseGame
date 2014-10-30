@@ -68,6 +68,9 @@ namespace UnityTest
 
         public void Start()
         {
+			//自動でタイムスケールをアクティブにする
+			Time.timeScale = 1;
+
             m_StartTime = Time.time;
             m_StartFrame = afterFrames;
             TryToCallTesting(Functions.Start);
