@@ -14,9 +14,9 @@ namespace Limone{
 		private GameData gameData;
 		private int contactTime;
 		private GameObject UnityChan;
-		private bool renderbool = false;
 
 		public PlayerControllerController playercontroller;
+		private GameManagerIntegrationTest inttest;
 
 		public void OnEnable(){
 			playercontroller.SetPlayerControllerController(this);
@@ -100,10 +100,7 @@ namespace Limone{
 				//Debug.Log("KeepFloor");
 				Movepow = playerSpeed;
 				OnFloor = true;
-			}
-
-			if(OnFloor && renderbool){
-				IntegrationTest.Pass(gameObject);
+				inttest.Floorcollision = true;
 			}
 		}
 		//Floorから離れたとき
@@ -125,9 +122,10 @@ namespace Limone{
 		public void PlayerControllerInit(){
 			gameData = GameObject.Find("GameManager").GetComponent<GameData>();
 			UnityChan = GameObject.Find("unitychan");
+			inttest = GameObject.Find("GameManager").GetComponent<GameManagerIntegrationTest>();
 		}
 		void OnBecameVisible(){
-			renderbool = true;
+			inttest.CameraRender = true;
 		}
 	}
 }

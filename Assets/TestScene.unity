@@ -182,6 +182,7 @@ GameObject:
   - 114: {fileID: 11574416}
   - 114: {fileID: 11574415}
   - 82: {fileID: 11574413}
+  - 114: {fileID: 11574417}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -362,6 +363,18 @@ MonoBehaviour:
   JumpPower: 1000
   Bullet: {fileID: 5400000, guid: c1f627c2d3f9781449c0c832661fe9e0, type: 2}
   FireFlameRate: 10
+--- !u!114 &11574417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 11574408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b67cae23109934184185c152005905, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentobj: {fileID: 0}
 --- !u!1 &12612645
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,7 +747,7 @@ Transform:
   - {fileID: 234598311}
   - {fileID: 1048170720}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!114 &135345561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -811,7 +824,7 @@ Transform:
   - {fileID: 423695051}
   - {fileID: 932123176}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &172388799
 GameObject:
   m_ObjectHideFlags: 0
