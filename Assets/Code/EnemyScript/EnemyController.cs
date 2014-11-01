@@ -11,9 +11,12 @@ namespace Limone{
 		public int ImpactDamage = 50;
 		public AudioClip deadse;
 
+		public bool MarchCheck = false;
+		public bool AttackCheck = false;
 		private GameData gamedata;
 		private bool deadcount = true;
 		public EnemyDataController Edatacontroller;
+		public GameManagerIntegrationTest inttest;
 	
 	
 		//NPC FSMの初期化
@@ -23,6 +26,7 @@ namespace Limone{
 		protected override void Initialize()
 		{
 			gamedata = GameObject.Find("GameManager").GetComponent<GameData>();
+			inttest = GameObject.Find("GameManager").GetComponent<GameManagerIntegrationTest>();
 			Edatacontroller = new EnemyDataController();
 
 			health = Edatacontroller.GetEnemyHealth();
@@ -54,9 +58,12 @@ namespace Limone{
 	
 		protected override void FSMFixedUpdate()
 		{
-			//Debug.Log("Actib state :" + CurrentState);
+			Debug.Log("Actib state :" + CurrentState);
 			CurrentState.Reason(playerTransform, transform);
 			CurrentState.Act(playerTransform, transform, targetTransform);
+			if(CurrentState.ToString() == "Limone.PlayerAttackState"){
+				IntegrationStateTest();
+			}
 			if((health <= 0) && deadcount){
 				deadcount = false;
 				GetComponent<BoxCollider>().enabled = false;
@@ -168,6 +175,10 @@ namespace Limone{
 		void OnDrawGizmos(){
 			Vector3 frontend = transform.position + (transform.forward * 10.0f) ;
 			Debug.DrawLine(transform.position,frontend,Color.red);
+		}
+
+		void IntegrationStateTest(){
+			inttest.EnemyStateCheck = true;
 		}
 
 		public int GetEnemyHealth(){

@@ -8,6 +8,8 @@ namespace Limone{
 		public bool CameraRender = false;
 		public bool ParentCheck = false;
 		public bool ChildrenCheck = false;
+		public bool EnemyStateCheck = false;
+		public bool PlayerDamageCheck = false;
 		// Use this for initialization
 		void Start () {
 		
@@ -15,7 +17,12 @@ namespace Limone{
 		
 		// Update is called once per frame
 		void Update () {
-			if(Floorcollision & CameraRender & ParentCheck & ChildrenCheck){
+			if(Floorcollision & 
+			   CameraRender & 
+			   ParentCheck & 
+			   ChildrenCheck &
+			   EnemyStateCheck &
+			   PlayerDamageCheck){
 				IntegrationTest.Pass(gameObject);				
 			}
 		}

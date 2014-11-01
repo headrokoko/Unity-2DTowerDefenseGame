@@ -65,6 +65,7 @@ namespace Limone{
 			if((collider.gameObject.tag == "Enemy")&&(contactTime == 0)){
 				gameData.playerHP -= 1;
 				UnityChan.GetComponent<Animator>().SetBool("DamageOn",true);
+				inttest.PlayerDamageCheck = true;
 			}
 			contactTime++;
 
