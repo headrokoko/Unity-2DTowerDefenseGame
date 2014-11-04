@@ -58,7 +58,7 @@ namespace Limone{
 	
 		protected override void FSMFixedUpdate()
 		{
-			Debug.Log("Actib state :" + CurrentState);
+			//Debug.Log("Actib state :" + CurrentState);
 			CurrentState.Reason(playerTransform, transform);
 			CurrentState.Act(playerTransform, transform, targetTransform);
 			if(CurrentState.ToString() == "Limone.PlayerAttackState"){
