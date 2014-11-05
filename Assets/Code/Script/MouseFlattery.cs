@@ -15,15 +15,22 @@ namespace Limone{
 		public float offset = 15.0f;
 
 		private AttackStateManager attackstate;
+		private GameManagerIntegrationTest inttest;
 
 		public MouseFlattery(){
 		}
 
 		void Start(){
 			attackstate = GameObject.Find("Player").GetComponent<AttackStateManager>();
+			inttest = GameObject.Find("GameManager").GetComponent<GameManagerIntegrationTest>();
 			floor = GameObject.Find("SpringTrapBase").GetComponent<SkinnedMeshRenderer>();
 			wall = GameObject.Find("BladeWall.001").GetComponent<SkinnedMeshRenderer>();
 			loof = GameObject.Find("LoofGas").GetComponent<MeshRenderer>();
+			if((floor != null)&
+			   (wall != null)&
+			   (loof != null)){
+				inttest.MouseFlatteryCheck = true;
+			}
 		}
 
 		// Update is called once per frame

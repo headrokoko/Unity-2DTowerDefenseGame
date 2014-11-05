@@ -12,6 +12,7 @@ namespace Limone{
 		public GameObject ChildZoomOutCamera;
 		public GameObject ChildMony;
 		public GameObject ChildBaseHP; 
+		public GameObject ChildMouseFlattery;
 
 		private GameManagerIntegrationTest inttest;
 
@@ -25,15 +26,17 @@ namespace Limone{
 			ChildZoomOutCamera = gameObject.transform.FindChild("ZoomOutCamera").gameObject;
 			ChildMony = gameObject.transform.FindChild("Money").gameObject;
 			ChildBaseHP = gameObject.transform.FindChild("Base HP").gameObject;
+			ChildMouseFlattery = gameObject.transform.FindChild("MouseFlattery").gameObject;
 
-			if((ChildPlayer != null) && 
-			   (ChildLight != null) &&
-			   (ChildScore != null) &&
-			   (ChildPlayerHP != null) &&
-			   (ChildFollorCamera != null)&&
-			   (ChildZoomOutCamera != null) &&
-			   (ChildMony != null)&&
-			   (ChildBaseHP != null)){
+			if((ChildPlayer != null) & 
+			   (ChildLight != null) &
+			   (ChildScore != null) &		   
+			   (ChildPlayerHP != null) &
+			   (ChildFollorCamera != null) &
+			   (ChildZoomOutCamera != null) &
+			   (ChildMony != null)&
+			   (ChildBaseHP != null)&
+			   (ChildMouseFlattery != null)){
 				inttest.ChildrenCheck = true;
 			}
 		}

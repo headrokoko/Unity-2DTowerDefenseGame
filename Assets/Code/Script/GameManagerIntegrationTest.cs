@@ -10,6 +10,8 @@ namespace Limone{
 		public bool ChildrenCheck = false;
 		public bool EnemyStateCheck = false;
 		public bool PlayerDamageCheck = false;
+		public bool MouseFlatteryCheck = false;
+
 		// Use this for initialization
 		void Start () {
 		
@@ -22,7 +24,8 @@ namespace Limone{
 			   ParentCheck & 
 			   ChildrenCheck &
 			   EnemyStateCheck &
-			   PlayerDamageCheck){
+			   PlayerDamageCheck
+			   ){
 				IntegrationTest.Pass(gameObject);				
 			}
 		}

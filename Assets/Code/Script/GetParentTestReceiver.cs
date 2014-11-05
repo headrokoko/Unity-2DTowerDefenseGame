@@ -13,7 +13,7 @@ namespace Limone{
 
 		public int ChildrenCount(){
 			childrennum++;
-			if(childrennum == 8){
+			if(childrennum == 9){
 				inttest.ParentCheck = true;
 			}
 			return childrennum;
