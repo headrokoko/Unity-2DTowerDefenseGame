@@ -23,6 +23,7 @@ namespace Limone{
 		public int Money = 1000;
 
 		public GameDataController gamedatacontroller;
+		private GameManagerIntegrationTest inttest;
 
 		public GameData(){
 		}
@@ -31,6 +32,7 @@ namespace Limone{
 			//下のthisにはインターフェース(IGameDataController)が入る
 			gamedatacontroller.SetGameDataController(this);
 			Debug.Log(startTexture);
+			GameDataInit();
 		}
 		
 		public void Init(){
@@ -60,6 +62,8 @@ namespace Limone{
 		public void GameDataInit(){
 			playerHP = initPlayerHP;
 			gamedatacontroller = new GameDataController();
+			inttest = gameObject.GetComponent<GameManagerIntegrationTest>();
+			TextureNullCheck();
 		}
 		public int GetPlayerHPdata(){
 			return gamedatacontroller.GetPlayerHP();
@@ -77,48 +81,13 @@ namespace Limone{
 			return gamedatacontroller.Getmonery();
 		}
 
-		public Texture2D GiveStartTexture(){
-			Texture2D sendTex = gamedatacontroller.GetStartTexture(startTexture);
-			Debug.Log("与えるテクスチャ" + sendTex);
-			return sendTex;
-		}
-		public string GetStartTextureName(){
-			string texname = gamedatacontroller.GetStartTexture(startTexture).ToString();
-			Debug.Log("スタートテクスチャの名前 ;" + texname);
-			return texname;
-		}
-		public string GetMenuTextureName(){
-			Debug.Log("MenuTexName :" + menuTexture);
-			return menuTexture.ToString();
-		}
-		public string GetStageSelectTextureName(){
-			Debug.Log("StageSelectTexName :" + stageselectTexture);
-			return stageselectTexture.ToString();
-		}
-		//public string GetTradeTextureName(){
-			//return tradeTexture.ToString();
-		//}
-		public string GetResultTextureName(){
-			Debug.Log("ResultTexName :" + resultTexture);
-			return resultTexture.ToString();
-		}
-
-		public string FormatStartTextureName(){
-			Debug.Log(startTexture);
-			string texname = GetStartTextureName();
-			return texname;
-		}
-		public string FormatMenuTextureName(){
-			return gamedatacontroller.GetMenuTecture(GetMenuTextureName());
-		}
-		public string FormatStageSelectTextureName(){
-			return gamedatacontroller.GetStageSelectTexture(GetStageSelectTextureName());
-		}
-		//public string FormatTradeTextureName(){
-			//return gamedatacontroller.GetTradeTexture(GetTradeTextureName());
-		//}
-		public string FormatResultTextureName(){
-			return gamedatacontroller.GetResultTexture(GetResultTextureName());
+		public void TextureNullCheck(){
+			if((startTexture != null)&
+			   (menuTexture != null)&
+			   (stageselectTexture != null)&
+			   (resultTexture != null)){
+				inttest.BackGroundTextureCheck = true;
+			}
 		}
 
 	}

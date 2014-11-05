@@ -21,22 +21,20 @@ namespace Limone{
 		}
 
 		void Start(){
-			attackstate = GameObject.Find("Player").GetComponent<AttackStateManager>();
-			inttest = GameObject.Find("GameManager").GetComponent<GameManagerIntegrationTest>();
-			floor = GameObject.Find("SpringTrapBase").GetComponent<SkinnedMeshRenderer>();
-			wall = GameObject.Find("BladeWall.001").GetComponent<SkinnedMeshRenderer>();
-			loof = GameObject.Find("LoofGas").GetComponent<MeshRenderer>();
-			if((floor != null)&
-			   (wall != null)&
-			   (loof != null)){
-				inttest.MouseFlatteryCheck = true;
-			}
+			MouseFlatttryInit();
 		}
 
 		// Update is called once per frame
 		void Update () {
 			//var CameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 			//mouseoverobj = cameraRayHit.collider.gameObject;
+			AlphaSwhich();
+			GetScreenPos();
+			gameObject.transform.position = screenpos;
+
+		}
+
+		public void AlphaSwhich(){
 			if((attackstate.weaponNum == 1)){
 				floor.enabled = true;
 				wall.enabled = false;
@@ -57,12 +55,25 @@ namespace Limone{
 				wall.enabled = false;
 				loof.enabled = false;
 			}
+		}
+
+		public void GetScreenPos(){
 			mousepos = Input.mousePosition;
 			mousepos.z = offset;
 			screenpos = Camera.main.ScreenToWorldPoint(mousepos);
+		}
 
-			gameObject.transform.position = screenpos;
-
+		public void MouseFlatttryInit(){
+			attackstate = GameObject.Find("Player").GetComponent<AttackStateManager>();
+			inttest = GameObject.Find("GameManager").GetComponent<GameManagerIntegrationTest>();
+			floor = GameObject.Find("SpringTrapBase").GetComponent<SkinnedMeshRenderer>();
+			wall = GameObject.Find("BladeWall.001").GetComponent<SkinnedMeshRenderer>();
+			loof = GameObject.Find("LoofGas").GetComponent<MeshRenderer>();
+			if((floor != null)&
+			   (wall != null)&
+			   (loof != null)){
+				inttest.MouseFlatteryCheck = true;
+			}
 		}
 	
 	}

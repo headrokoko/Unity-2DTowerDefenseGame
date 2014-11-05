@@ -43,25 +43,5 @@ namespace Limone{
 		public int Getmonery(){
 			return GData.Money;
 		}
-		
-		public Texture2D GetStartTexture(Texture2D tex){
-			startTex = tex;
-			if(startTex == null){
-				Debug.LogError("テクスチャが設定されていません");
-			}
-			return startTex;
-		}
-		public string GetMenuTecture(string MenuTexure){
-			return MenuTexure;
-		}
-		public string GetStageSelectTexture(string StageSelectTexture){
-			return StageSelectTexture;
-		}
-		public string GetTradeTexture(string TradeTexture){
-			return TradeTexture;
-		}
-		public string GetResultTexture(string ResultTexture){
-			return ResultTexture;
-		}
 	}
 }
