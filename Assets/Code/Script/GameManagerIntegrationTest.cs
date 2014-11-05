@@ -12,6 +12,7 @@ namespace Limone{
 		public bool PlayerDamageCheck = false;
 		public bool MouseFlatteryCheck = false;
 		public bool BackGroundTextureCheck = false;
+		public bool AudioCheck = false;
 
 		// Use this for initialization
 		void Start () {
@@ -27,7 +28,8 @@ namespace Limone{
 			   EnemyStateCheck &
 			   PlayerDamageCheck &
 			   MouseFlatteryCheck &
-			   BackGroundTextureCheck
+			   BackGroundTextureCheck &
+			   AudioCheck
 			   ){
 				IntegrationTest.Pass(gameObject);				
 			}

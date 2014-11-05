@@ -9,8 +9,8 @@ namespace Limone{
 		public GameObject Floor;
 		public GameObject Wall;
 		public GameObject Loof;
-		public AudioClip GunSE;
-		public AudioClip TrapSE;
+		private AudioClip GunSE;
+		private AudioClip TrapSE;
 		private GameObject Weapon;
 		public int weaponNum = 0;
 		private GunShotState gun;
@@ -26,6 +26,7 @@ namespace Limone{
 		private RaycastHit cameraRayHit;
 
 		public AttackStateController attackstatecontroller;
+		private SECheck secheck;
 		
 		public void OnEnable(){
 			attackstatecontroller.SetAttackStateManagerController(this);
@@ -126,6 +127,9 @@ namespace Limone{
 		}
 		public void AttackStateManagerInit(){
 			gamedata = GameObject.Find("GameManager").GetComponent<GameData>();
+			secheck = gameObject.GetComponentInParent<SECheck>();
+			GunSE = secheck.GunShotSE;
+			TrapSE = secheck.PutTrapSE;
 			gun = new GunShotState(Bullet,FireRate,GunSE);
 			PutTrap = new PutTrapState(Floor,Wall,Loof,TrapSE);
 		}

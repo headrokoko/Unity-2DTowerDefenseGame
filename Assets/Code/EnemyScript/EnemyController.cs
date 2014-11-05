@@ -9,7 +9,7 @@ namespace Limone{
 		public int BulletDamage = 20;
 		public int SlipDamage = 1;
 		public int ImpactDamage = 50;
-		public AudioClip deadse;
+		private AudioClip deadse;
 
 		public bool MarchCheck = false;
 		public bool AttackCheck = false;
@@ -17,6 +17,7 @@ namespace Limone{
 		private bool deadcount = true;
 		public EnemyDataController Edatacontroller;
 		public GameManagerIntegrationTest inttest;
+		private SECheck secheck;
 	
 	
 		//NPC FSMの初期化
@@ -27,6 +28,8 @@ namespace Limone{
 		{
 			gamedata = GameObject.Find("GameManager").GetComponent<GameData>();
 			inttest = GameObject.Find("GameManager").GetComponent<GameManagerIntegrationTest>();
+			secheck = GameObject.Find("GameManager").GetComponent<SECheck>();
+			deadse = secheck.EnemyDownSE;
 			Edatacontroller = new EnemyDataController();
 
 			health = Edatacontroller.GetEnemyHealth();

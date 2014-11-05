@@ -1006,6 +1006,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: e1dfdbd4dfdc2c44fa76abef33d147c5, type: 2}
+      propertyPath: startTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 52207cebe9e2a1849976b529682da511, type: 3}
+    - target: {fileID: 11400006, guid: e1dfdbd4dfdc2c44fa76abef33d147c5, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400042, guid: e1dfdbd4dfdc2c44fa76abef33d147c5, type: 2}
+      propertyPath: EnemyDownSE
+      value: 
+      objectReference: {fileID: 8300000, guid: 816ea0e74e178654cbff25a4c5db9b95, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e1dfdbd4dfdc2c44fa76abef33d147c5, type: 2}
   m_RootGameObject: {fileID: 321852065}
@@ -1407,7 +1419,6 @@ MonoBehaviour:
   BulletDamage: 20
   SlipDamage: 1
   ImpactDamage: 50
-  deadse: {fileID: 8300000, guid: 816ea0e74e178654cbff25a4c5db9b95, type: 3}
   MarchCheck: 0
   AttackCheck: 0
   Edatacontroller:
@@ -1955,6 +1966,7 @@ GameObject:
   - 114: {fileID: 321852069}
   - 114: {fileID: 321852070}
   - 114: {fileID: 321852071}
+  - 114: {fileID: 321852073}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2063,6 +2075,7 @@ MonoBehaviour:
   PlayerDamageCheck: 0
   MouseFlatteryCheck: 0
   BackGroundTextureCheck: 0
+  AudioCheck: 0
 --- !u!114 &321852071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2084,6 +2097,22 @@ MonoBehaviour:
   ChildMony: {fileID: 0}
   ChildBaseHP: {fileID: 0}
   ChildMouseFlattery: {fileID: 0}
+--- !u!114 &321852073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400042, guid: e1dfdbd4dfdc2c44fa76abef33d147c5,
+    type: 2}
+  m_PrefabInternal: {fileID: 171590408}
+  m_GameObject: {fileID: 321852065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f4ec48b3d23bb847bb6d52b096ca528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyDownSE: {fileID: 8300000, guid: 816ea0e74e178654cbff25a4c5db9b95, type: 3}
+  GunShotSE: {fileID: 8300000, guid: 4775fc75e340b0d4e98b8c16651b5b1e, type: 3}
+  PutTrapSE: {fileID: 8300000, guid: b1b76a8158b94d247bd5609062d04a6b, type: 3}
+  StartSE: {fileID: 8300000, guid: cae2767ca17854e4cbb019b360039a6f, type: 3}
 --- !u!1 &324989247
 GameObject:
   m_ObjectHideFlags: 0
@@ -3467,7 +3496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &635923220
 Transform:
   m_ObjectHideFlags: 2
@@ -5664,8 +5693,6 @@ MonoBehaviour:
   Floor: {fileID: 100008, guid: 202627b44310390469c28a9bea7b33ce, type: 2}
   Wall: {fileID: 100008, guid: dc1fd1d4accb38848b31d69319990f07, type: 2}
   Loof: {fileID: 100000, guid: 2374c1336030ae64aaad28287ed55f68, type: 2}
-  GunSE: {fileID: 8300000, guid: 4775fc75e340b0d4e98b8c16651b5b1e, type: 3}
-  TrapSE: {fileID: 8300000, guid: b1b76a8158b94d247bd5609062d04a6b, type: 3}
   weaponNum: 0
   FireRate: 30
   mousepos: {x: 0, y: 0, z: 0}
