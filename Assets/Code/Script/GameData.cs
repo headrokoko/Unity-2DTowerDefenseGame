@@ -44,7 +44,7 @@ namespace Limone{
 				playerHP = initPlayerHP;
 				BaseHP = BaseHP - 3;
 			}
-			Debug.Log("startTex NAme :" + startTexture);
+			//Debug.Log("startTex NAme :" + startTexture);
 		}
 		void Reset() {
 			playerHP = initPlayerHP;

@@ -33,6 +33,7 @@ namespace Limone{
 			   AudioCheck &
 			   BaseDamageCheck
 			   ){
+				//IntegrationTest.Assert(CameraRender,"CameraCheck");
 				IntegrationTest.Pass(gameObject);				
 			}
 		}

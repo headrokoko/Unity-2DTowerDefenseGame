@@ -8,7 +8,7 @@ namespace Limone{
 		private int childrennum = 0;
 		public GameManagerIntegrationTest inttest;
 		void Start(){
-			inttest = GameObject.Find("GameManager").GetComponent<GameManagerIntegrationTest>();
+			inttest = gameObject.GetComponent<GameManagerIntegrationTest>();
 		}
 
 		public int ChildrenCount(){

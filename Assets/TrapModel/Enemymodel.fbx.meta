@@ -1,0 +1,480 @@
+fileFormatVersion: 2
+guid: 5c6dc53277c19b945bc221381a6ab87f
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: _________
+    100002: Avatar
+    100004: Avatar_shadow
+    100006: Avatar|aAvatar Center
+    100008: Avatar|aChest
+    100010: Avatar|aChin
+    100012: Avatar|aL Forearm
+    100014: Avatar|aL Lower Leg
+    100016: Avatar|aL Upper Arm
+    100018: Avatar|aL Upper Leg
+    100020: Avatar|aLeft Ear
+    100022: Avatar|aLeft Eyeball
+    100024: Avatar|aLeft Foot
+    100026: Avatar|aLeft Hand
+    100028: Avatar|aLeft Hip
+    100030: Avatar|aLeft Pec
+    100032: Avatar|aLeft Shoulder
+    100034: Avatar|aMouth
+    100036: Avatar|aNeck
+    100038: Avatar|AnkleLeft
+    100040: Avatar|AnkleRight
+    100042: Avatar|aNose
+    100044: Avatar|aPelvis
+    100046: Avatar|aR Forearm
+    100048: Avatar|aR Lower Leg
+    100050: Avatar|aR Upper Arm
+    100052: Avatar|aR Upper Leg
+    100054: Avatar|aRight Ear
+    100056: Avatar|aRight Eyeball
+    100058: Avatar|aRight Foot
+    100060: Avatar|aRight Hand
+    100062: Avatar|aRight Hip
+    100064: Avatar|aRight Pec
+    100066: Avatar|aRight Shoulder
+    100068: Avatar|aSkull
+    100070: Avatar|aSpine
+    100072: Avatar|aStomach
+    100074: Avatar|BELLY
+    100076: Avatar|BUTT
+    100078: Avatar|CHEST
+    100080: Avatar|Chest
+    100082: Avatar|COG
+    100084: Avatar|CollarLeft
+    100086: Avatar|CollarLinkLeft
+    100088: Avatar|CollarLinkRight
+    100090: Avatar|CollarRight
+    100092: Avatar|ElbowLeft
+    100094: Avatar|ElbowRight
+    100096: Avatar|EyeLeft
+    100098: Avatar|EyeRight
+    100100: Avatar|EyeTarget
+    100102: Avatar|FootLeft
+    100104: Avatar|FootRight
+    100106: Avatar|HEAD
+    100108: Avatar|Head
+    100110: Avatar|HipLeft
+    100112: Avatar|HipLinkLeft
+    100114: Avatar|HipLinkRight
+    100116: Avatar|HipRight
+    100118: Avatar|ikAnkleLeft
+    100120: Avatar|ikAnkleRight
+    100122: Avatar|ikElbowLineLeft
+    100124: Avatar|ikElbowLineRight
+    100126: Avatar|ikElbowTargetLeft
+    100128: Avatar|ikElbowTargetRight
+    100130: Avatar|ikFootBallLeft
+    100132: Avatar|ikFootBallRight
+    100134: Avatar|ikFootPivotLeft
+    100136: Avatar|ikFootPivotRight
+    100138: Avatar|ikHeelLeft
+    100140: Avatar|ikHeelRight
+    100142: Avatar|ikKneeLineLeft
+    100144: Avatar|ikKneeLineRight
+    100146: Avatar|ikKneeTargetLeft
+    100148: Avatar|ikKneeTargetRight
+    100150: Avatar|ikWristLeft
+    100152: Avatar|ikWristRight
+    100154: Avatar|KneeLeft
+    100156: Avatar|KneeRight
+    100158: Avatar|L_CLAVICLE
+    100160: Avatar|L_FOOT
+    100162: Avatar|L_HAND
+    100164: Avatar|L_LOWER_ARM
+    100166: Avatar|L_LOWER_LEG
+    100168: Avatar|L_UPPER_ARM
+    100170: Avatar|L_UPPER_LEG
+    100172: Avatar|LEFT_HANDLE
+    100174: Avatar|LEFT_PEC
+    100176: Avatar|LOWER_BACK
+    100178: Avatar|mAnkleLeft
+    100180: Avatar|mAnkleRight
+    100182: Avatar|mChest
+    100184: Avatar|mCollarLeft
+    100186: Avatar|mCollarRight
+    100188: Avatar|mElbowLeft
+    100190: Avatar|mElbowRight
+    100192: Avatar|mEyeLeft
+    100194: Avatar|mEyeRight
+    100196: Avatar|mFootLeft
+    100198: Avatar|mFootRight
+    100200: Avatar|mHead
+    100202: Avatar|mHipLeft
+    100204: Avatar|mHipRight
+    100206: Avatar|mKneeLeft
+    100208: Avatar|mKneeRight
+    100210: Avatar|mNeck
+    100212: Avatar|mPelvis
+    100214: Avatar|mShoulderLeft
+    100216: Avatar|mShoulderRight
+    100218: Avatar|mSkull
+    100220: Avatar|mToeLeft
+    100222: Avatar|mToeRight
+    100224: Avatar|mTorso
+    100226: Avatar|mWristLeft
+    100228: Avatar|mWristRight
+    100230: Avatar|NECK
+    100232: Avatar|Neck
+    100234: Avatar|Origin
+    100236: Avatar|PELVIS
+    100238: Avatar|Pelvis
+    100240: Avatar|PelvisInv
+    100242: Avatar|R_CLAVICLE
+    100244: Avatar|R_FOOT
+    100246: Avatar|R_HAND
+    100248: Avatar|R_LOWER_ARM
+    100250: Avatar|R_LOWER_LEG
+    100252: Avatar|R_UPPER_ARM
+    100254: Avatar|R_UPPER_LEG
+    100256: Avatar|RIGHT_HANDLE
+    100258: Avatar|RIGHT_PEC
+    100260: Avatar|ShoulderLeft
+    100262: Avatar|ShoulderRight
+    100264: Avatar|Skull
+    100266: Avatar|ToeLeft
+    100268: Avatar|ToeRight
+    100270: Avatar|Torso
+    100272: Avatar|UPPER_BACK
+    100274: Avatar|WristLeft
+    100276: Avatar|WristRight
+    100278: Camera
+    100280: Cube
+    100282: CustomShape_Circle03
+    100284: CustomShape_Circle05
+    100286: CustomShape_Circle10
+    100288: CustomShape_COG
+    100290: CustomShape_Collar
+    100292: CustomShape_EyeTarget
+    100294: CustomShape_Foot
+    100296: CustomShape_FootPivot
+    100298: CustomShape_Hand
+    100300: CustomShape_Head
+    100302: CustomShape_Line
+    100304: CustomShape_Neck
+    100306: CustomShape_Origin
+    100308: CustomShape_Pelvis
+    100310: CustomShape_Target
+    100312: CustomShape_Torso
+    100314: CustomShape_Volume
+    100316: CustomShapes
+    100318: //RootNode
+    100320: eyeBallLeftMesh
+    100322: eyeBallRightMesh
+    100324: eyelashMesh
+    100326: hairMesh
+    100328: headMesh
+    100330: Lamp
+    100332: lowerBodyMesh
+    100334: skirtMesh
+    100336: upperBodyMesh
+    100338: z_eyeBallLeftMesh(shadow)
+    100340: z_eyeBallRightMesh(shadow)
+    100342: z_eyelashMesh(shadow)
+    100344: z_hairMesh(shadow)
+    100346: z_headMesh(shadow)
+    100348: z_lowerBodyMesh(shadow)
+    100350: z_skirtMesh(shadow)
+    100352: z_upperBodyMesh(shadow)
+    400000: _________
+    400002: Avatar
+    400004: Avatar_shadow
+    400006: Avatar|aAvatar Center
+    400008: Avatar|aChest
+    400010: Avatar|aChin
+    400012: Avatar|aL Forearm
+    400014: Avatar|aL Lower Leg
+    400016: Avatar|aL Upper Arm
+    400018: Avatar|aL Upper Leg
+    400020: Avatar|aLeft Ear
+    400022: Avatar|aLeft Eyeball
+    400024: Avatar|aLeft Foot
+    400026: Avatar|aLeft Hand
+    400028: Avatar|aLeft Hip
+    400030: Avatar|aLeft Pec
+    400032: Avatar|aLeft Shoulder
+    400034: Avatar|aMouth
+    400036: Avatar|aNeck
+    400038: Avatar|AnkleLeft
+    400040: Avatar|AnkleRight
+    400042: Avatar|aNose
+    400044: Avatar|aPelvis
+    400046: Avatar|aR Forearm
+    400048: Avatar|aR Lower Leg
+    400050: Avatar|aR Upper Arm
+    400052: Avatar|aR Upper Leg
+    400054: Avatar|aRight Ear
+    400056: Avatar|aRight Eyeball
+    400058: Avatar|aRight Foot
+    400060: Avatar|aRight Hand
+    400062: Avatar|aRight Hip
+    400064: Avatar|aRight Pec
+    400066: Avatar|aRight Shoulder
+    400068: Avatar|aSkull
+    400070: Avatar|aSpine
+    400072: Avatar|aStomach
+    400074: Avatar|BELLY
+    400076: Avatar|BUTT
+    400078: Avatar|CHEST
+    400080: Avatar|Chest
+    400082: Avatar|COG
+    400084: Avatar|CollarLeft
+    400086: Avatar|CollarLinkLeft
+    400088: Avatar|CollarLinkRight
+    400090: Avatar|CollarRight
+    400092: Avatar|ElbowLeft
+    400094: Avatar|ElbowRight
+    400096: Avatar|EyeLeft
+    400098: Avatar|EyeRight
+    400100: Avatar|EyeTarget
+    400102: Avatar|FootLeft
+    400104: Avatar|FootRight
+    400106: Avatar|HEAD
+    400108: Avatar|Head
+    400110: Avatar|HipLeft
+    400112: Avatar|HipLinkLeft
+    400114: Avatar|HipLinkRight
+    400116: Avatar|HipRight
+    400118: Avatar|ikAnkleLeft
+    400120: Avatar|ikAnkleRight
+    400122: Avatar|ikElbowLineLeft
+    400124: Avatar|ikElbowLineRight
+    400126: Avatar|ikElbowTargetLeft
+    400128: Avatar|ikElbowTargetRight
+    400130: Avatar|ikFootBallLeft
+    400132: Avatar|ikFootBallRight
+    400134: Avatar|ikFootPivotLeft
+    400136: Avatar|ikFootPivotRight
+    400138: Avatar|ikHeelLeft
+    400140: Avatar|ikHeelRight
+    400142: Avatar|ikKneeLineLeft
+    400144: Avatar|ikKneeLineRight
+    400146: Avatar|ikKneeTargetLeft
+    400148: Avatar|ikKneeTargetRight
+    400150: Avatar|ikWristLeft
+    400152: Avatar|ikWristRight
+    400154: Avatar|KneeLeft
+    400156: Avatar|KneeRight
+    400158: Avatar|L_CLAVICLE
+    400160: Avatar|L_FOOT
+    400162: Avatar|L_HAND
+    400164: Avatar|L_LOWER_ARM
+    400166: Avatar|L_LOWER_LEG
+    400168: Avatar|L_UPPER_ARM
+    400170: Avatar|L_UPPER_LEG
+    400172: Avatar|LEFT_HANDLE
+    400174: Avatar|LEFT_PEC
+    400176: Avatar|LOWER_BACK
+    400178: Avatar|mAnkleLeft
+    400180: Avatar|mAnkleRight
+    400182: Avatar|mChest
+    400184: Avatar|mCollarLeft
+    400186: Avatar|mCollarRight
+    400188: Avatar|mElbowLeft
+    400190: Avatar|mElbowRight
+    400192: Avatar|mEyeLeft
+    400194: Avatar|mEyeRight
+    400196: Avatar|mFootLeft
+    400198: Avatar|mFootRight
+    400200: Avatar|mHead
+    400202: Avatar|mHipLeft
+    400204: Avatar|mHipRight
+    400206: Avatar|mKneeLeft
+    400208: Avatar|mKneeRight
+    400210: Avatar|mNeck
+    400212: Avatar|mPelvis
+    400214: Avatar|mShoulderLeft
+    400216: Avatar|mShoulderRight
+    400218: Avatar|mSkull
+    400220: Avatar|mToeLeft
+    400222: Avatar|mToeRight
+    400224: Avatar|mTorso
+    400226: Avatar|mWristLeft
+    400228: Avatar|mWristRight
+    400230: Avatar|NECK
+    400232: Avatar|Neck
+    400234: Avatar|Origin
+    400236: Avatar|PELVIS
+    400238: Avatar|Pelvis
+    400240: Avatar|PelvisInv
+    400242: Avatar|R_CLAVICLE
+    400244: Avatar|R_FOOT
+    400246: Avatar|R_HAND
+    400248: Avatar|R_LOWER_ARM
+    400250: Avatar|R_LOWER_LEG
+    400252: Avatar|R_UPPER_ARM
+    400254: Avatar|R_UPPER_LEG
+    400256: Avatar|RIGHT_HANDLE
+    400258: Avatar|RIGHT_PEC
+    400260: Avatar|ShoulderLeft
+    400262: Avatar|ShoulderRight
+    400264: Avatar|Skull
+    400266: Avatar|ToeLeft
+    400268: Avatar|ToeRight
+    400270: Avatar|Torso
+    400272: Avatar|UPPER_BACK
+    400274: Avatar|WristLeft
+    400276: Avatar|WristRight
+    400278: Camera
+    400280: Cube
+    400282: CustomShape_Circle03
+    400284: CustomShape_Circle05
+    400286: CustomShape_Circle10
+    400288: CustomShape_COG
+    400290: CustomShape_Collar
+    400292: CustomShape_EyeTarget
+    400294: CustomShape_Foot
+    400296: CustomShape_FootPivot
+    400298: CustomShape_Hand
+    400300: CustomShape_Head
+    400302: CustomShape_Line
+    400304: CustomShape_Neck
+    400306: CustomShape_Origin
+    400308: CustomShape_Pelvis
+    400310: CustomShape_Target
+    400312: CustomShape_Torso
+    400314: CustomShape_Volume
+    400316: CustomShapes
+    400318: //RootNode
+    400320: eyeBallLeftMesh
+    400322: eyeBallRightMesh
+    400324: eyelashMesh
+    400326: hairMesh
+    400328: headMesh
+    400330: Lamp
+    400332: lowerBodyMesh
+    400334: skirtMesh
+    400336: upperBodyMesh
+    400338: z_eyeBallLeftMesh(shadow)
+    400340: z_eyeBallRightMesh(shadow)
+    400342: z_eyelashMesh(shadow)
+    400344: z_hairMesh(shadow)
+    400346: z_headMesh(shadow)
+    400348: z_lowerBodyMesh(shadow)
+    400350: z_skirtMesh(shadow)
+    400352: z_upperBodyMesh(shadow)
+    2300000: _________
+    2300002: Cube
+    2300004: CustomShape_Circle03
+    2300006: CustomShape_Circle05
+    2300008: CustomShape_Circle10
+    2300010: CustomShape_COG
+    2300012: CustomShape_Collar
+    2300014: CustomShape_EyeTarget
+    2300016: CustomShape_Foot
+    2300018: CustomShape_FootPivot
+    2300020: CustomShape_Hand
+    2300022: CustomShape_Head
+    2300024: CustomShape_Line
+    2300026: CustomShape_Neck
+    2300028: CustomShape_Origin
+    2300030: CustomShape_Pelvis
+    2300032: CustomShape_Target
+    2300034: CustomShape_Torso
+    2300036: CustomShape_Volume
+    2300038: //RootNode
+    3300000: _________
+    3300002: Cube
+    3300004: CustomShape_Circle03
+    3300006: CustomShape_Circle05
+    3300008: CustomShape_Circle10
+    3300010: CustomShape_COG
+    3300012: CustomShape_Collar
+    3300014: CustomShape_EyeTarget
+    3300016: CustomShape_Foot
+    3300018: CustomShape_FootPivot
+    3300020: CustomShape_Hand
+    3300022: CustomShape_Head
+    3300024: CustomShape_Line
+    3300026: CustomShape_Neck
+    3300028: CustomShape_Origin
+    3300030: CustomShape_Pelvis
+    3300032: CustomShape_Target
+    3300034: CustomShape_Torso
+    3300036: CustomShape_Volume
+    3300038: //RootNode
+    4300000: _________
+    4300036: z_lowerBodyMesh(shadow)
+    4300038: z_eyeBallRightMesh(shadow)
+    4300040: z_upperBodyMesh(shadow)
+    4300042: z_skirtMesh(shadow)
+    4300044: z_headMesh(shadow)
+    4300046: z_eyelashMesh(shadow)
+    4300048: z_hairMesh(shadow)
+    4300050: z_eyeBallLeftMesh(shadow)
+    4300052: Cube
+    9500000: //RootNode
+    13700000: eyeBallLeftMesh
+    13700002: eyeBallRightMesh
+    13700004: eyelashMesh
+    13700006: hairMesh
+    13700008: headMesh
+    13700010: lowerBodyMesh
+    13700012: skirtMesh
+    13700014: upperBodyMesh
+    13700016: z_eyeBallLeftMesh(shadow)
+    13700018: z_eyeBallRightMesh(shadow)
+    13700020: z_eyelashMesh(shadow)
+    13700022: z_hairMesh(shadow)
+    13700024: z_headMesh(shadow)
+    13700026: z_lowerBodyMesh(shadow)
+    13700028: z_skirtMesh(shadow)
+    13700030: z_upperBodyMesh(shadow)
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
