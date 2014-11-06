@@ -11,7 +11,6 @@ namespace Limone{
 		public GameBeginState(GameStateManager gamestateManager){
 			gamemanager = gamestateManager;
 			Gamecontroller = new GameDataController();
-			gamedata = GameObject.Find("GameManager").GetComponent<GameData>();
 			Time.timeScale = 0;
 		}
 
@@ -29,7 +28,7 @@ namespace Limone{
 		}
 	
 		public void Render(){
-			GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height),gamedata.startTexture,ScaleMode.StretchToFill);
+			GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height),gamemanager.gameData.startTexture,ScaleMode.StretchToFill);
 			if(GUI.Button(new Rect((Screen.width/10)*5,(Screen.height/10)*8 ,(Screen.width/10)*2,(Screen.height/10)*1),"Start")){
 				Application.LoadLevel("TDGStage1");
 				Time.timeScale = 1;

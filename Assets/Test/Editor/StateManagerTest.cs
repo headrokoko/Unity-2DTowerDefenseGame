@@ -40,7 +40,7 @@ namespace Limone.Test{
 		[Test]
 		[Category("StateName GameBeginState Get Test")]
 		public void StateNameGameBeginStateGetTest(){
-			string actstate = statemanager.statemanager.SwichState(new GameBeginState(gamemanager));
+			string actstate = statemanager.statemanager.SwichState(new GameBeginState(this.gamemanager));
 			Assert.That("Limone.GameBeginState",Is.EqualTo(actstate));
 		}
 		[Test]
