@@ -7,10 +7,12 @@ namespace Limone{
 		private Light baseLight;
 		private GameData gameData;
 		public DefenseObjController defcontroller;
+		private GameManagerIntegrationTest inttest;
 
 		public void OnEnable(){
 			//下のthisにはインターフェース(IGUIBaseHPController)が入る
 			defcontroller.SetDefenseObjController(this);
+			inttest = GameObject.Find("GameManager").GetComponent<GameManagerIntegrationTest>();
 		}
 		// Use this for initialization
 		void Start () {
@@ -29,6 +31,7 @@ namespace Limone{
 				gameData.BaseHP -= 1;
 				Debug.Log (gameData.BaseHP);
 				Destroy(CollisionObj.gameObject);
+				inttest.BaseDamageCheck = true;
 			}
 
 			if((gameData.BaseHP < 7) && (3 < gameData.BaseHP )){
