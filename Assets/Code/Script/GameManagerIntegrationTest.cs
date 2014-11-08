@@ -14,6 +14,8 @@ namespace Limone{
 		public bool BackGroundTextureCheck = false;
 		public bool AudioCheck = false;
 		public bool BaseDamageCheck = false;
+		public bool sample1 =false;
+		public bool sample2 = false;
 
 		// Use this for initialization
 		void Start () {
