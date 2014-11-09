@@ -354,7 +354,7 @@ MonoBehaviour:
   Wall: {fileID: 100008, guid: dc1fd1d4accb38848b31d69319990f07, type: 2}
   Loof: {fileID: 100000, guid: 2374c1336030ae64aaad28287ed55f68, type: 2}
   weaponNum: 0
-  FireRate: 30
+  FireRate: 20
   mousepos: {x: 0, y: 0, z: 0}
   screenpos: {x: 0, y: 0, z: 0}
   PutPos: {x: 0, y: 0, z: 0}
@@ -902,6 +902,8 @@ MonoBehaviour:
   BackGroundTextureCheck: 0
   AudioCheck: 0
   BaseDamageCheck: 0
+  sample1: 0
+  sample2: 0
 --- !u!114 &135345565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9525,6 +9527,10 @@ Prefab:
     - target: {fileID: 400028, guid: e1dfdbd4dfdc2c44fa76abef33d147c5, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: e1dfdbd4dfdc2c44fa76abef33d147c5, type: 2}
+      propertyPath: FireRate
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e1dfdbd4dfdc2c44fa76abef33d147c5, type: 2}
