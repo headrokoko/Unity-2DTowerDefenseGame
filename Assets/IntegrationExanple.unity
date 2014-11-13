@@ -156,6 +156,25 @@ Transform:
   - {fileID: 1160830258}
   m_Father: {fileID: 1138549242}
   m_RootOrder: 13
+--- !u!114 &34875119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4928c6c2b973874c8d4e6c9a69bb5b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 897327423}
+  thisPropertyPath: Transform.position.y
+  compareToType: 0
+  other: {fileID: 223605524}
+  otherPropertyPath: Transform.position.y
+  constantValueGeneric: 0
+  compareTypes: 2
+  floatingPointError: 9.9999997473787516e-05
 --- !u!1 &39913226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,6 +1089,14 @@ Prefab:
       propertyPath: EnemyDownSE
       value: 
       objectReference: {fileID: 8300000, guid: 816ea0e74e178654cbff25a4c5db9b95, type: 3}
+    - target: {fileID: 400004, guid: e1dfdbd4dfdc2c44fa76abef33d147c5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.90999985
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: e1dfdbd4dfdc2c44fa76abef33d147c5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e1dfdbd4dfdc2c44fa76abef33d147c5, type: 2}
   m_RootGameObject: {fileID: 321852065}
@@ -6027,6 +6054,7 @@ GameObject:
   - 114: {fileID: 897327426}
   - 82: {fileID: 897327425}
   - 114: {fileID: 897327432}
+  - 114: {fileID: 897327433}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -6041,7 +6069,7 @@ Transform:
   m_PrefabInternal: {fileID: 171590408}
   m_GameObject: {fileID: 897327423}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.90999997, z: 0}
+  m_LocalPosition: {x: 0, y: 1.90999985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1044935530}
@@ -6219,6 +6247,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentobj: {fileID: 0}
   receiver: {fileID: 0}
+--- !u!114 &897327433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 897327423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bafa54482a87ac4cbd7ff1bfd1ac93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkAfterTime: 1
+  repeatCheckTime: 1
+  repeatEveryTime: 1
+  checkAfterFrames: 1
+  repeatCheckFrame: 1
+  repeatEveryFrame: 10
+  hasFailed: 0
+  checkMethods: 4
+  m_ActionBase: {fileID: 34875119}
+  checksPerformed: 0
 --- !u!1 &901015557
 GameObject:
   m_ObjectHideFlags: 0
