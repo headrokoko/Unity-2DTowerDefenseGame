@@ -1097,6 +1097,10 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 13200004, guid: e1dfdbd4dfdc2c44fa76abef33d147c5, type: 2}
+      propertyPath: m_PixelOffset.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e1dfdbd4dfdc2c44fa76abef33d147c5, type: 2}
   m_RootGameObject: {fileID: 321852065}
@@ -11561,6 +11565,25 @@ MonoBehaviour:
   platformsToIgnore: []
   dynamic: 0
   dynamicTypeName: 
+--- !u!114 &1648945661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4928c6c2b973874c8d4e6c9a69bb5b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 2011222180}
+  thisPropertyPath: Transform.position.y
+  compareToType: 0
+  other: {fileID: 223605524}
+  otherPropertyPath: Transform.position.y
+  constantValueGeneric: 0
+  compareTypes: 2
+  floatingPointError: 9.9999997473787516e-05
 --- !u!1 &1654931050
 GameObject:
   m_ObjectHideFlags: 0
@@ -13908,6 +13931,7 @@ GameObject:
   - 4: {fileID: 2011222181}
   - 65: {fileID: 2011222183}
   - 114: {fileID: 2011222182}
+  - 114: {fileID: 2011222184}
   m_Layer: 0
   m_Name: BaseManager
   m_TagString: Untagged
@@ -13953,6 +13977,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2011222184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2011222180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bafa54482a87ac4cbd7ff1bfd1ac93a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkAfterTime: 1
+  repeatCheckTime: 1
+  repeatEveryTime: 1
+  checkAfterFrames: 1
+  repeatCheckFrame: 1
+  repeatEveryFrame: 10
+  hasFailed: 0
+  checkMethods: 6
+  m_ActionBase: {fileID: 1648945661}
+  checksPerformed: 0
 --- !u!1 &2021897493
 GameObject:
   m_ObjectHideFlags: 0
