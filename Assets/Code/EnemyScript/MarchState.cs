@@ -20,7 +20,10 @@ namespace Limone{
 			{
 				if(hit.collider.tag == "Player"){
 					Debug.Log ("SawPlayer Swich AttackState");
-					npc.renderer.material.color = Color.red;
+
+					Transform npcChild = npc.FindChild("Enemymodel");
+					npcChild.renderer.material.color =Color.yellow;
+					npc.renderer.material.color = Color.yellow;
 					npc.GetComponent<EnemyController>().SetTransition(Transition.SawPlayer);
 				}
 			}

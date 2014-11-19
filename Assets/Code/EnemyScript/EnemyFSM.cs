@@ -6,6 +6,7 @@ namespace Limone{
 	{
 		protected Transform playerTransform;
 		protected Transform targetTransform;
+		protected Transform enemyTransform;
 	
 		//NPCの次の到達点
 		protected Vector3 destPos;

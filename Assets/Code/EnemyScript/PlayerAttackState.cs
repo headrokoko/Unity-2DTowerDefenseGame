@@ -27,9 +27,12 @@ namespace Limone{
 			//プレーヤーとの距離を確認
 			float between = Vector3.Distance(npc.position, player.position);
 			//一定の距離内にPlayerがいなくなったらMarchstateに戻る
-			if (between >= 20.0f)
+			if (between >= 10.0f)
 			{
 				Debug.Log("PlayerLost Swich MarchState");
+
+				Transform npcChild = npc.FindChild("Enemymodel");
+				npcChild.renderer.material.color =Color.white;
 				npc.renderer.material.color = Color.white;
 				npc.GetComponent<EnemyController>().SetTransition(Transition.LostPlayer);
 			}  

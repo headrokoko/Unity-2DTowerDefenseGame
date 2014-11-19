@@ -39,8 +39,10 @@ namespace Limone{
 		
 			GameObject objPlayer = GameObject.FindGameObjectWithTag("Player");
 			GameObject objTarget = GameObject.FindGameObjectWithTag("Defense");
+			Transform objEnemy = transform.FindChild("Enemy");
 			playerTransform = objPlayer.transform;
 			targetTransform = objTarget.transform;
+			enemyTransform = objEnemy;
 		
 			if (!playerTransform)
 				print("プレーヤーが存在しません。タグ 'Player'　を追加してください。");
